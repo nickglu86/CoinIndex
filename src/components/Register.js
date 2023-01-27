@@ -34,7 +34,7 @@ export default function Register() {
     <Container>
       <Row className="justify-content-md-center">
         <Col xs={8} sm={8} md={4} lg={4} >
-          <h2 key={"secondary"}>Register</h2>
+          <h2>Register</h2>
           <Form onSubmit={(e) => handleSubmit(e)}>
             {/* email */}
             <Form.Group controlId="formBasicEmail" className="my-3">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { Button } from "react-bootstrap";
@@ -8,13 +8,13 @@ const token = cookies.get("TOKEN");
 
 export default function AuthComponent() {
   const [message, setMessage] = useState(token);
-
+  
   // useEffect automatically executes once the page is fully loaded
   useEffect(() => {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "https://enays-auth-app.herokuapp.com/auth-endpoint",
+      url: "http://localhost:3000/auth-endpoint",
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -24,6 +24,8 @@ export default function AuthComponent() {
     axios(configuration)
       .then((result) => {
         // assign the message in our result to the message we initialized above
+        console.log(result.data)
+        // localStorage.setItem("isLoggedIn", "true");
         setMessage(result.data.message);
       })
       .catch((error) => {
@@ -35,6 +37,8 @@ export default function AuthComponent() {
 const logout = () => {
     // destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
+    // Set LocalSorage isLogged in to False
+    localStorage.setItem("isLoggedIn", "false");
     // redirect user to the landing page
     window.location.href = "/";
   }

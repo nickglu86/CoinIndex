@@ -10,7 +10,7 @@ export default function FreeComponent() {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "https://enays-auth-app.herokuapp.com/free-endpoint",
+      url: "http://localhost:3000/free-endpoint",
     };
 
     // make the API call

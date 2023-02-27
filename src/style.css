@@ -1,5 +1,13 @@
 @media all and (max-width: 500px) {
   /* screen size until 500px */
+
+}
+.youtube-card{
+  width: 32%;
+  height: 340px;
+
+}
+@media all and (max-width: 1000px) {
   .news-feed-container {
     flex-direction: column;
     padding: 0 !important;
@@ -12,17 +20,6 @@
   }
   .footer-info{
     flex-direction: column;
-  }
-}
-.youtube-card{
-  width: 32%;
-  height: 340px;
-
-}
-@media all and (max-width: 1000px) {
-  .news-feed-container {
-    flex-direction: column;
-    padding: 0 !important;
   }
   .youtube-card{
     width: 100%;
@@ -56,7 +53,7 @@
 
 @keyframes slideshow {
   0% {
-    right: -100%;
+    right: -70%;
   }
   100% {
     right: 2700px; /* Total width of all images */

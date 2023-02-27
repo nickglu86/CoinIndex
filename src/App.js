@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Container, Col, Row, Stack, Button } from "react-bootstrap";
+import "./style.css";
 import Home from "./views/Home";
 import Account from "./components/Account";
 import FreeComponent from "./components/FreeComponent";

@@ -4,7 +4,7 @@ import { trending } from "../mockdata/trending";
 const Trending = () => {
   return (
     <Row>
-      <h3>Trending Coins</h3>
+      <h4>Trending Coins</h4>
       <Row className="news-grid" style={{ width: "4000px", maxWidth: "none" }}>
         {trending.map((item, index) => (
           <Card

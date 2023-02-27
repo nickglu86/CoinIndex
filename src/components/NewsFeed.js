@@ -55,6 +55,7 @@ const NewsFeed = () => {
                 fontSize: "17px",
                 lineHeight: "24px",
                 overflow: "hidden",
+                margin: "0",
                 ...(index === itemIndex &&  {fontWeight : '700', textDecoration: 'underline'})
               }}
              
@@ -71,14 +72,14 @@ const NewsFeed = () => {
   const NewsGrid = () => {
     return (
       <div className="my-4">
-        <h3>Other News</h3>
+        <h4>Other News</h4>
         <Row>
           {news.slice(4, 10).map((item, index) => (
             <Card
               href={item.url}
               key={index}
               className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
-              style={{ margin: " 10px 1%", width: "31%", height: "80px" }}
+              style={{ margin: " 10px 1%", width: "31%", height: "85px" }}
             >
               <Card.Img
                 src={item.image}
@@ -92,6 +93,7 @@ const NewsFeed = () => {
                   fontSize: "17px",
                   lineHeight: "21px",
                   overflow: "hidden",
+                  margin: "0"
                 }}
               >
                 {item.title}

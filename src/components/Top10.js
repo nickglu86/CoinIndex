@@ -24,10 +24,10 @@ const Top10 = () => {
   };
   const TableHeader = () => (
     <thead>
-      <tr>
-        <th style={{ textAlign: "center" }}>#</th>
+      <tr className="text-center">
+        <th>#</th>
         <th></th>
-        <th>CryptoCurrency</th>
+        <th style={{ textAlign: "left" }}>CryptoCurrency</th>
         <th>Price</th>
         <th>1h</th>
         <th>24h</th>
@@ -35,7 +35,7 @@ const Top10 = () => {
         <th>30d</th>
         <th>Market Cap</th>
         <th>Volume(24h)</th>
-        <th>Circulating Suplly</th>
+        <th style={{ textAlign: "right" }}>Circulating Suplly</th>
       </tr>
     </thead>
   );
@@ -43,7 +43,7 @@ const Top10 = () => {
   const TableBody = () => (
     <tbody>
       {top10coins.map((coin, index) => (
-        <tr key={index} style={{ verticalAlign: "baseline" }}>
+        <tr key={index}  className="text-center" style={{ verticalAlign: "baseline" }}>
           <td style={{ textAlign: "center", fontWeight: "600" }}>
             {coin.market_cap_rank}
           </td>
@@ -53,9 +53,9 @@ const Top10 = () => {
               style={{ width: "45px", height: "45px", padding: "2px" }}
             />
           </td>
-          <td>{coin.name}</td>
+          <td  style={{ textAlign: "left"}}> {coin.name}</td>
           <td
-            style={{ textAlign: "center", fontWeight: "600", fontSize: "19px" }}
+            style={{fontWeight: "600", fontSize: "19px" }}
           >
             {parseInt(coin.current_price) > 10
               ? coin.current_price.toFixed(0)
@@ -84,7 +84,7 @@ const Top10 = () => {
 
   return (
     <div>
-      <h3>Top10</h3>
+      <h4>Top10</h4>
       <Table striped hover size="sm">
         <TableHeader />
         <TableBody />

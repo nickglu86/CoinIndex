@@ -10,7 +10,7 @@ const NewsFeed = () => {
   };
 
   const NewsCarousel = () => (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item>
           <img className="d-block w-100" src={item.image} alt={item.title} />
@@ -109,11 +109,11 @@ const NewsFeed = () => {
 
   return (
     <div>
-      <Container className="d-flex justify-content-between">
-        <Col xs={12} sm={12} md={8} lg={8}>
+      <Container className="d-flex justify-content-between news-feed-container">
+        <Col xs={12} sm={12} md={7} lg={8}>
           <NewsCarousel />
         </Col>
-        <Col xs={12} sm={12} md={4} lg={4} className="m-3">
+        <Col xs={12} sm={12} md={5} lg={4} className="m-3">
           <NewsList />
         </Col>
       </Container>

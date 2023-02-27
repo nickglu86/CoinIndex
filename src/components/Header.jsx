@@ -25,8 +25,7 @@ function Header() {
           />
         </Navbar.Brand>
         <Navbar.Brand href="/" style={{
-          textTransform: 'uppercase',
-          fontSize: '22px'
+          fontSize: '27px'
         }}>CoinIndex</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

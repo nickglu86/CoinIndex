@@ -31,10 +31,11 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/free">Free Component</Nav.Link>
+            <Nav.Link href="/news">News</Nav.Link>
+            <Nav.Link href="/chart">Coins Chart</Nav.Link>
+            {/* <Nav.Link href="/free">Free Component</Nav.Link>
             <Nav.Link href="/auth">Auth Component</Nav.Link>
-            <Nav.Link href="/user">User Page</Nav.Link>
-
+            <Nav.Link href="/user">User Page</Nav.Link> */}
           </Nav>
 
           {/* <Nav>

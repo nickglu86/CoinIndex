@@ -1,0 +1,29 @@
+.news-grid {
+  position: relative;
+  /* width: 800%;  */
+  animation: slideshow 40s linear infinite;
+}
+.news-grid:hover {
+  animation-play-state: paused;
+}
+
+.news-item {
+  float: right;
+  cursor: pointer;
+  overflow: hidden;
+  /* width: 25%;   */
+}
+.news-item p {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@keyframes slideshow {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 3300px; /* Total width of all images */
+  }
+}

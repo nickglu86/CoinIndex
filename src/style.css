@@ -1,6 +1,15 @@
-@media all and (max-width: 500px) {
-  /* screen size until 500px */
 
+
+@media all and (max-width: 1400px) {
+  /* screen size until 500px */
+  .news-feed-container .carousel-caption{
+    position: relative!important;
+    left: 0!important;
+    min-height: max-content!important;
+ }
+ .news-feed-container  .carousel-indicators{
+    display: none;
+  }
 }
 .youtube-card{
   width: 32%;
@@ -31,18 +40,42 @@
 }
 
 .news-grid {
-  position: relative;
+  /* position: relative; */
   /* width: 800%;  */
-  animation: slideshow 40s linear infinite;
-}
-.news-grid:hover {
-  animation-play-state: paused;
-}
-
-.news-item {
-  float: right;
-  cursor: pointer;
+  /* animation: slideshow 40s linear infinite; */
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  max-width: 100%;
+}
+/* .news-grid:hover {
+  animation-play-state: paused;
+} */
+.news-grid-inner{
+  display: flex;
+  height: 100px;
+  width: 1850px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  animation: moveSlideshow 15s linear infinite;
+}
+@keyframes moveSlideshow {
+  0% {
+    transform: translateX(40%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+.news-item {
+  /* float: right;
+  cursor: pointer;
+  overflow: hidden; */
   /* width: 25%;   */
 }
 .news-item p {
@@ -51,6 +84,7 @@
   -webkit-box-orient: vertical;
 }
 
+
 @keyframes slideshow {
   0% {
     right: -70%;
@@ -58,4 +92,8 @@
   100% {
     right: 2700px; /* Total width of all images */
   }
+}
+
+table.coins-chart  thead  th{
+  cursor: pointer;
 }

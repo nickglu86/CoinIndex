@@ -20,13 +20,14 @@ const NewsFeed = () => {
               top: "0",
               left: "0",
               height: "19%",
+              minHeight: "max-content",
               backgroundColor: "rgba(0,0,0,.7)",
               textAlign: 'left',
-              padding: '5px 30% 5px 10px',
-              fontSize: '25px',
+              padding: '5px 0 5px 10px',
+      
             }}
           >
-            {item.title}
+            <h3 style={{maxWidth:'700px'}}>{item.title}</h3>
           </Carousel.Caption>
         </Carousel.Item>
       ))}

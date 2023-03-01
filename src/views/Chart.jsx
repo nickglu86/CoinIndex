@@ -9,7 +9,7 @@ import CoinsChart from "../components/CoinsChart";
 const Chart = () => {
     return (
         <Container>
-            <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
+            <Row className="justify-content-md-start" style={{ overflow: "scroll" }}>
                 <h1>Chart</h1>
                 <CoinsChart  coins={coins}/>
             </Row>

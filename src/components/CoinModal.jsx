@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Badge, Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import CandlesChartHook from './CandlesCharHook';
+import CandlesChart from './CandlesChart';
 
 function CoinModal({ coin }) {
     const [show, setShow] = useState(false);
@@ -24,9 +26,13 @@ function CoinModal({ coin }) {
                 animation={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title> {coin.name}</Modal.Title>
+         
+                    <Modal.Title> 
+                    <h2><Badge bg="secondary"># {coin.market_cap_rank}</Badge> - {coin.name}</h2>
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+
                     <Row>
                         <Col>
                             <img
@@ -34,12 +40,16 @@ function CoinModal({ coin }) {
                                 style={{ width: "200px", height: "200px", padding: "2px" }}
                             /></Col>
                         <Col>
-                            <h2>#{coin.market_cap_rank} </h2>
-                            {coin.name}
+
+                            {/* <h2>{coin.name}</h2> */}
                             <h2> {coin.current_price}$</h2>
                             <p>{coin.market_cap} </p>
-                            <button onClick={handleClose} type="button" class="btn-close" aria-label="Close"></button>
+                            {/* <button onClick={handleClose} type="button" class="btn-close" aria-label="Close"></button> */}
                         </Col>
+                    </Row>
+                    <Row className="my-4">
+                        <CandlesChart coin={coin} />
+                        {/* <CandlesChartHook coin={coin} /> */}
                     </Row>
                 </Modal.Body>
                 {/* <Modal.Footer>

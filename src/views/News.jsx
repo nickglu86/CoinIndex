@@ -3,6 +3,7 @@ import {
     Container,
     Row
 } from "react-bootstrap";
+import CandlesChart from "../components/CandlesChart";
 import { coins } from "../mockdata/coins";
 
 const News = () => {
@@ -11,6 +12,7 @@ const News = () => {
             <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
                 <h1>News</h1>
             </Row>
+            {/* <CandlesChart /> */}
         </Container>
     );
 };

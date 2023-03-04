@@ -14,6 +14,7 @@ import UserPage from "./components/UserPage";
 import Header from "./components/Header";
 import News from "./views/News";
 import Chart from "./views/Chart";
+import Resources from "./views/Resources";
 import Footer from "./components/Footer";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/free" component={FreeComponent} />
             <Route exact path="/chart" component={Chart} />
             <Route exact path="/news" component={News} />
+            <Route exact path="/resources" component={Resources} />
             <ProtectedRoutes path="/auth" component={AuthComponent} />
             <ProtectedRoutes path="/user" component={UserPage} />
           </Switch>

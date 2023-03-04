@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
+import CoinModal from "./CoinModal";
 
 const CoinsChart = ({coins}) => {
   const [chartData, setChartData] = useState(coins);
@@ -80,7 +81,7 @@ const sort = prop => {
               style={{ width: "45px", height: "45px", padding: "2px" }}
             />
           </td>
-          <td  style={{ textAlign: "left"}}> {coin.name}</td>
+          <td  style={{ textAlign: "left"}} ><CoinModal coin={coin} /></td>
           <td
             style={{fontWeight: "600", fontSize: "19px" }}
           >

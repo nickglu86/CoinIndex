@@ -16,6 +16,7 @@ import News from "./views/News";
 import Chart from "./views/Chart";
 import Resources from "./views/Resources";
 import Footer from "./components/Footer";
+import Exchanges from "./views/Exchanges";
 
 function App() {
    
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/free" component={FreeComponent} />
             <Route exact path="/chart" component={Chart} />
             <Route exact path="/news" component={News} />
+            <Route exact path="/exchanges" component={Exchanges} />
             <Route exact path="/resources" component={Resources} />
             <ProtectedRoutes path="/auth" component={AuthComponent} />
             <ProtectedRoutes path="/user" component={UserPage} />

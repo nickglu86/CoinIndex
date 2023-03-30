@@ -86,7 +86,7 @@ const sort = prop => {
             style={{fontWeight: "600", fontSize: "19px" }}
           >
             {parseInt(coin.current_price) > 10
-              ? coin.current_price.toFixed(0)
+              ? coin.current_price.toFixed(0) 
               : parseInt(coin.current_price) > 0
               ? coin.current_price.toFixed(2)
               : coin.current_price.toFixed(3)}

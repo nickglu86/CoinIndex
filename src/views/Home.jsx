@@ -16,16 +16,12 @@ const Home = () => {
   return (
     <Container>
       <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
-      
         <NewsFeed />
         <Trending />
         <Col xs={12} sm={12} md={12} lg={12} className="mt-5" >
             <Top10 />
         </Col>
-        <YouTubeVids />
-
-
- 
+        <YouTubeVids /> 
       </Row>
     </Container>
   );

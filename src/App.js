@@ -3,6 +3,7 @@ import { UserContext, UserProvider } from "./context/UserContext";
 import { Switch, Route } from "react-router-dom";
 import { Container, Col, Row, Stack, Button } from "react-bootstrap";
 import "./style.css";
+import { DataContext, DataProvider } from "./context/DataContext";
 import Home from "./views/Home";
 import Account from "./components/Account";
 import FreeComponent from "./components/FreeComponent";
@@ -19,27 +20,28 @@ import Footer from "./components/Footer";
 import Exchanges from "./views/Exchanges";
 
 function App() {
-   
   return (
     <UserProvider>
-      <main>
-        <Header />
-        <Container className="my-5">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/free" component={FreeComponent} />
-            <Route exact path="/chart" component={Chart} />
-            <Route exact path="/news" component={News} />
-            <Route exact path="/exchanges" component={Exchanges} />
-            <Route exact path="/resources" component={Resources} />
-            <ProtectedRoutes path="/auth" component={AuthComponent} />
-            <ProtectedRoutes path="/user" component={UserPage} />
-          </Switch>
-        </Container>
-        <Footer />
-      </main>
+      <DataProvider >
+        <main>
+          <Header />
+          <Container className="my-5">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/free" component={FreeComponent} />
+              <Route exact path="/chart" component={Chart} />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/exchanges" component={Exchanges} />
+              <Route exact path="/resources" component={Resources} />
+              <ProtectedRoutes path="/auth" component={AuthComponent} />
+              <ProtectedRoutes path="/user" component={UserPage} />
+            </Switch>
+          </Container>
+          <Footer />
+        </main>
+      </DataProvider>
     </UserProvider>
   );
 }

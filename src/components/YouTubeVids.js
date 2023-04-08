@@ -4,7 +4,6 @@ import { youtube } from "../mockdata/youtube";
 import YouTube from 'react-youtube';
 
 const YouTubeVids = (params) => {
-  console.log(youtube);
   let arr = [];
 
   Object.keys(youtube).forEach((key, index) =>

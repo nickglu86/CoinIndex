@@ -5,8 +5,6 @@ import {
 } from "react-bootstrap";
 import { resources } from "../mockdata/resources";
 
-console.log(resources);
-
 let resourcesComp = [];
 for (const [key, value] of Object.entries(resources)) {
     resourcesComp.push(
@@ -14,8 +12,8 @@ for (const [key, value] of Object.entries(resources)) {
             <h2>{key}</h2>
             {
                 value.map(
-                    resItem => (
-                        <a href={resItem["url"]} target="_blank">
+                    (resItem, index) => (
+                        <a key={index} href={resItem["url"]} target="_blank">
                             <img
                                 src={resItem["img"]}
                                 alt={resItem["name"]}

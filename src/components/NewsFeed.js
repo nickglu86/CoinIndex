@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
-import { news } from "../mockdata/news";
+// import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
+   import { news } from "../mockdata/news";
 
 const NewsFeed = () => {
+  // const { cryptoNewsApi  } = useContext(DataContext);
+  //  let data = useContext(DataContext);
   const [index, setIndex] = useState(0);
+  
+  const {  apiDta , isLoading } = useAPI();
+ 
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const NewsCarousel = () => (
+  const NewsCarousel = ({news}) => (
     <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>
       {news.slice(0, 4).map((item, index) => (
-        <Carousel.Item>
+        <Carousel.Item key={index}>
           <img className="d-block w-100" src={item.image} alt={item.title} />
           <Carousel.Caption
             style={{
@@ -34,8 +41,7 @@ const NewsFeed = () => {
     </Carousel>
   );
   
-  const NewsList = () => {
-    return (
+  const NewsList = ({news})=> (
       <Row>
         <h2>Latest News</h2>
         {news.slice(0, 4).map((item, itemIndex) => (
@@ -69,9 +75,8 @@ const NewsFeed = () => {
         ))}
       </Row>
     );
-  };
-  const NewsGrid = () => {
-    return (
+
+  const NewsGrid = ({news}) =>  (
       <div className="my-4">
         <h4>Other News</h4>
         <Row>
@@ -106,20 +111,25 @@ const NewsFeed = () => {
         </Row>
       </div>
     );
-  };
+ 
 
   return (
     <div>
       <Container className="d-flex justify-content-between news-feed-container">
         <Col xs={12} sm={12} md={7} lg={8}>
-          <NewsCarousel />
+         <NewsCarousel  news={news} />
+          {/* {isLoading &&  console.log(typeof apiDta.cryptoNewsApi )}
+          {isLoading && <NewsCarousel  news={apiDta.cryptoNewsApi} /> } */}
         </Col>
         <Col xs={12} sm={12} md={5} lg={4} className="m-3">
-          <NewsList />
+          <NewsList news={news} />
+          {/* {isLoading && apiDta.cryptoNewsApi && <NewsList news={apiDta.cryptoNewsApi} /> }   */}
         </Col>
       </Container>
       <Container>
-        <NewsGrid />
+        <NewsGrid news={news} />
+        {/* {isLoading &&  apiDta.cryptoNewsApi && <NewsGrid news={apiDta.cryptoNewsApi} /> }
+           */}
       </Container>
     </div>
   );

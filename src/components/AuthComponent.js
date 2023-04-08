@@ -24,7 +24,7 @@ export default function AuthComponent() {
     axios(configuration)
       .then((result) => {
         // assign the message in our result to the message we initialized above
-        console.log(result.data)
+        // console.log(result.data)
         // localStorage.setItem("isLoggedIn", "true");
         setMessage(result.data.message);
       })

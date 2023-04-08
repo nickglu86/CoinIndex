@@ -1,8 +1,11 @@
 import { Row, Card, ListGroup } from "react-bootstrap";
+import React, { useContext} from "react";
+import { DataContext } from "../context/DataContext";
 import { trending } from "../mockdata/trending";
 
 const Trending = () => {
-  return (
+  // const { trending } = useContext(DataContext);
+  return (  
     <Row>
       <h4>Trending Coins</h4>
       <Row className="news-grid">

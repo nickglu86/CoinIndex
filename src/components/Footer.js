@@ -45,7 +45,7 @@ const Footer = () => {
               <a href="https://t.me/CryptoJunkie5">
                 <img src="/assets/social/telegram.png" width="44" className="mx-1"></img>
               </a>
-              <a href>
+              <a href="/">
                 <img src="/assets/social/facebook.png" width="44" className="mx-1"></img>
               </a>
             </div>

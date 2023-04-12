@@ -1,21 +1,18 @@
 import React, { useState, useEffect, useContext} from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
-// import { DataContext } from "../context/DataContext";
 import { useAPI } from "../context/DataContext";
-   import { news } from "../mockdata/news";
+//import { news } from "../mockdata/news";
 
 const NewsFeed = () => {
-  // const { cryptoNewsApi  } = useContext(DataContext);
-  //  let data = useContext(DataContext);
+
   const [index, setIndex] = useState(0);
-  
-  const {  apiDta , isLoading } = useAPI();
- 
+  const {  apiData , isLoading } = useAPI();
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
+  
   const NewsCarousel = ({news}) => (
     <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>
       {news.slice(0, 4).map((item, index) => (
@@ -117,19 +114,18 @@ const NewsFeed = () => {
     <div>
       <Container className="d-flex justify-content-between news-feed-container">
         <Col xs={12} sm={12} md={7} lg={8}>
-         <NewsCarousel  news={news} />
-          {/* {isLoading &&  console.log(typeof apiDta.cryptoNewsApi )}
-          {isLoading && <NewsCarousel  news={apiDta.cryptoNewsApi} /> } */}
+         {/* <NewsCarousel  news={news} /> */}
+          {!isLoading && <NewsCarousel  news={apiData.cryptoNewsApi} /> }
         </Col>
         <Col xs={12} sm={12} md={5} lg={4} className="m-3">
-          <NewsList news={news} />
-          {/* {isLoading && apiDta.cryptoNewsApi && <NewsList news={apiDta.cryptoNewsApi} /> }   */}
+          {/* <NewsList news={news} /> */}
+          {!isLoading &&  <NewsList news={apiData.cryptoNewsApi} /> }  
         </Col>
       </Container>
       <Container>
-        <NewsGrid news={news} />
-        {/* {isLoading &&  apiDta.cryptoNewsApi && <NewsGrid news={apiDta.cryptoNewsApi} /> }
-           */}
+        {/* <NewsGrid news={news} /> */}
+        {!isLoading && <NewsGrid news={apiData.cryptoNewsApi} /> }
+          
       </Container>
     </div>
   );

@@ -21,7 +21,7 @@ const Home = () => {
         <Col xs={12} sm={12} md={12} lg={12} className="mt-5" >
             <Top10 />
         </Col>
-        <YouTubeVids /> 
+        {/* <YouTubeVids />  */}
       </Row>
     </Container>
   );

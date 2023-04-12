@@ -36,7 +36,7 @@ const sort = prop => {
 
   const priceChange = (changeValue) => {
     const changeColor =
-      parseFloat(changeValue.toFixed(1)) === 0
+      parseFloat(changeValue).toFixed(1) === 0
         ? {}
         : parseFloat(changeValue) > 0
         ? { color: "green" }
@@ -44,11 +44,11 @@ const sort = prop => {
         ? { color: "red" }
         : {};
     const valuePrefix =
-      parseFloat(changeValue.toFixed(1)) === 0
-        ? changeValue.toFixed(1)
+      parseFloat(changeValue).toFixed(1) === 0
+        ? parseFloat(changeValue).toFixed(1)
         : parseFloat(changeValue) > 0
-        ? "+" + changeValue.toFixed(1)
-        : changeValue.toFixed(1);
+        ? "+" + parseFloat(changeValue).toFixed(1)
+        : parseFloat(changeValue).toFixed(1);
     return <td style={changeColor}>{valuePrefix}%</td>;
   };
   const TableHeader = () => (
@@ -92,6 +92,10 @@ const sort = prop => {
               : coin.current_price.toFixed(3)}
             $
           </td>
+          {/* <td>{coin.price_change_percentage_1h_in_currency}</td>
+          <td>{coin.price_change_percentage_24h}</td>
+          <td> {coin.price_change_percentage_7d_in_currency}</td>
+          <td>{coin.price_change_percentage_30d_in_currency}</td> */}
           {priceChange(coin.price_change_percentage_1h_in_currency)}
           {priceChange(coin.price_change_percentage_24h)}
           {priceChange(coin.price_change_percentage_7d_in_currency)}

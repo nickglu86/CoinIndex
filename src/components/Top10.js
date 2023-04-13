@@ -1,5 +1,5 @@
 import React from "react";
-import CoinsChart from "./CoinsChart";
+import CoinsTable from "./CoinsTable";
 import { Table } from "react-bootstrap";
 // import { coins } from "../mockdata/coins";
 import { useAPI } from "../context/DataContext";
@@ -13,7 +13,7 @@ const Top10 = () => {
     return (
       <div style={{ overflow: "scroll" }}>
         <h4>Top10</h4>
-        <CoinsChart coins={top10coins}/>
+        <CoinsTable coins={top10coins}/>
       </div>
     );
   }

@@ -1,18 +1,41 @@
 import {createContext, useContext, useState, useEffect} from 'react';
 import axios from 'axios';
 import dataResources from '../utils/dataResources';
+//MockData 
+import { news } from '../mockdata/news';
+import { coins } from '../mockdata/coins';
+import {trending} from '../mockdata/trending'
+import { globaldata } from '../mockdata/globaldata';
+import {exchanges} from '../mockdata/exchanges'
+import { fearAndGreed } from '../mockdata/fearAndGreed';
+import { btc } from '../mockdata/btc';
+
+const USE_MOCK_DATA = true;
 
 export const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-
+ 
     const [apiData, setApiData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => { 
-        let promises = dataResources.map(resource => axios.get(resource.endpoint));
+       if(USE_MOCK_DATA){
+          let data = {
+            cryptoNewsApi : news,
+            coins: coins,
+            btc: btc,
+            trending: trending,
+            fearAndGreed: fearAndGreed,
+            globalData: globaldata,
+            exchanges: exchanges
+          }
+          setApiData(data);
+          setIsLoading(false);
+       } else {
+        let endPointsDataRequests = dataResources.map(resource => axios.get(resource.endpoint));
         
-        Promise.all(promises)
+        Promise.all(endPointsDataRequests)
           .then(responses => {
             let data = {};
             responses.forEach((response, index) => {
@@ -22,6 +45,8 @@ export const DataProvider = ({ children }) => {
             setIsLoading(false);
           })
           .catch(error => console.log(error));
+       }
+
       }, []);
  
   

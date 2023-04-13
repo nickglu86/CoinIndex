@@ -97,6 +97,7 @@ const sort = prop => {
     </tbody>
   );
 
+  
   return (
       <Table className="coins-chart" striped hover size="sm">
         <TableHeader />

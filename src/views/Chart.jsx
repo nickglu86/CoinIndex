@@ -4,7 +4,7 @@ import {
     Row
 } from "react-bootstrap";
 //import { coins } from "../mockdata/coins";
-import CoinsChart from "../components/CoinsChart";
+import CoinsTable from "../components/CoinsTable";
 import { useAPI } from "../context/DataContext";
 
 const Chart = () => {
@@ -15,7 +15,7 @@ const Chart = () => {
             <Container>
                 <Row className="justify-content-md-start" style={{ overflow: "scroll" }}>
                     <h1>Chart</h1>
-                    <CoinsChart  coins={apiData.coins}/>
+                    <CoinsTable  coins={apiData.coins}/>
                 </Row>
             </Container>
         );

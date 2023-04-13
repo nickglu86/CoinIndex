@@ -34,6 +34,10 @@ export const dataResources  = [
     {
         name: 'globalData',
         endpoint:  'https://api.coingecko.com/api/v3/global'
+    },
+    {
+        name: 'exchanges',
+        endpoint:  'https://api.coingecko.com/api/v3/exchanges?per_page=100'
     }
 ]
 

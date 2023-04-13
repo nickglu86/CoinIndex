@@ -31,9 +31,10 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/news">News</Nav.Link>
-            <Nav.Link href="/chart">Chart</Nav.Link>
+            <Nav.Link href="/chart">Cryptocurrencies</Nav.Link>
             <Nav.Link href="/exchanges">Exchanges</Nav.Link>
             <Nav.Link href="/resources">Resources</Nav.Link>
+            <Nav.Link href="/aboutus">About Us</Nav.Link>
             {/* <Nav.Link href="/free">Free Component</Nav.Link>
             <Nav.Link href="/auth">Auth Component</Nav.Link>
             <Nav.Link href="/user">User Page</Nav.Link> */}

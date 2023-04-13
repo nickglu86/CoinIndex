@@ -18,6 +18,9 @@ import Chart from "./views/Chart";
 import Resources from "./views/Resources";
 import Footer from "./components/Footer";
 import Exchanges from "./views/Exchanges";
+import AboutUs from "./views/AboutUs";
+import NewsLetter from "./views/NewsLetter";
+import PrivacyPolicy from "./views/PrivacyPolicy";
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
               <Route exact path="/news" component={News} />
               <Route exact path="/exchanges" component={Exchanges} />
               <Route exact path="/resources" component={Resources} />
+              <Route exact path="/aboutus" component={AboutUs} />
+              <Route exact path="/newsletter" component={NewsLetter} />
+              <Route exact path="/privacypolicy" component={PrivacyPolicy} />
               <ProtectedRoutes path="/auth" component={AuthComponent} />
               <ProtectedRoutes path="/user" component={UserPage} />
             </Switch>

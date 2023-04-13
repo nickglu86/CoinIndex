@@ -9,12 +9,12 @@ const Footer = () => {
           <aside>
             <h4>Site Information</h4>
             <div className="d-flex flex-column my-4">
-                <Nav.Link href="/">About / Contact Us</Nav.Link>
+                <Nav.Link href="/aboutus">About / Contact Us</Nav.Link>
                 <Nav.Link href="/">Contributors</Nav.Link>
             </div>
             <div className="d-flex flex-column my-4">
-               <Nav.Link href="/">Get our free newsletter</Nav.Link>
-               <Nav.Link href="/">Privacy Policy</Nav.Link>
+               <Nav.Link href="/newsletter">Get our free newsletter</Nav.Link>
+               <Nav.Link href="/privacypolicy">Privacy Policy</Nav.Link>
             </div>
             <div className="d-flex flex-column my-4">
                <Nav.Link href="/">Site Map</Nav.Link>
@@ -53,17 +53,17 @@ const Footer = () => {
         </Row>
         <Row className="d-flex gap-2 my-4 pt-3">
           <Col>
-            <span>&#169; 2022 CoinIndex </span>
+            <span>&#169; 2023 CoinIndex </span>
             <span>| Developed by nickglu86</span>
           </Col>
          
-            <Col className="col-md-4 d-flex justify-content-between">
+            {/* <Col className="col-md-4 d-flex justify-content-between">
                 <Nav.Link href="/">CryptoIndex</Nav.Link>
                 <Nav.Link href="/">News</Nav.Link>
                 <Nav.Link href="/">NFTs</Nav.Link>
                 <Nav.Link href="/">Metrics</Nav.Link>
                 <Nav.Link href="/">Invest</Nav.Link>
-            </Col>
+            </Col> */}
     
         </Row>
       </Container>

@@ -12,9 +12,9 @@ const Trending = () => {
     const trending = apiData.trending.coins;
     return (  
       <Row>
-        <h4>Trending Coins</h4>
-        <Row className="news-grid">
-          <div className="news-grid-inner">
+        <h2>Trending Coins</h2>
+        <Row className="news-grid" style={{margin: '0 10px'}}>
+          <div className="news-grid-inner" >
           {trending.map((item, index) => (
             <Card
               key={index}
@@ -37,7 +37,7 @@ const Trending = () => {
                 src={item.item.large}
                 style={{ width: "80px", height: "80px", marginRight: "10px" }}
               />{" "}
-              <Card.Title>{item.item.name}</Card.Title>
+              <Card.Title style={{ width:'100%', textAlign: 'center'}}>{item.item.name}</Card.Title>
             </Card>
           ))}
           </div>

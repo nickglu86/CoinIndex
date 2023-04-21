@@ -10,6 +10,9 @@
  .news-feed-container  .carousel-indicators{
     display: none;
   }
+  .top10{
+    overflow-x: scroll;
+  }
 }
 .youtube-card{
   width: 32%;
@@ -96,4 +99,21 @@
 
 table.coins-chart  thead  th{
   cursor: pointer;
+}
+
+.news-feed-container .carousel-control-prev, .news-feed-container .carousel-control-next {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  opacity: 1;
+  top: unset;
+  width: auto;
+  border: 1px solid #ffffff5e;
+}
+.news-feed-container .carousel-control-prev{
+  right: 60px;
+  left: unset;
+}
+.news-feed-container .carousel-indicators{
+  display: none;
 }

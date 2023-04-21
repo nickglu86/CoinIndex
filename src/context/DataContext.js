@@ -9,6 +9,7 @@ import { globaldata } from '../mockdata/globaldata';
 import {exchanges} from '../mockdata/exchanges'
 import { fearAndGreed } from '../mockdata/fearAndGreed';
 import { btc } from '../mockdata/btc';
+import { youtube } from '../mockdata/youtube';
 
 const USE_MOCK_DATA = true;
 
@@ -28,7 +29,8 @@ export const DataProvider = ({ children }) => {
             trending: trending,
             fearAndGreed: fearAndGreed,
             globalData: globaldata,
-            exchanges: exchanges
+            exchanges: exchanges,
+            youtube: youtube
           }
           setApiData(data);
           setIsLoading(false);
@@ -38,8 +40,14 @@ export const DataProvider = ({ children }) => {
         Promise.all(endPointsDataRequests)
           .then(responses => {
             let data = {};
+            data.youtube = {};
             responses.forEach((response, index) => {
-              data[dataResources[index].name] = response.data;
+              if(dataResources[index].type === 'youtube'){
+                Object.assign(data.youtube, { [dataResources[index].name] : response.data });
+              } else {
+                data[dataResources[index].name] = response.data;
+              }
+  
             });
             setApiData(data);
             setIsLoading(false);

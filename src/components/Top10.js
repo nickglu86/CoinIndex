@@ -1,6 +1,6 @@
 import React from "react";
 import CoinsTable from "./CoinsTable";
-import { Table } from "react-bootstrap";
+import { Table, Col } from "react-bootstrap";
 // import { coins } from "../mockdata/coins";
 import { useAPI } from "../context/DataContext";
 
@@ -11,10 +11,12 @@ const Top10 = () => {
     const top10coins = apiData.coins.filter((coin, index) => index < 10);
       
     return (
-      <div style={{ overflow: "scroll" }}>
-        <h4>Top10</h4>
-        <CoinsTable coins={top10coins}/>
-      </div>
+      <Col xs={12} sm={12} md={12} lg={12} className="mt-5" >
+        <div className="top10">
+          <h2>Top10</h2>
+          <CoinsTable coins={top10coins}/>
+        </div>
+      </Col>
     );
   }
  

@@ -14,10 +14,10 @@ const NewsFeed = () => {
 
   
   const NewsCarousel = ({news}) => (
-    <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>
+    <Carousel activeIndex={index} onSelect={handleSelect}  /* interval={null} */ >
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item key={index}>
-          <img className="d-block w-100" src={item.image} alt={item.title} />
+          <img className="d-block w-100" src={item.image_url} alt={item.title} />
           <Carousel.Caption
             style={{
               width: "100%",
@@ -27,11 +27,28 @@ const NewsFeed = () => {
               minHeight: "max-content",
               backgroundColor: "rgba(0,0,0,.7)",
               textAlign: 'left',
-              padding: '5px 0 5px 10px',
+              padding: '10px 0 5px 15px',
+              display: 'flex',
+              alignItems: 'center'
       
             }}
           >
             <h3 style={{maxWidth:'700px'}}>{item.title}</h3>
+          </Carousel.Caption>
+          <Carousel.Caption
+            style={{
+              width: "100%",
+              bottom: "0",
+              left: "0",
+              height: "10%",
+              backgroundColor: "rgba(0,0,0,.7)",
+              padding: '10px 0 5px 15px',
+              display: 'flex',
+              alignItems: 'center'
+      
+            }}
+          >
+            <div>  <span style={{color: '#ffcd04'}}>by {item.creator}</span> | {item.pubDate}</div>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
@@ -43,16 +60,11 @@ const NewsFeed = () => {
         <h2>Latest News</h2>
         {news.slice(0, 4).map((item, itemIndex) => (
           <Card
-            href={item.url}
+            href={item.link}
             key={itemIndex}
             className="col-3 p-3  d-flex flex-row  justify-content-between align-items-center news-item"
-            style={{ margin: "10px", width: "90%", height: "80px" }}
+            style={{ margin: "10px", width: "90%", height: "90px" }}
           >
-            {/* <Card.Img
-              src={item.image}
-              style={{ width: "35%", height: "fit-content" }}
-            /> */}
-
             <Card.Text
               className="pl-2"
               style={{
@@ -67,7 +79,7 @@ const NewsFeed = () => {
               {item.title}
             </Card.Text>
             <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-              target="_blank" href={item.url}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
+              target="_blank" href={item.link}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
           </Card>
         ))}
       </Row>
@@ -85,24 +97,24 @@ const NewsFeed = () => {
               style={{ margin: " 10px 1%", width: "31%", height: "85px" }}
             >
               <Card.Img
-                src={item.image}
-                style={{ width: "35%", height: "fit-content" }}
+                src={item.image_url}
+                style={{ width: "35%", height: "100%" }}
               />
 
               <Card.Text
-                className="p-2"
                 style={{
                   width: "65%",
                   fontSize: "17px",
                   lineHeight: "21px",
                   overflow: "hidden",
-                  margin: "0"
+                  margin: "8px",
+                  padding: "0!important"
                 }}
               >
                 {item.title}
               </Card.Text>
               <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-              target="_blank" href={item.url}></Card.Link>
+              target="_blank" href={item.link}></Card.Link>
             </Card>
           ))}
         </Row>
@@ -115,16 +127,16 @@ const NewsFeed = () => {
       <Container className="d-flex justify-content-between news-feed-container">
         <Col xs={12} sm={12} md={7} lg={8}>
          {/* <NewsCarousel  news={news} /> */}
-          {!isLoading && <NewsCarousel  news={apiData.cryptoNewsApi} /> }
+          {!isLoading && <NewsCarousel  news={apiData.cryptoNewsApi.results} /> }
         </Col>
         <Col xs={12} sm={12} md={5} lg={4} className="m-3">
           {/* <NewsList news={news} /> */}
-          {!isLoading &&  <NewsList news={apiData.cryptoNewsApi} /> }  
+          {!isLoading &&  <NewsList news={apiData.cryptoNewsApi.results} /> }  
         </Col>
       </Container>
       <Container>
         {/* <NewsGrid news={news} /> */}
-        {!isLoading && <NewsGrid news={apiData.cryptoNewsApi} /> }
+        {!isLoading && <NewsGrid news={apiData.cryptoNewsApi.results} /> }
           
       </Container>
     </div>

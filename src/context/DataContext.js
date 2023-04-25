@@ -11,7 +11,7 @@ import { fearAndGreed } from '../mockdata/fearAndGreed';
 import { btc } from '../mockdata/btc';
 import { youtube } from '../mockdata/youtube';
 
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 export const DataContext = createContext({});
 

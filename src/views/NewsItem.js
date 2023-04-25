@@ -16,7 +16,7 @@ const NewsItemView = ({ match }) => {
   }
 
   function splitIntoParagraphs(text, maxLength) {
-    const sentences = text.match(/[^.?!]+[.?!]\s+(?=[A-Z])/g);
+    const sentences = text.match(/[^.?!]+[.?!]/g);
     let currentParagraph = "";
     const paragraphs = [];
     for (let i = 0; i < sentences.length; i++) {
@@ -30,7 +30,6 @@ const NewsItemView = ({ match }) => {
     paragraphs.push(currentParagraph.trim());
     return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>);
   }
- 
 
   const NewsItem = () => {
     const _newsItemTitle = decodeURIComponent(newsItemTitle);
@@ -48,26 +47,24 @@ const NewsItemView = ({ match }) => {
             width: "100%",
             maxWidth: "1000px",
             border: "none",
-            padding: '0'
+            padding: "0",
           }}
-        >  
-        <Card.Header className="mt-4 d-flex  justify-content-between align-items-center"
-        > 
-        <Card.Text style={{ margin: '0'}} >
-              by {newsItem.creator} 
-             
-            </Card.Text>
-            <Card.Subtitle className="text-muted" >
+        >
+          <Card.Header className="mt-4 d-flex  justify-content-between align-items-center">
+            <Card.Text style={{ margin: "0" }}>by {newsItem.creator}</Card.Text>
+            <Card.Subtitle className="text-muted">
               {newsItem.pubDate}
             </Card.Subtitle>
-        </Card.Header>
+          </Card.Header>
           <Card.Body className="mt-4">
-            <Card.Title style={{ fontSize: '27px'}}>{newsItem.title}</Card.Title>
+            <Card.Title style={{ fontSize: "27px" }}>
+              {newsItem.title}
+            </Card.Title>
 
             <Card.Text style={{ fontStyle: "italic" }}>
               {newsItem.description}
             </Card.Text>
-  
+
             <Card.Img
               style={{ width: "100%", maxWidth: "800px" }}
               variant="top"
@@ -76,25 +73,24 @@ const NewsItemView = ({ match }) => {
             <Card.Text
               style={{
                 fontSize: "17px",
-                lineHeight: "20px",
+                lineHeight: "22px",
                 overflow: "hidden",
                 textAlign: "left",
-                marginTop: '20px'
-
+                marginTop: "20px",
               }}
             >
               {paragraphs}
             </Card.Text>
-            
+
             <Card.Link href={newsItem.link}>Read More...</Card.Link>
             <Card.Text
-                          style={{
-                              fontSize: "17px",
-                              fontWeight: "600",
-                              marginTop: '20px'
-              
-                            }}>
-               KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
+              style={{
+                fontSize: "17px",
+                fontWeight: "600",
+                marginTop: "20px",
+              }}
+            >
+              KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
             </Card.Text>
           </Card.Body>
         </Card>

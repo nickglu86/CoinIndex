@@ -21,6 +21,7 @@ import Exchanges from "./views/Exchanges";
 import AboutUs from "./views/AboutUs";
 import NewsLetter from "./views/NewsLetter";
 import PrivacyPolicy from "./views/PrivacyPolicy";
+import NewsItemView from "./views/NewsItem";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route exact path="/free" component={FreeComponent} />
               <Route exact path="/chart" component={Chart} />
               <Route exact path="/news" component={News} />
+              <Route   path="/news/:newsItemTitle" component={NewsItemView} />
               <Route exact path="/exchanges" component={Exchanges} />
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/aboutus" component={AboutUs} />

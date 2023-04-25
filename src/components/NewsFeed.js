@@ -14,10 +14,13 @@ const NewsFeed = () => {
 
   
   const NewsCarousel = ({news}) => (
-    <Carousel activeIndex={index} onSelect={handleSelect}  /* interval={null} */ >
+    <Carousel activeIndex={index} onSelect={handleSelect}   interval={null}   >
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item key={index}>
-          <img className="d-block w-100" src={item.image_url} alt={item.title} />
+          <img 
+          className="d-block w-100" 
+        //  style={{ height: 'auto', objectFit: 'cover', maxHeight: '100vh'}}
+          src={item.image_url} alt={item.title} />
           <Carousel.Caption
             style={{
               width: "100%",
@@ -60,7 +63,6 @@ const NewsFeed = () => {
         <h2>Latest News</h2>
         {news.slice(0, 4).map((item, itemIndex) => (
           <Card
-            href={item.link}
             key={itemIndex}
             className="col-3 p-3  d-flex flex-row  justify-content-between align-items-center news-item"
             style={{ margin: "10px", width: "90%", height: "90px" }}
@@ -79,7 +81,7 @@ const NewsFeed = () => {
               {item.title}
             </Card.Text>
             <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-              target="_blank" href={item.link}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
+               href={`/news/${encodeURIComponent(item.title)}`}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
           </Card>
         ))}
       </Row>
@@ -91,7 +93,6 @@ const NewsFeed = () => {
         <Row>
           {news.slice(4, 10).map((item, index) => (
             <Card
-              href={item.url}
               key={index}
               className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
               style={{ margin: " 10px 1%", width: "31%", height: "85px" }}
@@ -114,7 +115,7 @@ const NewsFeed = () => {
                 {item.title}
               </Card.Text>
               <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-              target="_blank" href={item.link}></Card.Link>
+                href={`/news/${encodeURIComponent(item.title)}`}></Card.Link>
             </Card>
           ))}
         </Row>

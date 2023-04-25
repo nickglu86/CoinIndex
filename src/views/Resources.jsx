@@ -13,7 +13,7 @@ for (const [key, value] of Object.entries(resources)) {
             {
                 value.map(
                     (resItem, index) => (
-                        <a key={index} href={resItem["url"]} target="_blank">
+                        <a key={index} href={resItem["url"]} >
                             <img
                                 src={resItem["img"]}
                                 alt={resItem["name"]}

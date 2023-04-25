@@ -78,7 +78,7 @@ const sort = prop => {
           </Badge> 
           </td>
           <td>
-             <a href={exchange.url} target="_blank"> {optimizeUrlLabel(exchange.url)}</a> 
+             <a href={exchange.url} > {optimizeUrlLabel(exchange.url)}</a> 
           </td>
           <td>
               {exchange.trade_volume_24h_btc.toFixed(0)}

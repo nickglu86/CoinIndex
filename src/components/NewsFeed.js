@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext} from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
 //import { news } from "../mockdata/news";
+import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsFeed = () => {
 
@@ -81,7 +82,7 @@ const NewsFeed = () => {
               {item.title}
             </Card.Text>
             <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-               href={`/news/${encodeURIComponent(item.title)}`}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
+               href={`/news/${getNewsItemURI(item)}`}  onMouseEnter={() => setIndex(itemIndex)} ></Card.Link>
           </Card>
         ))}
       </Row>
@@ -115,7 +116,7 @@ const NewsFeed = () => {
                 {item.title}
               </Card.Text>
               <Card.Link style={{ position: 'absolute', width:'100%', height:'100%'}}
-                href={`/news/${encodeURIComponent(item.title)}`}></Card.Link>
+                href={`/news/${getNewsItemURI(item)}`}></Card.Link>
             </Card>
           ))}
         </Row>

@@ -9,7 +9,7 @@ const NewsItemView = ({ match }) => {
 
   function findSimilarTitles(searchString, results) {
     return results.filter((result) => {
-      const title = result.title.toLowerCase();
+      const title = result.link.toLowerCase();
       const search = searchString.toLowerCase();
       return title.includes(search) || search.includes(title);
     });
@@ -32,9 +32,9 @@ const NewsItemView = ({ match }) => {
   }
 
   const NewsItem = () => {
-    const _newsItemTitle = decodeURIComponent(newsItemTitle);
+    // const _newsItemTitle = decodeURIComponent(newsItemTitle);
     const newsItem = findSimilarTitles(
-      _newsItemTitle,
+      newsItemTitle,
       apiData.cryptoNewsApi.results
     )[0];
 

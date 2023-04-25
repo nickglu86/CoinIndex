@@ -1,11 +1,9 @@
-import { useContext } from "react";
-import { UserContext, UserProvider } from "./context/UserContext";
+import {  UserProvider } from "./context/UserContext";
 import { Switch, Route } from "react-router-dom";
-import { Container, Col, Row, Stack, Button } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import "./style.css";
-import { DataContext, DataProvider } from "./context/DataContext";
+import { DataProvider } from "./context/DataContext";
 import Home from "./views/Home";
-import Account from "./components/Account";
 import FreeComponent from "./components/FreeComponent";
 import AuthComponent from "./components/AuthComponent";
 import ProtectedRoutes from "./utils/ProtectedRoutes";

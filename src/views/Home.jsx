@@ -19,7 +19,7 @@ const Home = () => {
         <NewsFeed />
         <Trending />
         <Top10 />
-        <YouTubeVids /> 
+        {/* <YouTubeVids />  */}
       </Row>
     </Container>
   );

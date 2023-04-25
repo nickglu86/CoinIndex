@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext} from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
 //import { news } from "../mockdata/news";
-import { getNewsItemURI } from "../utils/DataFuncs";
+// import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsFeed = () => {
 
@@ -12,7 +12,12 @@ const NewsFeed = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-
+  
+  const getNewsItemURI = (newsItem) => {
+    const startIndex = newsItem.link.indexOf(".com/") + 5;
+    const endIndex = newsItem.link.indexOf("/", startIndex);
+    return newsItem.link.slice(startIndex, endIndex);
+  };
   
   const NewsCarousel = ({news}) => (
     <Carousel activeIndex={index} onSelect={handleSelect}   interval={null}   >

@@ -1,15 +1,20 @@
 import React from "react";
 import { Card, Row, Nav } from "react-bootstrap";
-import { getNewsItemURI } from "../utils/DataFuncs";
+//import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsList = ({ news }) => {
- 
-  const NewsItem = ({ item}) => (
+  const getNewsItemURI = (newsItem) => {
+    const startIndex = newsItem.link.indexOf(".com/") + 5;
+    const endIndex = newsItem.link.indexOf("/", startIndex);
+    return newsItem.link.slice(startIndex, endIndex);
+  };
+
+  const NewsItem = ({ item }) => (
     <Nav.Link
-    className="link-dark"
-    style={{ textDecoration: "none" }}
-     href={`/news/${getNewsItemURI(item)}`}
-    // href={`/news/${encodeURIComponent(item.title)}`}
+      className="link-dark"
+      style={{ textDecoration: "none" }}
+      href={`/news/${getNewsItemURI(item)}`}
+      // href={`/news/${encodeURIComponent(item.title)}`}
     >
       <Card
         className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item"

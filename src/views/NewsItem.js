@@ -51,10 +51,11 @@ const NewsItemView = ({ match }) => {
             padding: '0'
           }}
         >  
-        <Card.Header className="d-flex  justify-content-between align-items-center"> 
+        <Card.Header className="mt-4 d-flex  justify-content-between align-items-center"
+        > 
         <Card.Text style={{ margin: '0'}} >
-              by {newsItem.creator} |{" "}
-              {newsItem.keywords && newsItem.keywords.join(", ")}
+              by {newsItem.creator} 
+             
             </Card.Text>
             <Card.Subtitle className="text-muted" >
               {newsItem.pubDate}
@@ -84,7 +85,17 @@ const NewsItemView = ({ match }) => {
             >
               {paragraphs}
             </Card.Text>
-            <Card.Link href={newsItem.link}>Read More</Card.Link>
+            
+            <Card.Link href={newsItem.link}>Read More...</Card.Link>
+            <Card.Text
+                          style={{
+                              fontSize: "17px",
+                              fontWeight: "600",
+                              marginTop: '20px'
+              
+                            }}>
+               KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
+            </Card.Text>
           </Card.Body>
         </Card>
       );

@@ -1,5 +1,5 @@
 
- 
+.breadcrumb a { color: #6c757d; }
 @media all and (max-width: 1400px) {
   /* screen size until 500px */
   .news-feed-container .carousel-caption{

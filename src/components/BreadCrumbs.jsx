@@ -15,7 +15,7 @@ const Breadcrumbs = () => {
         const isLast = index === pathnames.length - 1;
         return (
           <Breadcrumb.Item key={name} href={routeTo} active={isLast}>
-            { capitalize(name)}
+            { capitalize(decodeURIComponent(name))}
           </Breadcrumb.Item>
         );
       });

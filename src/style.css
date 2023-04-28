@@ -158,6 +158,11 @@ body {
   display: flex;
   flex-direction:column-reverse;
 }
+.btc-widget .apexcharts-title-text{
+  font-family:'Open Sans'!important;
+  font-size: 1rem;
+  background-image: url('/public/assets/icons/currency-bitcoin.svg');
+}
 @media all and (min-width: 1200px) {
   .btc-widget{
     display: flex;

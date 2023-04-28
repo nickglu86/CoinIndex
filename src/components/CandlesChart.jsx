@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactApexChart from "react-apexcharts";
 
-const CandlesChart = ({coin, timeframe}) => {
+const CandlesChart = ({coin, timeframe, customTitle}) => {
     const [data, setData] = useState([]);
 
     const coinEndPoint = `https://api.coingecko.com/api/v3/coins/${coin.id}/ohlc?vs_currency=usd&days=${timeframe}`;
-    const candlesChartTitle = `${coin.name} -  Last ${ timeframe === 1 ? '24 Hours': timeframe + ' Days Chart'}`;
+    const candlesChartTitle = customTitle ? customTitle : `${coin.name} -  Last ${ timeframe === 1 ? '24 Hours': timeframe + ' Days Chart'}`;
 
     const apexChartOptions = {
         chart: {

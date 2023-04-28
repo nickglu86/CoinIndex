@@ -27,7 +27,6 @@ function App() {
       <DataProvider >
         <main>
           <Header />
- 
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/register" component={Register} />
@@ -44,7 +43,6 @@ function App() {
               <ProtectedRoutes path="/auth" component={AuthComponent} />
               <ProtectedRoutes path="/user" component={UserPage} />
             </Switch>
- 
           <Footer />
         </main>
       </DataProvider>

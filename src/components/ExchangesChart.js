@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Table, Badge } from "react-bootstrap";
 import { CurrencyBitcoin, GeoAlt } from "react-bootstrap-icons";
 
+//  Exchanges table component
 const ExchangesChart = ({ exchanges }) => {
   const [chartData, setChartData] = useState(exchanges);
   const [sortOrder, setSortOrder] = useState(true);
   const [search, setSearch] = useState("");
 
+  //  Search function
   const filteredChart = chartData.filter((exchange) => {
     return (
       exchange.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -21,6 +23,7 @@ const ExchangesChart = ({ exchanges }) => {
     return slashIndex ? _url.split("/")[0] : _url;
   };
 
+  //  Sort function
   Array.prototype.sortBy = function (prop) {
     if (sortOrder) {
       return this.slice(0).sort(function (a, b) {
@@ -32,13 +35,14 @@ const ExchangesChart = ({ exchanges }) => {
       });
     }
   };
-
+  //  Table sort function
   const sort = (prop) => {
     let sortedChart = chartData;
     setSortOrder(!sortOrder);
     setChartData(sortedChart.sortBy(prop));
   };
 
+  // Exchanges Table Header
   const TableHeader = () => (
     <thead>
       <tr className="text-center" style={{ fontSize: "0.75rem" }}>
@@ -55,6 +59,8 @@ const ExchangesChart = ({ exchanges }) => {
       </tr>
     </thead>
   );
+
+  // Exchanges Table Body
   const TableBody = () => (
     <tbody>
       {filteredChart.map((exchange, index) => (

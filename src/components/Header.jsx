@@ -1,16 +1,18 @@
-import React, { useContext } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { PersonCircle } from 'react-bootstrap-icons';
-import { UserContext } from '../context/UserContext';
+import React, { useContext } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { PersonCircle } from "react-bootstrap-icons";
+import { UserContext } from "../context/UserContext";
 
 function Header() {
   //  const [loggedIn, setloggedIn] = useState(initialState)
-  const personCircleIcon = (<PersonCircle color="grey" className="ml-2" size={36} />);
+  const personCircleIcon = (
+    <PersonCircle color="grey" className="ml-2" size={36} />
+  );
   const { isLoggedIn, _logout } = useContext(UserContext);
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -24,17 +26,23 @@ function Header() {
             alt="Coin Index logo"
           />
         </Navbar.Brand>
-        <Navbar.Brand href="/" style={{
-          fontSize: '27px'
-        }}>CoinIndex</Navbar.Brand>
+        <Navbar.Brand
+          href="/"
+          style={{
+            fontSize: "27px",
+          }}
+        >
+          CoinIndex
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav 
-          className="me-auto" 
-          style={{
-          fontSize: '0.75rem',
-          paddingTop: '0.25rem'
-        }}>
+          <Nav
+            className="me-auto"
+            style={{
+              fontSize: "0.75rem",
+              paddingTop: "0.25rem",
+            }}
+          >
             <Nav.Link href="/news">News</Nav.Link>
             <Nav.Link href="/chart">CryptoCurrencies</Nav.Link>
             <Nav.Link href="/exchanges">Exchanges</Nav.Link>
@@ -57,23 +65,25 @@ function Header() {
              </Form>
           </Nav> */}
           <Nav>
-            {
-              !isLoggedIn ? (
-                <NavDropdown title={personCircleIcon} id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="/login">Sign In</NavDropdown.Item>
-                  <NavDropdown.Item href="/register">Sign Up</NavDropdown.Item>
-                </NavDropdown>
-              ) : (
-                <NavDropdown title={personCircleIcon} id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="/user">Account</NavDropdown.Item>
-                  <NavDropdown.Item onClick={_logout}>Sign Out</NavDropdown.Item>
-                </NavDropdown>
-              )
-            }
-
+            {!isLoggedIn ? (
+              <NavDropdown
+                title={personCircleIcon}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item href="/login">Sign In</NavDropdown.Item>
+                <NavDropdown.Item href="/register">Sign Up</NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <NavDropdown
+                title={personCircleIcon}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item href="/user">Account</NavDropdown.Item>
+                <NavDropdown.Item onClick={_logout}>Sign Out</NavDropdown.Item>
+              </NavDropdown>
+            )}
           </Nav>
         </Navbar.Collapse>
-
       </Container>
     </Navbar>
   );

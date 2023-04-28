@@ -42,16 +42,16 @@ const BtcFearAndGreed = () => {
     <Tabs
       defaultActiveKey="24hours"
       className="mb-3"
-      style={{ fontSize: "0.45rem" }}
+      style={{ fontSize: "0.5rem" }}
     >
       <Tab eventKey="24hours" title="Last 24 Hours">
-        <CandlesChart coin={btcCoin} timeframe={1} customTitle={`Bitcoin Price : ${apiData.btc.bitcoin.usd}`} />
+        <CandlesChart coin={btcCoin} timeframe={1} customTitle={` `}  /* customTitle={`Bitcoin Price : ${apiData.btc.bitcoin.usd}`}*/ />
       </Tab>
       <Tab eventKey="7days" title="Last 7 Days">
-        <CandlesChart coin={btcCoin} timeframe={7}  customTitle={`Bitcoin Price : ${apiData.btc.bitcoin.usd}`} />
+        <CandlesChart coin={btcCoin} timeframe={7}  customTitle={` `} />
       </Tab>
       <Tab eventKey="1month" title="Last Month">
-        <CandlesChart coin={btcCoin} timeframe={30} customTitle={`Bitcoin Price : ${apiData.btc.bitcoin.usd}`} />
+        <CandlesChart coin={btcCoin} timeframe={30} customTitle={` `} />
       </Tab>
     </Tabs>
   );

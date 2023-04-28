@@ -163,6 +163,10 @@ body {
   font-size: 1rem;
   background-image: url('/public/assets/icons/currency-bitcoin.svg');
 }
+.btc-widget-candle-chart .nav.nav-tabs{
+  justify-content: end;
+  border-bottom: none;
+}
 @media all and (min-width: 1200px) {
   .btc-widget{
     display: flex;
@@ -178,6 +182,7 @@ body {
     padding: 0 1rem;
   }
   .btc-widget-candle-chart{
+    padding: 2rem 2rem 0rem;
     border-right: 1px solid rgba(0, 0, 0, 0.175);
   }
   .btc-widget-fag-img{

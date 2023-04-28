@@ -13,7 +13,7 @@ const Chart = () => {
     if(!isLoading){
         return (
             <Container>
-                <Row className="justify-content-md-start" style={{ overflow: "scroll" }}>
+                <Row className="justify-content-md-start">
                     <h1>Chart</h1>
                     <CoinsTable  coins={apiData.coins}/>
                 </Row>

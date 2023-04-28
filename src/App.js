@@ -27,7 +27,7 @@ function App() {
       <DataProvider >
         <main>
           <Header />
-          <Container className="my-5">
+          <Container className="my-2">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/register" component={Register} />

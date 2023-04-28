@@ -29,7 +29,12 @@ function Header() {
         }}>CoinIndex</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav 
+          className="me-auto" 
+          style={{
+          fontSize: '0.75rem',
+          paddingTop: '0.25rem'
+        }}>
             <Nav.Link href="/news">News</Nav.Link>
             <Nav.Link href="/chart">CryptoCurrencies</Nav.Link>
             <Nav.Link href="/exchanges">Exchanges</Nav.Link>

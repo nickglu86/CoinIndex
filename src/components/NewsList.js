@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Nav } from "react-bootstrap";
+import { Card, Row, Nav, Container } from "react-bootstrap";
 //import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsList = ({ news }) => {
@@ -17,7 +17,7 @@ const NewsList = ({ news }) => {
       // href={`/news/${encodeURIComponent(item.title)}`}
     >
       <Card
-        className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item"
+        className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid"
         style={{
           margin: " 10px 1%",
           width: "100%",
@@ -30,7 +30,7 @@ const NewsList = ({ news }) => {
           style={{ width: "380px", height: "auto" }}
         />
         <Card.Body
-          className="p-2 d-flex flex-column "
+          className="p-2 d-flex flex-column"
           style={{
             width: "50%",
             overflow: "hidden",
@@ -76,11 +76,14 @@ const NewsList = ({ news }) => {
 
   return (
     <div className="my-4">
-      <Row>
+ 
+        <Container fluid>
         {news.map((item, index) => (
           <NewsItem item={item} key={index} index={index} />
         ))}
-      </Row>
+        </Container>
+
+ 
     </div>
   );
 };

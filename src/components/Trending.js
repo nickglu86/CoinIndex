@@ -21,7 +21,7 @@ const Trending = () => {
               className="col-3 p-1 pl-3 d-flex flex-row justify-content-start  align-items-center news-item"
               style={{ margin: "10px", width: "255px!important", height: "82px", overflow: "hidden" }}
             >
-              <ListGroup variant="flush">
+              <ListGroup variant="flush" style={{fontSize: '0.75rem'}}>
                 <ListGroup.Item>
                   <Card.Text className="text-center">
                     #{item.item.market_cap_rank}
@@ -37,7 +37,7 @@ const Trending = () => {
                 src={item.item.large}
                 style={{ width: "80px", height: "80px", marginRight: "10px" }}
               />{" "}
-              <Card.Title style={{ width:'100%', textAlign: 'center'}}>{item.item.name}</Card.Title>
+              <Card.Title style={{ width:'100%', textAlign: 'center', fontSize: '1rem'}}>{item.item.name}</Card.Title>
             </Card>
           ))}
           </div>

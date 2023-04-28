@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext} from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
-//import { news } from "../mockdata/news";
-// import { getNewsItemURI } from "../utils/DataFuncs";
+
 
 const NewsFeed = () => {
 
@@ -25,7 +24,6 @@ const NewsFeed = () => {
         <Carousel.Item key={index}>
           <img 
           className="d-block w-100" 
-        //  style={{ height: 'auto', objectFit: 'cover', maxHeight: '100vh'}}
           src={item.image_url} alt={item.title} />
           <Carousel.Caption
             style={{
@@ -38,18 +36,22 @@ const NewsFeed = () => {
               textAlign: 'left',
               padding: '10px 0 5px 15px',
               display: 'flex',
-              alignItems: 'center'
-      
+              alignItems: 'center',
             }}
           >
-            <h3 style={{maxWidth:'700px'}}>{item.title}</h3>
+            <h3 
+              style={{
+                maxWidth:'700px',
+                fontSize: '1.25rem',
+              }}
+              >{item.title}</h3>
           </Carousel.Caption>
           <Carousel.Caption
             style={{
               width: "100%",
               bottom: "0",
               left: "0",
-              height: "10%",
+              height: "13%",
               backgroundColor: "rgba(0,0,0,.7)",
               padding: '10px 0 5px 15px',
               display: 'flex',
@@ -70,14 +72,14 @@ const NewsFeed = () => {
         {news.slice(0, 4).map((item, itemIndex) => (
           <Card
             key={itemIndex}
-            className="col-3 p-3  d-flex flex-row  justify-content-between align-items-center news-item"
-            style={{ margin: "10px", width: "90%", height: "90px" }}
+            className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
+            style={{ margin: "0.4rem", width: "90%", height: "90px" }}
           >
             <Card.Text
               className="pl-2"
               style={{
-                fontSize: "17px",
-                lineHeight: "24px",
+                fontSize: "0.735rem",
+                lineHeight: "1.1rem",
                 overflow: "hidden",
                 margin: "0",
                 ...(index === itemIndex &&  {fontWeight : '700', textDecoration: 'underline'})
@@ -96,25 +98,25 @@ const NewsFeed = () => {
   const NewsGrid = ({news}) =>  (
       <div className="my-4">
         <h4>Other News</h4>
-        <Row>
+        <Row  className=" d-flex flex-row  justify-content-between align-items-center ">
           {news.slice(4, 10).map((item, index) => (
             <Card
               key={index}
               className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
-              style={{ margin: " 10px 1%", width: "31%", height: "85px" }}
+              style={{ margin: " 10px 0%", width: "32%", height: "85px" }}
             >
               <Card.Img
                 src={item.image_url}
-                style={{ width: "35%", height: "100%" }}
+                style={{ width: "35%", height: "110%" }}
               />
 
               <Card.Text
                 style={{
                   width: "65%",
-                  fontSize: "17px",
-                  lineHeight: "21px",
+                  fontSize: "0.735rem",
+                  lineHeight: "1.1rem",
                   overflow: "hidden",
-                  margin: "8px",
+                  margin: "0.4rem",
                   padding: "0!important"
                 }}
               >
@@ -136,7 +138,7 @@ const NewsFeed = () => {
          {/* <NewsCarousel  news={news} /> */}
           {!isLoading && <NewsCarousel  news={apiData.cryptoNewsApi.results} /> }
         </Col>
-        <Col xs={12} sm={12} md={5} lg={4} className="m-3">
+        <Col xs={12} sm={12} md={5} lg={4} className="mx-3">
           {/* <NewsList news={news} /> */}
           {!isLoading &&  <NewsList news={apiData.cryptoNewsApi.results} /> }  
         </Col>

@@ -44,7 +44,7 @@ const CandlesChart = ({coin, timeframe}) => {
 
         return (
             <div className={`candles-chart-${timeframe}d`}>
-            <ReactApexChart options={apexChartObj.options} series={apexChartObj.series} type="candlestick" height={350} />
+            <ReactApexChart options={apexChartObj.options} series={apexChartObj.series} type="candlestick" height={320} />
             </div>
         );
 }

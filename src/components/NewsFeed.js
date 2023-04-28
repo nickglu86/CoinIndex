@@ -55,8 +55,8 @@ const NewsFeed = () => {
               backgroundColor: "rgba(0,0,0,.7)",
               padding: '10px 0 5px 15px',
               display: 'flex',
-              alignItems: 'center'
-      
+              alignItems: 'center',
+              fontSize: '0.735rem',
             }}
           >
             <div>  <span style={{color: '#ffcd04'}}>by {item.creator}</span> | {item.pubDate}</div>
@@ -67,13 +67,12 @@ const NewsFeed = () => {
   );
   
   const NewsList = ({news})=> (
-      <Row>
+      <Row className="news-feeed-right">
         <h2>Latest News</h2>
         {news.slice(0, 4).map((item, itemIndex) => (
           <Card
             key={itemIndex}
             className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
-            style={{ margin: "0.4rem", width: "90%", height: "90px" }}
           >
             <Card.Text
               className="pl-2"

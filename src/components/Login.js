@@ -16,7 +16,10 @@ export default function Login() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:3000/login",
+      //Localhost
+      // url: "http://localhost:3000/login",
+      //Heroku Server
+      url: "https://enays-auth-app.herokuapp.com/login",
       data: {
         email,
         password,

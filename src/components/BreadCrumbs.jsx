@@ -2,7 +2,7 @@ import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({title}) => {
       const location = useLocation();
       const pathnames = location.pathname.split("/").filter((x) => x);
       const capitalize = (str) => {
@@ -15,7 +15,7 @@ const Breadcrumbs = () => {
         const isLast = index === pathnames.length - 1;
         return (
           <Breadcrumb.Item key={name} href={routeTo} active={isLast}>
-            { capitalize(decodeURIComponent(name))}
+            {    (index + 1 === pathnames.length) ? title : capitalize(decodeURIComponent(name))}
           </Breadcrumb.Item>
         );
       });

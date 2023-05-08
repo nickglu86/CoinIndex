@@ -6,6 +6,12 @@ export const dataResources = [
     type: "news",
   },
   {
+    name: "cryptoNewsApi2",
+    endpoint:
+      "https://newsdata.io/api/1/news?apikey=pub_167632e1074e9c30ea0b34c3119c202cf3bd5&q=cointelegraph&language=en",
+    type: "news",
+  },
+  {
     name: "coins",
     endpoint:
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C7d%2C30d&locale=en",

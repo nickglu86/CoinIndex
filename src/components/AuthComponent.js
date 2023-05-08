@@ -14,7 +14,10 @@ export default function AuthComponent() {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "http://localhost:3000/auth-endpoint",
+      //Localhost
+      // url: "http://localhost:3000/auth-endpoint",
+      //Heroku Server
+      url: "https://enays-auth-app.herokuapp.com/auth-endpoint",
       headers: {
         Authorization: `Bearer ${token}`,
       },

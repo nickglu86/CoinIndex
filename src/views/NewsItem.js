@@ -16,7 +16,7 @@ const NewsItemView = ({ match }) => {
   }
 
   function splitIntoParagraphs(text, maxLength) {
-    const sentences = text.match(/[^.?!]+[.?!]/g);
+const sentences = text.match(/[^.?!]+[.?!]\s/g);
     let currentParagraph = "";
     const paragraphs = [];
     for (let i = 0; i < sentences.length; i++) {
@@ -42,7 +42,13 @@ const NewsItemView = ({ match }) => {
       const paragraphs = splitIntoParagraphs(newsItem.content, 100);
 
       return (
-        <Card
+
+      <>
+       <Row>
+        <Breadcrumbs title={newsItem.title}/>
+      </Row>
+      <Row>
+      <Card
           style={{
             width: "100%",
             maxWidth: "1000px",
@@ -94,16 +100,16 @@ const NewsItemView = ({ match }) => {
             </Card.Text>
           </Card.Body>
         </Card>
+      </Row>
+      </>
+
       );
     }
   };
 
   return (
     <Container>
-      <Row>
-        <Breadcrumbs />
-      </Row>
-      <Row>{!isLoading && <NewsItem />} </Row>
+        {!isLoading && <NewsItem />} 
     </Container>
   );
 };

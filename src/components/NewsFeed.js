@@ -3,6 +3,7 @@ import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
 
 
+
 const NewsFeed = () => {
 
   const [index, setIndex] = useState(0);
@@ -24,7 +25,7 @@ const NewsFeed = () => {
         <Carousel.Item key={index}>
           <img 
           className="d-block w-100" 
-          src={item.image_url} alt={item.title} />
+          src={item.image_url ? item.image_url : 'assets/news/crypto-news.jpg'} alt={item.title} testatr={item.image_url ? item.image_url : 'nothing'} />
           <Carousel.Caption
             style={{
               width: "100%",
@@ -105,7 +106,7 @@ const NewsFeed = () => {
               style={{ margin: " 10px 0%", width: "32%", height: "85px" }}
             >
               <Card.Img
-                src={item.image_url}
+                src={item.image_url ? item.image_url : 'assets/news/crypto-news.png'}
                 style={{ width: "35%", height: "110%" }}
               />
 

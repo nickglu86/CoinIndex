@@ -1,3 +1,5 @@
+
+
 export const dataResources = [
   {
     name: "cryptoNewsApi",
@@ -63,4 +65,4 @@ export const dataResources = [
 const bitcoinFearIndexIMG =
   "https://alternative.me/crypto/fear-and-greed-index.png";
 
-export default   dataResources  ;
+export default   dataResources;

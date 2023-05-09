@@ -1,5 +1,4 @@
 import { Container, Nav, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -26,7 +25,7 @@ const Footer = () => {
           <Col xs={12} sm={12} md={4} lg={4}>
             <figure className="d-flex align-items-center">
               <img src="/coinindex-logo.png"  width="80"/>
-              <h2>Coin Index</h2>
+              <h4>Coin Index</h4>
             </figure>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}>
@@ -56,15 +55,6 @@ const Footer = () => {
             <span>&#169; 2023 CoinIndex </span>
             <span>| Developed by nickglu86</span>
           </Col>
-         
-            {/* <Col className="col-md-4 d-flex justify-content-between">
-                <Nav.Link href="/">CryptoIndex</Nav.Link>
-                <Nav.Link href="/">News</Nav.Link>
-                <Nav.Link href="/">NFTs</Nav.Link>
-                <Nav.Link href="/">Metrics</Nav.Link>
-                <Nav.Link href="/">Invest</Nav.Link>
-            </Col> */}
-    
         </Row>
       </Container>
     </footer>

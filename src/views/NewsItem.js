@@ -44,7 +44,7 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
       return (
 
       <>
-       <Row>
+       <Row className="mt-4">
         <Breadcrumbs title={newsItem.title}/>
       </Row>
       <Row>
@@ -56,7 +56,7 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
             padding: "0",
           }}
         >
-          <Card.Header className="mt-4 d-flex  justify-content-between align-items-center">
+          <Card.Header className="mt-2 d-flex  justify-content-between align-items-center">
             <Card.Text style={{ margin: "0" }}>by {newsItem.creator}</Card.Text>
             <Card.Subtitle className="text-muted">
               {newsItem.pubDate}
@@ -74,7 +74,7 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
             <Card.Img
               style={{ width: "100%", maxWidth: "800px" }}
               variant="top"
-              src={newsItem.image_url}
+              src={newsItem.image_url ? newsItem.image_url : '../ assets/news/crypto-news.jpg'}
             />
             <Card.Text
               style={{

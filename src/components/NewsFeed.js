@@ -14,7 +14,8 @@ const NewsFeed = () => {
   };
   
   const getNewsItemURI = (newsItem) => {
-    const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+   // const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+    const startIndex = newsItem.link.indexOf(".com/") + 5;
     const endIndex = newsItem.link.indexOf("/", startIndex);
     return newsItem.link.slice(startIndex, endIndex);
   };

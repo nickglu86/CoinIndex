@@ -4,7 +4,8 @@ import { Card, Row, Nav, Container } from "react-bootstrap";
 
 const NewsList = ({ news }) => {
   const getNewsItemURI = (newsItem) => {
-    const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+    //const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+    const startIndex = newsItem.link.indexOf(".com/") + 5;
     const endIndex = newsItem.link.indexOf("/", startIndex);
     return newsItem.link.slice(startIndex, endIndex);
   };
@@ -69,8 +70,6 @@ const NewsList = ({ news }) => {
           <NewsItem item={item} key={index} index={index} />
         ))}
         </Container>
-
- 
     </div>
   );
 };

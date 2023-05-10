@@ -39,21 +39,21 @@ export const dataResources = [
     endpoint: `https://api.coingecko.com/api/v3/exchanges?per_page=100`,
     type: `exchanges`,
   },
-  {
-    name: `copinBerau`,
-    endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCqK_GSMbpiV8spgD3ZGloSw&part=snippet&maxResults=1&order=date&type=video`,
-    type: `youtube`,
-  },
-  {
-    name: `dataDash`,
-    endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCCatR7nWbYrkVXdxXb4cGXw&part=snippet&maxResults=3&order=date&type=video`,
-    type: `youtube`,
-  },
-  {
-    name: `camerFous`,
-    endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCwGflGmzevf4fcm-z8E-twA&part=snippet&maxResults=3&order=date&type=video`,
-    type: `youtube`,
-  },
+  // {
+  //   name: `copinBerau`,
+  //   endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCqK_GSMbpiV8spgD3ZGloSw&part=snippet&maxResults=1&order=date&type=video`,
+  //   type: `youtube`,
+  // },
+  // {
+  //   name: `dataDash`,
+  //   endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCCatR7nWbYrkVXdxXb4cGXw&part=snippet&maxResults=3&order=date&type=video`,
+  //   type: `youtube`,
+  // },
+  // {
+  //   name: `camerFous`,
+  //   endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCwGflGmzevf4fcm-z8E-twA&part=snippet&maxResults=3&order=date&type=video`,
+  //   type: `youtube`,
+  // },
 ];
 
 export default dataResources;

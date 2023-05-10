@@ -71,7 +71,7 @@ const BtcFearAndGreed = () => {
         <Col xs={12} sm={12} md={6} lg={6} className="btc-widget-candle-chart">
           <div className="btc-candles-chart-label">
             <img src="/bitcoin.png" alt="Bitcoin Logo" />
-            <span>Bitcoin Price Chart</span>
+            <h2>Bitcoin Price Chart</h2>
           </div> 
           <BitcoinCandlesChart btcCoin={btcCoin} />
         </Col>

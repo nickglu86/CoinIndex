@@ -3,7 +3,7 @@ import { Container, Row, Card, Breadcrumb } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
 import Breadcrumbs from "../components/BreadCrumbs";
 
-const NewsItemView = ({ match }) => {
+const NewsArticle = ({ match }) => {
   const newsItemTitle = match.params.newsItemTitle;
   const { apiData, isLoading } = useAPI();
 
@@ -56,7 +56,7 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
             padding: "0",
           }}
         >
-          <Card.Header className="mt-2 d-flex  justify-content-between align-items-center">
+          <Card.Header>
             <Card.Text style={{ margin: "0" }}>by {newsItem.creator}</Card.Text>
             <Card.Subtitle className="text-muted">
               {newsItem.pubDate}
@@ -108,10 +108,10 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
   };
 
   return (
-    <Container>
+    <Container className="news-article">
         {!isLoading && <NewsItem />} 
     </Container>
   );
 };
 
-export default NewsItemView;
+export default NewsArticle;

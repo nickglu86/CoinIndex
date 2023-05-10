@@ -20,7 +20,7 @@ const NewsFeed = () => {
   };
   
   const NewsCarousel = ({news}) => (
-    <Carousel activeIndex={index} onSelect={handleSelect}   interval={null}   >
+    <Carousel activeIndex={index} onSelect={handleSelect}   /*interval={null}*/  >
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item key={index}>
           <img 
@@ -60,7 +60,7 @@ const NewsFeed = () => {
               fontSize: '0.735rem',
             }}
           >
-            <div>  <span style={{color: '#ffcd04'}}>by {item.creator}</span> | {item.pubDate}</div>
+            <div>  <span style={{color: '#ffcd04'}}>{item.creator}</span> | {item.pubDate}</div>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
@@ -106,7 +106,7 @@ const NewsFeed = () => {
               style={{ margin: " 10px 0%", width: "32%", height: "85px" }}
             >
               <Card.Img
-                src={item.image_url ? item.image_url : 'assets/news/crypto-news.png'}
+                src={item.image_url ? item.image_url : 'assets/news/crypto-news.jpg'}
                 style={{ width: "35%", height: "110%" }}
               />
 

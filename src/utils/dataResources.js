@@ -6,7 +6,7 @@ export const dataResources = [
     type: "news",
   },
   {
-    name: "cryptoNewsApi2",
+    name: "cryptoNewsApiAlt",
     endpoint:
       "https://newsdata.io/api/1/news?apikey=pub_167632e1074e9c30ea0b34c3119c202cf3bd5&q=cointelegraph&language=en",
     type: "news",

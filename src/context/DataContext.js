@@ -3,6 +3,7 @@ import axios from 'axios';
 import dataResources from '../utils/dataResources';
 //MockData 
 import { news } from '../mockdata/news';
+import { newsAlternative } from '../mockdata/newsAlternative';
 import { coins } from '../mockdata/coins';
 import {trending} from '../mockdata/trending'
 import { globaldata } from '../mockdata/globaldata';
@@ -11,7 +12,7 @@ import { fearAndGreed } from '../mockdata/fearAndGreed';
 import { btc } from '../mockdata/btc';
 import { youtube } from '../mockdata/youtube';
 
-const USE_MOCK_DATA = false;
+const USE_MOCK_DATA = true;
 
 export const DataContext = createContext({});
 
@@ -20,10 +21,18 @@ export const DataProvider = ({ children }) => {
     const [apiData, setApiData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
+    const swapNewsResource = (sourceObj, sourceKey, targetObj, targetKey) => {
+      var temp = sourceObj[sourceKey];
+      sourceObj[sourceKey] = targetObj[targetKey];
+      targetObj[targetKey] = temp;
+    }
+
+  
     useEffect(() => { 
        if(USE_MOCK_DATA){
           let data = {
             cryptoNewsApi : news,
+            cryptoNewsApiAlt: newsAlternative,
             coins: coins,
             btc: btc,
             trending: trending,
@@ -32,6 +41,7 @@ export const DataProvider = ({ children }) => {
             exchanges: exchanges,
             youtube: youtube
           }
+          data.cryptoNewsApi = !data.cryptoNewsApi.results.length ? data.cryptoNewsApiAlt : data.cryptoNewsApi;
           setApiData(data);
           setIsLoading(false);
        } else {
@@ -49,6 +59,7 @@ export const DataProvider = ({ children }) => {
               }
   
             });
+            data.cryptoNewsApi = !data.cryptoNewsApi.results.length ? data.cryptoNewsApiAlt : data.cryptoNewsApi;
             setApiData(data);
             setIsLoading(false);
           })

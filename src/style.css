@@ -33,11 +33,27 @@ body {
   font-family: 'Open Sans', sans-serif!important;
 }
 
+footer {
+    font-size: 0.8rem;
+}
 
+.container h1{
+  margin: 1rem 0 0.5rem;
+  font-size: 1.8rem;
+}
+.container h2{
+  font-size: 1.4rem;
+}
+.container h4{
+  font-size: 1.2rem;
+}
 /* Home Page */
 
 @media all and (max-width: 1400px) {
   /* screen size until 500px */
+  .news-feed-container{
+    padding: 0!important;
+  }
   .news-feed-container .carousel-caption{
     position: relative!important;
     left: 0!important;
@@ -84,7 +100,9 @@ body {
   transform: translate3d(0, 0, 0);
   animation: moveSlideshow 15s linear infinite;
 }
- 
+.news-grid-inner .card>.list-group{
+  border: 0;
+}
 .news-item p {
   -webkit-line-clamp: 3;
   display: -webkit-box;
@@ -100,12 +118,13 @@ body {
   height: 40px;
   width: auto;
   border: 1px solid #ffffff5e;
+  background: rgba(0, 0, 0, 0.5);
 }
 .news-feed-container .carousel-control-prev{
   right: 60px;
   left: unset;
 }
-
+ 
 @media all and (min-width: 1000px) {
   .news-feed-container .carousel-control-prev, .news-feed-container .carousel-control-next {
 
@@ -156,18 +175,53 @@ body {
 } */
 .btc-widget-fag{
   display: flex;
-  flex-direction:column-reverse;
+  flex-direction:column;
 }
 .btc-widget .apexcharts-title-text{
   font-family:'Open Sans'!important;
   font-size: 1rem;
   background-image: url('/public/assets/icons/currency-bitcoin.svg');
 }
+.btc-widget-candle-chart{
+  position: relative;
+}
 .btc-widget-candle-chart .nav.nav-tabs{
   justify-content: end;
   border-bottom: none;
 }
-@media all and (min-width: 1200px) {
+.btc-candles-chart-label{
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+.btc-candles-chart-label img{
+  width: 36px;
+}
+.btc-candles-chart-label h2{
+  padding-left: 0.5rem;
+  margin-bottom: 0;
+}
+.btc-widget-candle-chart button.nav-link{
+  padding: 10px;
+  border: 0;
+  color: #000;
+}
+.btc-widget-candle-chart .tab-pane{
+  margin-left: -0.5rem;
+}
+.btc-widget-hdata{
+  max-width: 90%;
+}
+.btc-widget-hdata tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.btc-widget-hdata tr, .btc-widget-hdata td {
+  border: none;
+}
+@media all and (min-width: 800px) {
   .btc-widget{
     display: flex;
     justify-content: space-between;
@@ -182,21 +236,35 @@ body {
     padding: 0 1rem;
   }
   .btc-widget-candle-chart{
-    padding: 2rem 2rem 0rem;
+    padding: 2rem 2rem 1rem;
     border-right: 1px solid rgba(0, 0, 0, 0.175);
   }
+  
   .btc-widget-fag-img{
-    width: 55%;
+    width: 58%;
   }
   .btc-widget-hdata{
-    width: 32%;
-    padding-top: 1rem;
+    width: 25%;
+    padding-top: 2.8rem;
     font-size: 0.7rem;
     font-weight: 700;
+    margin: 0;
   }
+ 
   .btc-widget-hdata h5{
     font-size: 0.8rem;
     padding-left: 0.5rem;
+  }
+  .btc-candles-chart-label{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+  .btc-candles-chart-label h2{
+    font-size: 0.8rem;
+  }
+  .btc-widget-candle-chart .tab-pane{
+    margin-left: 0;
   }
 }
 /* Coins Table */
@@ -207,11 +275,94 @@ table.coins-chart  thead  th{
   overflow-x: auto;
   overflow-y: none;
 }
+ /* News  Page */
+ .news-list{
+  padding: 0!important;
+}
+ .news-list-item.card{
+  flex-direction: column!important;
+    margin: 5px 0%!important;
+    width: 100%!important;
+    border: none;
+ }
  
+.news-list-item-body{
+  overflow: hidden;
+  margin: 0;
+  text-align: left;
+  padding: 0;
+}
+
+@media all and (min-width: 770px) {
+
+  .news-list-item-body{
+    width: 50%;
+    margin: 0 40px 0 20px;
+    padding: 0.5rem;
+  }
+  .news-list-item.card{
+    flex-direction: row!important;
+    height: 230px;
+    margin: 60px 1%!important;
+   }
+   .news-list-item.card  img{
+    width: 380px;
+    height: auto;
+   }
+}
+
 /* News Item Page */
 .breadcrumb a { color: #6c757d; }
+.breadcrumb li.breadcrumb-item.active{
+  text-decoration: underline;
+}
+ 
+@media all and (min-width: 770px) {
+  .news-article .card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+}
+  
+/* Fear&Greed lables */
+[gaf-attr="Fear"] .gaf-lbl{
+  color: #e39d64;
+}
+[gaf-attr="Extreme Fear"] .gaf-lbl {
+  color: #db7d5b;
+}
+[gaf-attr="Neutral"] .gaf-lbl {
+  color: #dfce60;
+}
+[gaf-attr="Greed"] .gaf-lbl{
+  color: #9bbe44;
+}
+[gaf-attr="Extreme Greed"] .gaf-lbl{
+  color: #79d75d;
+}
+.btc-widget-hdata td:nth-child(2){
+  border-radius: 50%;
+  width: 44px;
+  text-align: center;
+  color: #fff;
+}
 
-
+[gaf-attr="Fear"] td:nth-child(2){
+  background-color: #e39d64;
+}
+[gaf-attr="Extreme Fear"]  td:nth-child(2){
+  background-color: #db7d5b;
+}
+[gaf-attr="Neutral"] td:nth-child(2){
+  background-color: #dfce60;
+}
+[gaf-attr="Greed"]  td:nth-child(2){
+  background-color: #9bbe44;
+}
+[gaf-attr="Extreme Greed"]  td:nth-child(2){
+  background-color: #79d75d;
+}
 /* ANimations */
 @keyframes moveSlideshow {
   0% {

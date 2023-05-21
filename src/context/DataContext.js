@@ -12,7 +12,7 @@ import { fearAndGreed } from '../mockdata/fearAndGreed';
 import { btc } from '../mockdata/btc';
 import { youtube } from '../mockdata/youtube';
 
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 export const DataContext = createContext({});
 
@@ -20,7 +20,6 @@ export const DataProvider = ({ children }) => {
  
     const [apiData, setApiData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-
     const swapNewsResource = (sourceObj, sourceKey, targetObj, targetKey) => {
       var temp = sourceObj[sourceKey];
       sourceObj[sourceKey] = targetObj[targetKey];
@@ -76,10 +75,10 @@ export const DataProvider = ({ children }) => {
     );
   };
 
-  export function useAPI() {
-    const context = useContext(DataContext);
-    if (context === undefined) {
-      throw new Error("Context must be used within a Provider");
-    }
-    return context;
+export function useAPI() {
+  const context = useContext(DataContext);
+  if (context === undefined) {
+    throw new Error("Context must be used within a Provider");
   }
+  return context;
+}

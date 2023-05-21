@@ -11,9 +11,9 @@ const Top10 = () => {
     const top10coins = apiData.coins.filter((coin, index) => index < 10);
       
     return (
-      <Col xs={12} sm={12} md={12} lg={12} className="mt-5" >
+      <Col xs={12} sm={12} md={12} lg={12} className="mt-3" >
+         <h2>Top10</h2>
         <div className="top10">
-          <h2>Top10</h2>
           <CoinsTable coins={top10coins}/>
         </div>
       </Col>

@@ -11,7 +11,7 @@ const Trending = () => {
   if (!isLoading) {
     const trending = apiData.trending.coins;
     return (
-      <Row>
+      <Row className="my-4">
         <h2>Trending Coins</h2>
         <Row className="news-grid" style={{ margin: "0 10px" }}>
           <div className="news-grid-inner">

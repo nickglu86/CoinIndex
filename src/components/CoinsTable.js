@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 import CoinModal from "./CoinModal";
+import { priceChange } from "../utils/DataFuncs";
+import { getPriceforDisplay } from "../utils/DataFuncs";
 
 // Coins table component
 const CoinsTable = ({ coins }) => {
@@ -15,6 +17,17 @@ const CoinsTable = ({ coins }) => {
       coin.symbol.toLowerCase().includes(search.toLowerCase())
     );
   });
+
+  const getFirstNonZeroIndex = num => {
+    let firstNonZeroIndex = -1;
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] !== '0') {
+        return i;
+        break;
+      }
+    }
+    return firstNonZeroIndex;
+  }
 
   // Sort function
   Array.prototype.sortBy = function (prop) {
@@ -34,25 +47,6 @@ const CoinsTable = ({ coins }) => {
     let sortedChart = chartData;
     setSortOrder(!sortOrder);
     setChartData(sortedChart.sortBy(prop));
-  };
-
-  // Price change tracker function
-  const priceChange = (changeValue) => {
-    const changeColor =
-      parseFloat(changeValue).toFixed(1) === 0
-        ? {}
-        : parseFloat(changeValue) > 0
-        ? { color: "green" }
-        : parseFloat(changeValue) < 0
-        ? { color: "red" }
-        : {};
-    const valuePrefix =
-      parseFloat(changeValue).toFixed(1) === 0
-        ? parseFloat(changeValue).toFixed(1)
-        : parseFloat(changeValue) > 0
-        ? "+" + parseFloat(changeValue).toFixed(1)
-        : parseFloat(changeValue).toFixed(1);
-    return <td style={changeColor}>{valuePrefix}%</td>;
   };
 
   // Coins Table Header
@@ -113,26 +107,17 @@ const CoinsTable = ({ coins }) => {
               letterSpacing: "0.5px",
             }}
           >
-            {parseInt(coin.current_price) > 10
-              ? coin.current_price.toFixed(0)
-              : parseInt(coin.current_price) > 0
-              ? coin.current_price.toFixed(2)
-              : coin.current_price.toFixed(3)}
-            $
+            {getPriceforDisplay(coin.current_price)}$
           </td>
-          {/* <td>{coin.price_change_percentage_1h_in_currency}</td>
-          <td>{coin.price_change_percentage_24h}</td>
-          <td> {coin.price_change_percentage_7d_in_currency}</td>
-          <td>{coin.price_change_percentage_30d_in_currency}</td> */}
           {priceChange(coin.price_change_percentage_1h_in_currency)}
           {priceChange(coin.price_change_percentage_24h)}
           {priceChange(coin.price_change_percentage_7d_in_currency)}
           {priceChange(coin.price_change_percentage_30d_in_currency)}
           <td style={{ textAlign: "center" }}>
-            $ {coin.market_cap.toLocaleString()}
+            ${coin.market_cap.toLocaleString()}
           </td>
           <td style={{ textAlign: "center" }}>
-            $ {coin.total_volume.toLocaleString()}
+            ${coin.total_volume.toLocaleString()}
           </td>
           <td style={{ textAlign: "end" }}>
             {coin.symbol} {coin.circulating_supply.toLocaleString()}

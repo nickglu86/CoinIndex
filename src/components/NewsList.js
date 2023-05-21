@@ -4,39 +4,27 @@ import { Card, Row, Nav, Container } from "react-bootstrap";
 
 const NewsList = ({ news }) => {
   const getNewsItemURI = (newsItem) => {
-    const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+    //const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+    const startIndex = newsItem.link.indexOf(".com/") + 5;
     const endIndex = newsItem.link.indexOf("/", startIndex);
     return newsItem.link.slice(startIndex, endIndex);
   };
 
   const NewsItem = ({ item }) => (
     <Nav.Link
-      className="link-dark"
+      className="link-dark  news-list-item"
       style={{ textDecoration: "none" }}
       href={`/news/${getNewsItemURI(item)}`}
       // href={`/news/${encodeURIComponent(item.title)}`}
     >
       <Card
-        className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid"
-        style={{
-          margin: " 10px 1%",
-          width: "100%",
-          height: "230px",
-          border: "none",
-        }}
+        className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid news-list-item"
       >
         <Card.Img
-          src={item.image_url}
-          style={{ width: "380px", height: "auto" }}
+          src={item.image_url ? item.image_url : 'assets/newsjpg'}
         />
         <Card.Body
-          className="p-2 d-flex flex-column"
-          style={{
-            width: "50%",
-            overflow: "hidden",
-            margin: "0 40px 0 20px",
-            textAlign: "left",
-          }}
+          className="d-flex flex-column news-list-item-body"
         >
           <Card.Subtitle className="mb-3">
             <span className="text-muted"> {item.pubDate} </span>
@@ -77,13 +65,11 @@ const NewsList = ({ news }) => {
   return (
     <div className="my-4">
  
-        <Container fluid>
+        <Container className="news-list"  fluid>
         {news.map((item, index) => (
           <NewsItem item={item} key={index} index={index} />
         ))}
         </Container>
-
- 
     </div>
   );
 };

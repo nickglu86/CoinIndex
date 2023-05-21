@@ -18,7 +18,7 @@ const Home = () => {
     <Container className="my-2">
       <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
         <NewsFeed />
-        {/* <BtcFearAndGreed /> */}
+        <BtcFearAndGreed />
         <Trending />
         <Top10 />
         {/* <YouTubeVids />  */}

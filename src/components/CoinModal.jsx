@@ -65,7 +65,7 @@ function CoinModal({ coin }) {
                     <td> ATH Date </td>
                   </tr>
                   <tr style={{ textAlign: "center", fontSize: "0.6rem" }}>
-                    <td>${coin.ath.toLocaleString()}</td>
+                    <td>${getPriceforDisplay(coin.ath)}</td>
                     {priceChange(coin.ath_change_percentage)}
                     <td>{coin.ath_date.substring(0, 10)} </td>
                   </tr>

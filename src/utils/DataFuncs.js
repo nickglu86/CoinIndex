@@ -1,9 +1,8 @@
  // Get News Item URI / Title 
- const getNewsItemURI = newsItem => {
-      const startIndex = newsItem.link.indexOf(".com/") + 5;
-      const endIndex = newsItem.link.indexOf("/", startIndex);
-      return newsItem.link.slice(startIndex, endIndex);
-}
+ const getNewsItemURI = (newsItem) => {
+      const startIndex = newsItem.link.substring(0, newsItem.link.length-1).lastIndexOf("/");
+      return newsItem.link.slice(startIndex +1, newsItem.link.length);
+    };
 
   // Price change tracker function
  const priceChange = (changeValue) => {
@@ -24,6 +23,7 @@
       return <td style={changeColor}>{valuePrefix}%</td>;
 };
 
+// Price Coin Price for Display
 const getPriceforDisplay = (priceValue) => {
       return  parseInt(priceValue) > 10
               ? priceValue.toFixed(0).toLocaleString()
@@ -31,5 +31,6 @@ const getPriceforDisplay = (priceValue) => {
               ? priceValue.toFixed(2)
               : priceValue.toFixed(Math.floor(Math.log10(parseFloat(priceValue))) * -1 + 2)
 }
+
 
 export { priceChange, getNewsItemURI, getPriceforDisplay };

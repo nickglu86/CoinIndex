@@ -74,7 +74,7 @@ const sentences = text.match(/[^.?!]+[.?!]\s/g);
             <Card.Img
               style={{ width: "100%", maxWidth: "800px" }}
               variant="top"
-              src={newsItem.image_url ? newsItem.image_url : '../ assets/news/crypto-news.jpg'}
+              src={newsItem.image_url ? newsItem.image_url : '../assets/news/crypto-news.jpg'}
             />
             <Card.Text
               style={{

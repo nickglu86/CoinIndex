@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { useAPI } from "../context/DataContext";
+import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsFeed = () => {
   const [index, setIndex] = useState(0);
@@ -10,12 +11,12 @@ const NewsFeed = () => {
     setIndex(selectedIndex);
   };
 
-  const getNewsItemURI = (newsItem) => {
-    // const startIndex = newsItem.link.indexOf(".com/news/") + 10;
-    const startIndex = newsItem.link.indexOf(".com/") + 5;
-    const endIndex = newsItem.link.indexOf("/", startIndex);
-    return newsItem.link.slice(startIndex, endIndex);
-  };
+  // const getNewsItemURI = (newsItem) => {
+  //   // const startIndex = newsItem.link.indexOf(".com/news/") + 10;
+  //   const startIndex = newsItem.link.indexOf(".com/") + 5;
+  //   const endIndex = newsItem.link.indexOf("/", startIndex);
+  //   return newsItem.link.slice(startIndex, endIndex);
+  // };
 
   const NewsCarousel = ({ news }) => (
     <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>

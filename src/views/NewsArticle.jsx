@@ -14,23 +14,38 @@ const NewsArticle = ({ match }) => {
       return title.includes(search) || search.includes(title);
     });
   }
-
-  function splitIntoParagraphs(text, maxLength) {
-const sentences = text.match(/[^.?!]+[.?!]\s/g);
+  function splitIntoParagraphs(text) {
+    const regex = /([.!?])\s+(?=[A-Z])/;
+    const sentences = text.split(regex);
     let currentParagraph = "";
     const paragraphs = [];
-    for (let i = 0; i < sentences.length; i++) {
-      if (currentParagraph.length + sentences[i].length <= maxLength) {
-        currentParagraph += " " + sentences[i];
-      } else {
-        paragraphs.push(currentParagraph.trim());
-        currentParagraph = sentences[i];
+  
+    for (let i = 0; i < sentences.length; i += 2) {
+      const sentence = sentences[i].trim();
+  
+      if (sentence.length > 0) {
+        currentParagraph += sentence ;
+        const nextSentence = sentences[i + 1];
+  
+        if (nextSentence && nextSentence.length > 0) {
+          currentParagraph += nextSentence.trim();
+          paragraphs.push(currentParagraph.trim());
+          currentParagraph = "";
+        }
       }
     }
-    paragraphs.push(currentParagraph.trim());
+  
+    if (currentParagraph.length > 0) {
+      paragraphs.push(currentParagraph.trim());
+    }
+  
     return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>);
   }
-
+    
+   
+ 
+  
+ 
   const NewsItem = () => {
     // const _newsItemTitle = decodeURIComponent(newsItemTitle);
     const newsItem = findSimilarTitles(

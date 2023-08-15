@@ -1,25 +1,26 @@
 import {  UserProvider } from "./context/UserContext";
 import { Switch, Route } from "react-router-dom";
-import { Container} from "react-bootstrap";
-import "./style.css";
 import { DataProvider } from "./context/DataContext";
-import Home from "./views/Home";
 import FreeComponent from "./components/FreeComponent";
 import AuthComponent from "./components/AuthComponent";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import UserPage from "./components/UserPage";
 import Header from "./components/Header";
-import News from "./views/News";
-import Chart from "./views/Chart";
-import Resources from "./views/Resources";
 import Footer from "./components/Footer";
-import Exchanges from "./views/Exchanges";
-import AboutUs from "./views/AboutUs";
-import NewsLetter from "./views/NewsLetter";
-import PrivacyPolicy from "./views/PrivacyPolicy";
-import NewsArticle from "./views/NewsArticle";
+import {
+  AboutUs,
+  NewsLetter,
+  Exchanges,
+  PrivacyPolicy,
+  NewsArticle,
+  News,
+  Chart,
+  Resources,
+  Home,
+  Register,
+  Login,
+  UserPage,
+} from "./utils/RoutesList";
+import "./style.css";
 
 function App() {
   return (

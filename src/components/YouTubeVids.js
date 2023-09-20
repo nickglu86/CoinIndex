@@ -2,10 +2,10 @@ import React from "react";
 import { Stack, Card, Button, Container } from "react-bootstrap";
 import { youtube } from "../mockdata/youtube";
 import YouTube from 'react-youtube';
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
 
 const YouTubeVids = () => {
-  const {  apiData , isLoading } = DataContext();
+  const {  apiData , isLoading } = useAPI();
 
   const vidsFeed = youtube => {
     let arr = [];

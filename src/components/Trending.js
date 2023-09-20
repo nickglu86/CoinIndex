@@ -1,11 +1,11 @@
 import { Row, Card, ListGroup } from "react-bootstrap";
 import React, { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
 //import { trending } from "../mockdata/trending";
 
 const Trending = () => {
   // const { trending } = useContext(DataContext);
-  const { apiData, isLoading } = DataContext();
+  const { apiData, isLoading } = useAPI();
 
   if (!isLoading) {
     const trending = apiData.trending.coins;

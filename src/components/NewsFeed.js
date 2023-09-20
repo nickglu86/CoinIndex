@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
 import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsFeed = () => {
   const [index, setIndex] = useState(0);
-  const { apiData, isLoading } = DataContext();
+  const { apiData, isLoading } = useAPI();
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -155,16 +155,16 @@ const NewsFeed = () => {
       <Container className="d-flex justify-content-between news-feed-container">
         <Col xs={12} sm={12} md={7} lg={8}>
           {/* <NewsCarousel  news={news} /> */}
-          {!isLoading && <NewsCarousel news={apiData.cryptoNewsApi.results} />}
+          {(!isLoading && apiData.cryptoNewsApi.results.length)&& <NewsCarousel news={apiData.cryptoNewsApi.results} />}
         </Col>
         <Col xs={12} sm={12} md={5} lg={4} className="mx-3">
           {/* <NewsList news={news} /> */}
-          {!isLoading && <NewsList news={apiData.cryptoNewsApi.results} />}
+          {(!isLoading && apiData.cryptoNewsApi.results.length) && <NewsList news={apiData.cryptoNewsApi.results} />}
         </Col>
       </Container>
       <Container>
         {/* <NewsGrid news={news} /> */}
-        {!isLoading && <NewsGrid news={apiData.cryptoNewsApi.results} />}
+        {(!isLoading && apiData.cryptoNewsApi.results.length) && <NewsGrid news={apiData.cryptoNewsApi.results} />}
       </Container>
     </div>
   );

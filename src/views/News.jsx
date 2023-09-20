@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row} from "react-bootstrap";
 import NewsList from "../components/NewsList";
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
  
 
 const News = () => {
     // News Data from API/Context
-    const {  apiData , isLoading } = DataContext();
+    const {  apiData , isLoading } = useAPI();
 
     return (
         <Container>

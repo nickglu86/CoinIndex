@@ -2,10 +2,10 @@ import React from "react";
 import CoinsTable from "./CoinsTable";
 import { Table, Col } from "react-bootstrap";
 // import { coins } from "../mockdata/coins";
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
 
 const Top10 = () => {
-  const {  apiData , isLoading } = DataContext();
+  const {  apiData , isLoading } = useAPI();
 
   if(!isLoading){
     const top10coins = apiData.coins.filter((coin, index) => index < 10);

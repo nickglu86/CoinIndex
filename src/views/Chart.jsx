@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 //import { coins } from "../mockdata/coins";
 import CoinsTable from "../components/CoinsTable";
-import { DataContext } from "../context/DataContext";
+import { useAPI } from "../context/DataContext";
 
 const Chart = () => {
-  const { apiData, isLoading } = DataContext();
+  const { apiData, isLoading } = useAPI();
 
   if (!isLoading) {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import { exchanges } from "../mockdata/exchanges";
+import { exchanges } from "../services/mockdata/exchanges";
 import ExchangesChart from "../components/ExchangesChart";
 import { DataContext } from "../context/DataContext";
 

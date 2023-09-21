@@ -1,28 +1,8 @@
 import {createContext, useContext, useState, useEffect} from 'react';
 import axios from 'axios';
-import apiEndpoints from '../data/ApiEndpoints';
-import { news } from '../mockdata/news';
-import { newsAlternative } from '../mockdata/newsAlternative';
-import { coins } from '../mockdata/coins';
-import {trending} from '../mockdata/trending'
-import { globaldata } from '../mockdata/globaldata';
-import {exchanges} from '../mockdata/exchanges'
-import { fearAndGreed } from '../mockdata/fearAndGreed';
-import { btc } from '../mockdata/btc';
-import { youtube } from '../mockdata/youtube';
+import apiEndpoints from '../utils/ApiEndpoints';
+import { mockData } from '../services/mockdata';
 
-// MOCK API's Data
-const mockData = {
-  cryptoNewsApi : news,
-  cryptoNewsApiAlt: newsAlternative,
-  coins: coins,
-  btc: btc,
-  trending: trending,
-  fearAndGreed: fearAndGreed,
-  globalData: globaldata,
-  exchanges: exchanges,
-  youtube: youtube
-};
 
 //Use MOCK data / false - will use Real Api's data
 const USE_MOCK_DATA = true;

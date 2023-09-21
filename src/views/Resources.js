@@ -3,7 +3,7 @@ import {
     Container,
     Row
 } from "react-bootstrap";
-import { resources } from "../mockdata/resources";
+import { resources } from "../services/mockdata/resources";
 
 let resourcesComp = [];
 for (const [key, value] of Object.entries(resources)) {

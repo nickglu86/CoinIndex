@@ -19,8 +19,8 @@ import {
   Register,
   Login,
   UserPage,
-} from "./utils/RoutesList";
-import "./style.css";
+} from "./views";
+import "./styles/style.css";
 
 function App() {
   return (

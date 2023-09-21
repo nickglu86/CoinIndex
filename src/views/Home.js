@@ -5,8 +5,8 @@ import {
   Container,
   Row
 } from "react-bootstrap";
-import { news } from "../mockdata/news";
-import { coins } from "../mockdata/coins";
+import { news } from "../services/mockdata/news";
+import { coins } from "../services/mockdata/coins";
 
 import NewsFeed from "../components/NewsFeed";
 import Top10 from "../components/Top10";

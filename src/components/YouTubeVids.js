@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack, Card, Button, Container } from "react-bootstrap";
-import { youtube } from "../mockdata/youtube";
+import { youtube } from "../services/mockdata/youtube";
 import YouTube from 'react-youtube';
 import { DataContext } from "../context/DataContext";
 

@@ -5,7 +5,7 @@ import { mockData } from '../services/mockdata';
 
 
 //Use MOCK data / false - will use Real Api's data
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 // The Context that will hold the data from API's
 export const Context = createContext({});
@@ -43,14 +43,11 @@ export const DataProvider = ({ children }) => {
 
           // responses.forEach((response, index) => {
           //   const isYouTubeEndpoint =  endPointsDataRequests[index].type === 'youtube' ;
-
           //   isYouTubeEndpoint ?
           //   Object.assign(data.youtube, { [endPointsDataRequests[index].name] : response.data })
           //   : data[endPointsDataRequests[index].name] = response.data;
-
           // });
 
-          
           console.log(data);
           data.cryptoNewsApi = !data.cryptoNewsApi.results.length ? data.cryptoNewsApiAlt : data.cryptoNewsApi;
           setApiData(data);

@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Card, Breadcrumb } from "react-bootstrap";
-import { useAPI } from "../context/DataContext";
+import { DataContext } from "../context/DataContext";
 import Breadcrumbs from "../components/BreadCrumbs";
 
 const NewsArticle = ({ match }) => {
   const newsItemTitle = match.params.newsItemTitle;
-  const { apiData, isLoading } = useAPI();
+  const { apiData, isLoading } = DataContext();
 
   function findSimilarTitles(searchString, results) {
     return results.filter((result) => {

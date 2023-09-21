@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import { exchanges } from "../mockdata/exchanges";
+import { exchanges } from "../services/mockdata/exchanges";
 import ExchangesChart from "../components/ExchangesChart";
-import { useAPI } from "../context/DataContext";
+import { DataContext } from "../context/DataContext";
 
 const Exchanges = () => {
-  const { apiData, isLoading } = useAPI();
+  const { apiData, isLoading } = DataContext();
   if (!isLoading) {
     return (
       <Container>

@@ -1,5 +1,5 @@
 import { Table, Tabs, Tab, Col, Container } from "react-bootstrap";
-import { useAPI } from "../context/DataContext";
+import { DataContext } from "../context/DataContext";
 import CandlesChart from "./CandlesChart";
 
 const BtcFearAndGreed = () => {
@@ -7,7 +7,7 @@ const BtcFearAndGreed = () => {
     "https://alternative.me/crypto/fear-and-greed-index.png";
 
   const days = ["Toda", "Yesterday", "Last Week"];
-  const { apiData, isLoading } = useAPI();
+  const { apiData, isLoading } = DataContext();
 
  // Calculate Average Fear and Greed
   const calcRangeGAF = (fagDataRange) => {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
-import { useAPI } from "../context/DataContext";
+import { DataContext } from "../context/DataContext";
 import { getNewsItemURI } from "../utils/DataFuncs";
 
 const NewsFeed = () => {
   const [index, setIndex] = useState(0);
-  const { apiData, isLoading } = useAPI();
+  const { apiData, isLoading } = DataContext();
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);

@@ -1,13 +1,13 @@
 export const apiEndpoints = [
   {
     name: `cryptoNewsApi`,
-    endpoint: `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=cryptopotato&language=en`,
+    endpoint: `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=coincu&language=en`,
     type: `news`,
   },
   {
     name: "cryptoNewsApiAlt",
     endpoint:
-      `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=cointelegraph&language=en`,
+      `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=cryptopotatoANDcointelegraph&language=en`,
     type: "news",
   },
   {

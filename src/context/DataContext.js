@@ -25,7 +25,7 @@ const mockData = {
 };
 
 //Use MOCK data / false - will use Real Api's data
-const USE_MOCK_DATA = false;
+const USE_MOCK_DATA = true;
 
 // The Context that will hold the data from API's
 export const Context = createContext({});
@@ -45,30 +45,30 @@ export const DataProvider = ({ children }) => {
     }
 
     // Init the Context  real data from API /utis/ApiEndpoints.js
-    const initDatafromAPIs = () => {
-      let endPointsDataRequests = apiEndpoints.map(resource => axios.get(resource.endpoint));
+     const  initDatafromAPIs =   () => {
+      let endPointsDataRequests = apiEndpoints.map( resource => axios.get(resource.endpoint));
         
-      Promise.all(endPointsDataRequests)
+        Promise.all(endPointsDataRequests)
         .then(responses => {
           let data = {};
           console.log(responses);
-          // responses.forEach((response, index) => {
-          //   if(apiEndpoints[index].type === 'youtube'){
-          //     Object.assign(data.youtube, { [apiEndpoints[index].name] : response.data });
-          //   } else {
-          //     data[apiEndpoints[index].name] = response.data;
-          //   }
-
-          // });
-
           responses.forEach((response, index) => {
-            const isYouTubeEndpoint =  endPointsDataRequests[index].type === 'youtube' ;
-
-            isYouTubeEndpoint ?
-            Object.assign(data.youtube, { [endPointsDataRequests[index].name] : response.data })
-            : data[endPointsDataRequests[index].name] = response.data;
+            if(apiEndpoints[index].type === 'youtube'){
+              Object.assign(data.youtube, { [apiEndpoints[index].name] : response.data });
+            } else {
+              data[apiEndpoints[index].name] = response.data;
+            }
 
           });
+
+          // responses.forEach((response, index) => {
+          //   const isYouTubeEndpoint =  endPointsDataRequests[index].type === 'youtube' ;
+
+          //   isYouTubeEndpoint ?
+          //   Object.assign(data.youtube, { [endPointsDataRequests[index].name] : response.data })
+          //   : data[endPointsDataRequests[index].name] = response.data;
+
+          // });
 
           
           console.log(data);

@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { PersonCircle } from "react-bootstrap-icons";
 import { UserContext } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 function Header() {
   //  const [loggedIn, setloggedIn] = useState(initialState)
@@ -17,23 +18,21 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="/">
-          <img
+      <Link to='/' className="navbar-brand">
+      <img
             src="/coinindex-logo.png"
             width="50"
             height="50"
             className="d-inline-block align-top"
             alt="Coin Index logo"
           />
-        </Navbar.Brand>
-        <Navbar.Brand
-          href="/"
-          style={{
+      </Link>
+      <Link to='/' className="navbar-brand"   style={{
             fontSize: "27px",
-          }}
-        >
-          CoinIndex
-        </Navbar.Brand>
+          }}>  CoinIndex</Link>
+ 
+     
+     
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
@@ -43,10 +42,10 @@ function Header() {
               paddingTop: "0.25rem",
             }}
           >
-            <Nav.Link href="/news">News</Nav.Link>
-            <Nav.Link href="/chart">CryptoCurrencies</Nav.Link>
-            <Nav.Link href="/exchanges">Exchanges</Nav.Link>
-            <Nav.Link href="/resources">Resources</Nav.Link>
+            <Link to='/news' className="nav-link">News</Link>
+            <Link to='/chart' className="nav-link">CryptoCurrencies</Link>
+            <Link to='/exchanges' className="nav-link">Exchanges</Link>
+            <Link to='/resources' className="nav-link">Resources</Link>
             {/* <Nav.Link href="/aboutus">About Us</Nav.Link>
             <Nav.Link href="/free">Free Component</Nav.Link>
             <Nav.Link href="/auth">Auth Component</Nav.Link>
@@ -70,15 +69,15 @@ function Header() {
                 title={personCircleIcon}
                 id="collasible-nav-dropdown"
               >
-                <NavDropdown.Item href="/login">Sign In</NavDropdown.Item>
-                <NavDropdown.Item href="/register">Sign Up</NavDropdown.Item>
+                <Link to='/login' className="dropdown-item">Sign In</Link>
+                <Link to='/register' className="dropdown-item">Sign Up</Link>
               </NavDropdown>
             ) : (
               <NavDropdown
                 title={personCircleIcon}
                 id="collasible-nav-dropdown"
               >
-                <NavDropdown.Item href="/user">Account</NavDropdown.Item>
+                <Link to='/user' className="dropdown-item">Account</Link>
                 <NavDropdown.Item onClick={_logout}>Sign Out</NavDropdown.Item>
               </NavDropdown>
             )}

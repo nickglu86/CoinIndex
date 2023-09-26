@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Card, Breadcrumb } from "react-bootstrap";
 import { DataContext } from "../context/DataContext";
 import Breadcrumbs from "../components/BreadCrumbs";
@@ -19,14 +20,14 @@ const NewsArticle = ({ match }) => {
     const sentences = text.split(regex);
     let currentParagraph = "";
     const paragraphs = [];
-  
+
     for (let i = 0; i < sentences.length; i += 2) {
       const sentence = sentences[i].trim();
-  
+
       if (sentence.length > 0) {
-        currentParagraph += sentence ;
+        currentParagraph += sentence;
         const nextSentence = sentences[i + 1];
-  
+
         if (nextSentence && nextSentence.length > 0) {
           currentParagraph += nextSentence.trim();
           paragraphs.push(currentParagraph.trim());
@@ -34,18 +35,14 @@ const NewsArticle = ({ match }) => {
         }
       }
     }
-  
+
     if (currentParagraph.length > 0) {
       paragraphs.push(currentParagraph.trim());
     }
-  
+
     return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>);
   }
-    
-   
- 
-  
- 
+
   const NewsItem = () => {
     // const _newsItemTitle = decodeURIComponent(newsItemTitle);
     const newsItem = findSimilarTitles(
@@ -57,75 +54,77 @@ const NewsArticle = ({ match }) => {
       const paragraphs = splitIntoParagraphs(newsItem.content, 100);
 
       return (
-
-      <>
-       <Row className="mt-4">
-        <Breadcrumbs title={newsItem.title}/>
-      </Row>
-      <Row>
-      <Card
-          style={{
-            width: "100%",
-            maxWidth: "1000px",
-            border: "none",
-            padding: "0",
-          }}
-        >
-          <Card.Header>
-            <Card.Text style={{ margin: "0" }}>by {newsItem.creator}</Card.Text>
-            <Card.Subtitle className="text-muted">
-              {newsItem.pubDate}
-            </Card.Subtitle>
-          </Card.Header>
-          <Card.Body className="mt-4">
-            <Card.Title style={{ fontSize: "27px" }}>
-              {newsItem.title}
-            </Card.Title>
-
-            <Card.Text style={{ fontStyle: "italic" }}>
-              {newsItem.description}
-            </Card.Text>
-
-            <Card.Img
-              style={{ width: "100%", maxWidth: "800px" }}
-              variant="top"
-              src={newsItem.image_url ? newsItem.image_url : '../assets/news/crypto-news.jpg'}
-            />
-            <Card.Text
+        <>
+          <Row className="mt-4">
+            <Breadcrumbs title={newsItem.title} />
+          </Row>
+          <Row>
+            <Card
               style={{
-                fontSize: "17px",
-                lineHeight: "22px",
-                overflow: "hidden",
-                textAlign: "left",
-                marginTop: "20px",
+                width: "100%",
+                maxWidth: "1000px",
+                border: "none",
+                padding: "0",
               }}
             >
-              {paragraphs}
-            </Card.Text>
+              <Card.Header>
+                <Card.Text style={{ margin: "0" }}>
+                  by {newsItem.creator}
+                </Card.Text>
+                <Card.Subtitle className="text-muted">
+                  {newsItem.pubDate}
+                </Card.Subtitle>
+              </Card.Header>
+              <Card.Body className="mt-4">
+                <Card.Title style={{ fontSize: "27px" }}>
+                  {newsItem.title}
+                </Card.Title>
 
-            <Card.Link href={newsItem.link}>Read More...</Card.Link>
-            <Card.Text
-              style={{
-                fontSize: "17px",
-                fontWeight: "600",
-                marginTop: "20px",
-              }}
-            >
-              KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Row>
-      </>
+                <Card.Text style={{ fontStyle: "italic" }}>
+                  {newsItem.description}
+                </Card.Text>
 
+                <Card.Img
+                  style={{ width: "100%", maxWidth: "800px" }}
+                  variant="top"
+                  src={
+                    newsItem.image_url
+                      ? newsItem.image_url
+                      : "../assets/news/crypto-news.jpg"
+                  }
+                />
+                <Card.Text
+                  style={{
+                    fontSize: "17px",
+                    lineHeight: "22px",
+                    overflow: "hidden",
+                    textAlign: "left",
+                    marginTop: "20px",
+                  }}
+                >
+                  {paragraphs}
+                </Card.Text>
+                <Link to={newsItem.link}> Read More...</Link>
+
+                <Card.Text
+                  style={{
+                    fontSize: "17px",
+                    fontWeight: "600",
+                    marginTop: "20px",
+                  }}
+                >
+                  KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Row>
+        </>
       );
     }
   };
 
   return (
-    <Container className="news-article">
-        {!isLoading && <NewsItem />} 
-    </Container>
+    <Container className="news-article">{!isLoading && <NewsItem />}</Container>
   );
 };
 

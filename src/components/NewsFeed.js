@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { DataContext } from "../context/DataContext";
 import { getNewsItemURI } from "../utils/DataFuncs";
+import { Link } from "react-router-dom";
 
 const NewsFeed = () => {
   const [index, setIndex] = useState(0);
@@ -19,7 +20,7 @@ const NewsFeed = () => {
   // };
 
   const NewsCarousel = ({ news }) => (
-    <Carousel activeIndex={index} onSelect={handleSelect} /*interval={null}*/>
+    <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item key={index}>
           <img
@@ -101,11 +102,12 @@ const NewsFeed = () => {
           >
             {item.title}
           </Card.Text>
-          <Card.Link
-            style={{ position: "absolute", width: "100%", height: "100%" }}
-            href={`/news/${getNewsItemURI(item)}`}
-            onMouseEnter={() => setIndex(itemIndex)}
-          ></Card.Link>
+          <Link 
+          className="card-text"
+           style={{ position: "absolute", width: "100%", height: "100%" }}
+           to={`/news/${getNewsItemURI(item)}`}
+           onMouseEnter={() => setIndex(itemIndex)}
+           ></Link>
         </Card>
       ))}
     </Row>

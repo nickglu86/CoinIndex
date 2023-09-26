@@ -1,25 +1,19 @@
 import React from "react";
 import { Card, Row, Nav, Container } from "react-bootstrap";
- import { getNewsItemURI } from "../utils/DataFuncs";
-
+import { getNewsItemURI } from "../utils/DataFuncs";
+import { Link } from "react-router-dom";
 const NewsList = ({ news }) => {
-
-
   const NewsItem = ({ item }) => (
-    <Nav.Link
+    <Link
       className="link-dark  news-list-item"
       style={{ textDecoration: "none" }}
-      href={`/news/${getNewsItemURI(item)}`}
+      to={`/news/${getNewsItemURI(item)}`}
     >
-      <Card
-        className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid news-list-item"
-      >
+      <Card className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid news-list-item">
         <Card.Img
           src={item.image_url ? item.image_url : "assets/news/crypto-news.jpg"}
         />
-        <Card.Body
-          className="d-flex flex-column news-list-item-body"
-        >
+        <Card.Body className="d-flex flex-column news-list-item-body">
           <Card.Subtitle className="mb-3">
             <span className="text-muted"> {item.pubDate} </span>
           </Card.Subtitle>
@@ -53,17 +47,16 @@ const NewsList = ({ news }) => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </Nav.Link>
+    </Link>
   );
 
   return (
     <div className="my-4">
- 
-        <Container className="news-list"  fluid>
+      <Container className="news-list" fluid>
         {news.map((item, index) => (
           <NewsItem item={item} key={index} index={index} />
         ))}
-        </Container>
+      </Container>
     </div>
   );
 };

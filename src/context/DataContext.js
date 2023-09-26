@@ -1,4 +1,4 @@
-import {createContext, useContext, useState, useEffect} from 'react';
+import {createContext, useContext, useState, useEffect, useMemo} from 'react';
 import axios from 'axios';
 import apiEndpoints from '../utils/ApiEndpoints';
 import { mockData } from '../services/mockdata';
@@ -12,7 +12,7 @@ export const Context = createContext({});
 
 export const DataProvider = ({ children }) => {
  
-    const [apiData, setApiData] = useState(null);
+    const [apiData, setApiData] = useState();
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -56,11 +56,16 @@ export const DataProvider = ({ children }) => {
         .catch(error => console.log(error));
     }
 
-    useEffect(() => USE_MOCK_DATA ? initWithMockData() : initDatafromAPIs(), []);
- 
+    useEffect(() => {
+      console.log('Data fetched from APIs!')
+      USE_MOCK_DATA ? initWithMockData() : initDatafromAPIs();
+    }, []);
+
+    // Use useMemo to memoize apiData
+    const memoizedApiData = useMemo(() => apiData, [apiData]);
   
     return (
-      <Context.Provider value={{ apiData, isLoading }}  >
+      <Context.Provider value={{ apiData: memoizedApiData, isLoading }}  >
         {children}
       </Context.Provider>
     );

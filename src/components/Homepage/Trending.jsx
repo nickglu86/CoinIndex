@@ -1,6 +1,6 @@
 import { Row, Card, ListGroup } from "react-bootstrap";
 import React, { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 //import { trending } from "../mockdata/trending";
 
 const Trending = () => {

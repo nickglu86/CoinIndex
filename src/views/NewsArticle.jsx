@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Card, Breadcrumb } from "react-bootstrap";
 import { DataContext } from "../context/DataContext";
-import Breadcrumbs from "../components/BreadCrumbs";
+import Breadcrumbs from "../components/News/BreadCrumbs";
 
 const NewsArticle = ({ match }) => {
   const newsItemTitle = match.params.newsItemTitle;

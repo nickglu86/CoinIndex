@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useContext } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Table, Badge, Col, Row, Modal } from "react-bootstrap";
-import CandlesChart from "./CandlesChart";
+import CandlesChart from "../Chart/CandlesChart";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { WindowPlus } from "react-bootstrap-icons";
-import { priceChange } from "../utils/DataFuncs";
-import { getPriceforDisplay } from "../utils/DataFuncs";
+import { priceChange } from "../../utils/DataFuncs";
+import { getPriceforDisplay } from "../../utils/DataFuncs";
 
 function CoinModal({ coin }) {
   const [show, setShow] = useState(false);

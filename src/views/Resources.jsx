@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Container,
-    Row
 } from "react-bootstrap";
 import { resources } from "../services/mockdata/resources";
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
-import { DataContext } from "../context/DataContext";
-import { getNewsItemURI } from "../utils/DataFuncs";
+import { DataContext } from "../../context/DataContext";
+import { getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
 const NewsFeed = () => {
@@ -24,7 +24,7 @@ const NewsFeed = () => {
       {news.slice(0, 4).map((item, index) => (
         <Carousel.Item key={index}>
           <img
-            className="d-block w-100"
+            className="news-carousel-item"
             src={
               item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
             }
@@ -120,21 +120,22 @@ const NewsFeed = () => {
         {news.slice(4, 10).map((item, index) => (
           <Card
             key={index}
-            className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
-            style={{ margin: " 10px 0%", width: "32%", height: "85px" }}
+            className="other-news-item col-3   d-flex flex-row  justify-content-between align-items-center news-item"
+         
           >
             <Card.Img
               src={
                 item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
               }
-              style={{ width: "35%", height: "110%" }}
+              style={{ width: "53%", height: "100%", objectFit: 'cover' }}
             />
 
             <Card.Text
+              className="other-news-item-title"
               style={{
-                width: "65%",
-                fontSize: "0.735rem",
-                lineHeight: "1.1rem",
+                width: "40%",
+                fontSize: "0.5rem",
+                lineHeight: "0.67rem",
                 overflow: "hidden",
                 margin: "0.4rem",
                 padding: "0!important",

@@ -81,33 +81,44 @@ const NewsFeed = () => {
 
   const NewsList = ({ news }) => (
     <Row className="news-feeed-right">
-      <h2>Latest News</h2>
       {news.slice(0, 4).map((item, itemIndex) => (
-        <Card
-          key={itemIndex}
-          className="col-3 p-2  d-flex flex-row  justify-content-between align-items-center news-item"
-        >
-          <Card.Text
-            className="pl-2"
-            style={{
-              fontSize: "0.735rem",
-              lineHeight: "1.1rem",
-              overflow: "hidden",
-              margin: "0",
-              ...(index === itemIndex && {
-                fontWeight: "700",
-                textDecoration: "underline",
-              }),
-            }}
-          >
-            {item.title}
-          </Card.Text>
-          <Link 
-          className="card-text"
-           style={{ position: "absolute", width: "100%", height: "100%" }}
-           to={`/news/${getNewsItemURI(item)}`}
-           onMouseEnter={() => setIndex(itemIndex)}
-           ></Link>
+        <Card key={itemIndex} className="col-3 news-item">
+          
+          <div className="news-item-header">
+            <img src="/assets/icons/news.png" />
+            <Card.Text> {item.pubDate}</Card.Text>
+          </div>
+          <div>
+            <Card.Text
+              className="pl-2"
+              style={{
+                fontSize: "0.735rem",
+                lineHeight: "0.9rem",
+                overflow: "hidden",
+                margin: "0 30px 0 24px",
+                padding: "5px 0",
+                ...(index === itemIndex && {
+                  fontWeight: "700",
+                  textDecoration: "underline",
+                }),
+              }}
+            >
+              {item.title}
+            </Card.Text>
+            <Link
+              className="card-text"
+              style={{ position: "absolute", width: "100%", height: "100%" }}
+              to={`/news/${getNewsItemURI(item)}`}
+              onMouseEnter={() => setIndex(itemIndex)}
+            ></Link>
+                        <div
+              className="news-item-header"
+              style={{ position: "absolute", bottom: "7px", right: "10px" }}
+            >
+              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
+           
+            </div>
+          </div>
         </Card>
       ))}
     </Row>
@@ -115,30 +126,43 @@ const NewsFeed = () => {
 
   const NewsGrid = ({ news }) => (
     <div className="my-4">
-      <h4>Other News</h4>
+      {/* <h4>Other News</h4> */}
       <Row className=" d-flex flex-row  justify-content-between align-items-center ">
         {news.slice(4, 10).map((item, index) => (
           <Card
             key={index}
             className="other-news-item col-3   d-flex flex-row  justify-content-between align-items-center news-item"
-         
           >
+            <div
+              className="news-item-header"
+              style={{ position: "absolute", top: "7px", left: "55%" }}
+            >
+              <img src="/assets/icons/news.png" />
+              <Card.Text> {item.pubDate}</Card.Text>
+            </div>
+            <div
+              className="news-item-header"
+              style={{ position: "absolute", bottom: "7px", right: "10px" }}
+            >
+              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
+           
+            </div>
             <Card.Img
               src={
                 item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
               }
-              style={{ width: "53%", height: "100%", objectFit: 'cover' }}
+              style={{ width: "53%", height: "100%", objectFit: "cover" }}
             />
 
             <Card.Text
               className="other-news-item-title"
               style={{
-                width: "40%",
-                fontSize: "0.5rem",
-                lineHeight: "0.67rem",
+                width: "45%",
+                fontSize: "0.55rem",
+                lineHeight: "0.77rem",
                 overflow: "hidden",
-                margin: "0.4rem",
-                padding: "0!important",
+                margin: "20px 0.1rem 0.1rem  0.1rem ",
+             
               }}
             >
               {item.title}
@@ -154,7 +178,11 @@ const NewsFeed = () => {
   );
 
   return (
-    <div>
+    <div className="news-feed">
+      <div className="hp-section-title">
+        <img src="/assets/icons/news.png" />
+        <h2>Latest News</h2>
+      </div>
       <Container className="d-flex justify-content-between news-feed-container">
         <Col xs={12} sm={12} md={7} lg={8}>
           {/* <NewsCarousel  news={news} /> */}

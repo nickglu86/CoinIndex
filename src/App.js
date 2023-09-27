@@ -1,11 +1,11 @@
 import { UserProvider } from "./context/UserContext";
 import { Switch, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataContext";
-import FreeComponent from "./components/FreeComponent";
-import AuthComponent from "./components/AuthComponent";
-import ProtectedRoutes from "./utils/ProtectedRoutes";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import FreeComponent from "./components/Auth/FreeComponent";
+import AuthComponent from "./components/Auth/AuthComponent";
+import ProtectedRoutes from "./components/Auth/ProtectedRoutes";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 import {
   AboutUs,
   NewsLetter,

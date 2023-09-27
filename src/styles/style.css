@@ -31,6 +31,7 @@ html {
 /* GENERAL */
 body {
   font-family: 'Open Sans', sans-serif!important;
+
 }
 
 footer {
@@ -51,19 +52,48 @@ footer {
 .home-page{
   margin-top: 1rem;
 }
+
+.hp-section-title{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-family: monospace!important;
+ 
+}
+.hp-section-title h2{
+  width: auto;
+  padding: 0;
+  margin: 0 0 0 5px;
+  font-size: 1rem;
+  font-family: monospace;
+}
+.hp-section-title img{
+  width: 28px;
+  height: 28px;
+  padding: 0px;
+}
+  
 @media all and (max-width: 700px) {
   .home-page{
     margin-top: 0rem;
     padding: 0!important;
   }
 }
+@media all and (min-width: 700px) {
+  .news-feed{
+    border: 1px solid rgb(0 0 0 / 6%);
+    border-radius: 18px;
+  }
+}
+
+.news-feed-container{
+  padding: 0!important;
+}
 
 @media all and (max-width: 1400px) {
  
   /* screen size until 500px */
-  .news-feed-container{
-    padding: 0!important;
-  }
+
   .news-feed-container .carousel-caption{
     position: relative!important;
     left: 0!important;
@@ -161,7 +191,7 @@ footer {
     display: block;
     width: 900px;
     max-width: 100%;
-    height: 500px;
+    height: 460px;
     object-fit: cover;
    
   }
@@ -195,18 +225,30 @@ footer {
 .news-feed-container .carousel-indicators{
   display: none;
 }
-.news-feed-container .news-feeed-right h2{
-  padding-top: 1rem;
-}
+
 .news-feed-container .news-feeed-right .news-item{
   margin: 0.4rem;
+  padding: 0.2rem;
   width: 90%;
   height: auto;
+}
+.news-item-header{
+  display: flex;
+  align-items: center;
+}
+.news-item-header img{
+  width: 23px;
+  height: 23px;
+}
+.news-item-header .card-text{
+  font-size: 12px;
+  padding-left: 5px;
 }
 @media all and (min-width: 1200px) {
   .news-feed-container .news-feeed-right .news-item{
     margin: 0.4rem;
     height: 90px;
+    padding: 0.2rem;
   }
 }
 /* Youtube Widget */
@@ -256,6 +298,7 @@ footer {
 .btc-candles-chart-label h2{
   padding-left: 0.5rem;
   margin-bottom: 0;
+  font-family: monospace!important;
 }
 .btc-widget-candle-chart button.nav-link{
   padding: 10px;

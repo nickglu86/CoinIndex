@@ -7,7 +7,7 @@ import {
 } from "react-bootstrap";
 import { news } from "../services/mockdata/news";
 import { coins } from "../services/mockdata/coins";
-import NewsFeed from "../components/homepage/NewsFeed";
+import NewsFeed from "../components/Homepage/NewsFeed";
 import Top10 from "../components/Homepage/Top10";
 import Trending from "../components/Homepage/Trending";
 import YouTubeVids from "../components/YouTubeVids";

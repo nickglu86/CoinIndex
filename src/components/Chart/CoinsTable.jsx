@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
-import CoinModal from "../modals/CoinModal";
+import CoinModal from "../Modals/CoinModal";
 import { priceChange } from "../../utils/DataFuncs";
 import { getPriceforDisplay } from "../../utils/DataFuncs";
 

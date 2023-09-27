@@ -7,9 +7,9 @@ import News from "./News";
 import Chart from "./Chart";
 import Resources from "./Resources";
 import Home from "./Home";
-import Register from "../components/Register";
-import Login from "../components/Login";
-import UserPage from "../components/UserPage";
+import Register from "../components/Auth/Register";
+import Login from "../components/Auth/Login";
+import UserPage from "../components/Auth/UserPage";
 
 export {
   AboutUs,

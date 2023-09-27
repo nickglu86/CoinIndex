@@ -1,6 +1,6 @@
 import { Row, Card, ListGroup } from "react-bootstrap";
 import React, { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 //import { trending } from "../mockdata/trending";
 
 const Trending = () => {
@@ -10,8 +10,12 @@ const Trending = () => {
   if (!isLoading) {
     const trending = apiData.trending.coins;
     return (
-      <Row className="my-4">
-        <h2>Trending Coins</h2>
+      <Row className="my-1">
+        <div className="hp-section-title">
+        <img src="/assets/icons/trending.png"  />
+          <h2>Trending Coins</h2>
+        </div>
+          
         <Row className="news-grid" style={{ margin: "0 10px" }}>
           <div className="news-grid-inner">
             {trending.map((item, index) => (

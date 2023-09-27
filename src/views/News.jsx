@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row} from "react-bootstrap";
-import NewsList from "../components/NewsList";
+import NewsList from "../components/News/NewsList";
 import { DataContext } from "../context/DataContext";
  
 

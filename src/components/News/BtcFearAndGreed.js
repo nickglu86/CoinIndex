@@ -1,6 +1,6 @@
 import { Table, Tabs, Tab, Col, Container } from "react-bootstrap";
-import { DataContext } from "../context/DataContext";
-import CandlesChart from "./CandlesChart";
+import { DataContext } from "../../context/DataContext";
+import CandlesChart from "../Chart/CandlesChart";
 
 const BtcFearAndGreed = () => {
   const bitcoinFearIndexIMG =

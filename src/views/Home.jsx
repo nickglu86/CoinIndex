@@ -7,21 +7,21 @@ import {
 } from "react-bootstrap";
 import { news } from "../services/mockdata/news";
 import { coins } from "../services/mockdata/coins";
-
-import NewsFeed from "../components/NewsFeed";
-import Top10 from "../components/Top10";
-import Trending from "../components/Trending";
+import NewsFeed from "../components/Homepage/NewsFeed";
+import Top10 from "../components/Homepage/Top10";
+import Trending from "../components/Homepage/Trending";
 import YouTubeVids from "../components/YouTubeVids";
-import BtcFearAndGreed from "../components/BtcFearAndGreed";
+import BtcFearAndGreed from "../components/News/BtcFearAndGreed";
 const Home = () => {
   return (
-    <Container className="my-2">
+    <Container className="home-page">
       <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
         <NewsFeed />
-        <BtcFearAndGreed />
         <Trending />
+        <BtcFearAndGreed />
         <Top10 />
         {/* <YouTubeVids />  */}
+
       </Row>
     </Container>
   );

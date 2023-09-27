@@ -1,8 +1,8 @@
 import React from "react";
-import CoinsTable from "./CoinsTable";
+import CoinsTable from "../Chart/CoinsTable";
 import { Table, Col } from "react-bootstrap";
 // import { coins } from "../mockdata/coins";
-import { DataContext } from "../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 
 const Top10 = () => {
   const {  apiData , isLoading } = DataContext();

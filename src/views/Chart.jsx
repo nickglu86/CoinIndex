@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 //import { coins } from "../mockdata/coins";
-import CoinsTable from "../components/CoinsTable";
+import CoinsTable from "../components/Chart/CoinsTable";
 import { DataContext } from "../context/DataContext";
 
 const Chart = () => {

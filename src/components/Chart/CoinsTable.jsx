@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
-import CoinModal from "./CoinModal";
-import { priceChange } from "../utils/DataFuncs";
-import { getPriceforDisplay } from "../utils/DataFuncs";
+import CoinModal from "../Modals/CoinModal";
+import { priceChange } from "../../utils/DataFuncs";
+import { getPriceforDisplay } from "../../utils/DataFuncs";
 
 // Coins table component
 const CoinsTable = ({ coins }) => {

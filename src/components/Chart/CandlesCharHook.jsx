@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReactApexChart from "react-apexcharts";
-import useFetchData from "../utils/useFetchData";
+import useFetchData from "../../utils/useFetchData";
  
 
  

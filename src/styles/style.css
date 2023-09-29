@@ -247,7 +247,7 @@ footer {
 @media all and (min-width: 1200px) {
   .news-feed-container .news-feeed-right .news-item{
     margin: 0.4rem;
-    height: 90px;
+    /* height: 90px; */
     padding: 0.2rem;
   }
 }

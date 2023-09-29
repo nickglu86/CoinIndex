@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Row, Nav, Container } from "react-bootstrap";
 import { getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
+
+
 const NewsList = ({ news }) => {
   const NewsItem = ({ item }) => (
     <Link

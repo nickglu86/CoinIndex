@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { DataContext } from "../../context/DataContext";
-import { getNewsItemURI } from "../../utils/DataFuncs";
+import { adjustDateStirng, getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
 const NewsFeed = () => {
@@ -18,6 +18,8 @@ const NewsFeed = () => {
   //   const endIndex = newsItem.link.indexOf("/", startIndex);
   //   return newsItem.link.slice(startIndex, endIndex);
   // };
+
+
 
   const NewsCarousel = ({ news }) => (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
@@ -82,11 +84,18 @@ const NewsFeed = () => {
   const NewsList = ({ news }) => (
     <Row className="news-feeed-right">
       {news.slice(0, 4).map((item, itemIndex) => (
-        <Card key={itemIndex} className="col-3 news-item">
-          
+                    <Link
+                    key={itemIndex} className="col-3 news-item"
+                     
+                    style={{ color: "inherit", textDecoration: "none" }}
+                    to={`/news/${getNewsItemURI(item)}`}
+                    onMouseEnter={() => setIndex(itemIndex)}
+                  >
+        <Card   style={{ height: "90px", padding: '5px'}}>
+
           <div className="news-item-header">
             <img src="/assets/icons/news.png" />
-            <Card.Text> {item.pubDate}</Card.Text>
+            <Card.Text> {adjustDateStirng(item.pubDate)}</Card.Text>
           </div>
           <div>
             <Card.Text
@@ -105,21 +114,17 @@ const NewsFeed = () => {
             >
               {item.title}
             </Card.Text>
-            <Link
-              className="card-text"
-              style={{ position: "absolute", width: "100%", height: "100%" }}
-              to={`/news/${getNewsItemURI(item)}`}
-              onMouseEnter={() => setIndex(itemIndex)}
-            ></Link>
-                        <div
+
+            <div
               className="news-item-header"
               style={{ position: "absolute", bottom: "7px", right: "10px" }}
             >
-              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
-           
+              <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
+
             </div>
           </div>
         </Card>
+        </Link>
       ))}
     </Row>
   );
@@ -138,14 +143,14 @@ const NewsFeed = () => {
               style={{ position: "absolute", top: "7px", left: "55%" }}
             >
               <img src="/assets/icons/news.png" />
-              <Card.Text> {item.pubDate}</Card.Text>
+              <Card.Text style={{ fontStyle: 'italic', color: 'grey' }}>{adjustDateStirng(item.pubDate)}</Card.Text>
             </div>
             <div
               className="news-item-header"
               style={{ position: "absolute", bottom: "7px", right: "10px" }}
             >
-              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
-           
+              <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
+
             </div>
             <Card.Img
               src={
@@ -158,11 +163,11 @@ const NewsFeed = () => {
               className="other-news-item-title"
               style={{
                 width: "45%",
-                fontSize: "0.55rem",
-                lineHeight: "0.77rem",
+                fontSize: "0.6rem",
+                lineHeight: "0.84rem",
                 overflow: "hidden",
-                margin: "20px 0.1rem 0.1rem  0.1rem ",
-             
+                margin: "10px 0.1rem 0.1rem  0.1rem ",
+
               }}
             >
               {item.title}

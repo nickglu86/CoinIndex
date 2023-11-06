@@ -5,7 +5,7 @@ import { mockData } from '../services/mockdata';
 
 
 //Use MOCK data / false - will use Real Api's data
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 // The Context that will hold the data from API's
 export const Context = createContext({});

@@ -10,13 +10,13 @@ const Trending = () => {
   if (!isLoading) {
     const trending = apiData.trending.coins;
     return (
-      <Row className="my-1">
+      <section className="my-3 home-section">
         <div className="hp-section-title">
         <img src="/assets/icons/trending.png"  />
           <h2>Trending Coins</h2>
         </div>
           
-        <Row className="news-grid" style={{ margin: "0 10px" }}>
+        <Row className="news-grid" style={{ margin: "0 10px", paddingBottom: '30px' }}>
           <div className="news-grid-inner">
             {trending.map((item, index) => (
               <Card
@@ -58,7 +58,7 @@ const Trending = () => {
             ))}
           </div>
         </Row>
-      </Row>
+      </section>
     );
   }
 };

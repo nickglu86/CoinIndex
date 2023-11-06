@@ -16,7 +16,7 @@ function Header() {
   );
   const { isLoggedIn, _logout } = useContext(UserContext);
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="black">
       <Container>
       <Link to='/' className="navbar-brand">
       <img

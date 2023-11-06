@@ -230,7 +230,7 @@ footer {
     display: flex;
     justify-content: space-between;
     border-radius: 0.375rem;
-    border: 1px solid rgba(0, 0, 0, 0.175);
+    border: 1px solid rgb(0 0 0 / 6%);
     padding: 0 1rem 0 0!important;
     
   }
@@ -241,7 +241,7 @@ footer {
   }
   .btc-widget-candle-chart{
     padding: 2rem 2rem 1rem;
-    border-right: 1px solid rgba(0, 0, 0, 0.175);
+ 
   }
   
   .btc-widget-fag-img{
@@ -298,6 +298,10 @@ table.coins-chart  thead  th{
 }
 
 @media all and (min-width: 770px) {
+  .home-section{
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 18px;
+  }
 
   .news-list-item-body{
     width: 50%;

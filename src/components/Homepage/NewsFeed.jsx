@@ -10,31 +10,39 @@ const NewsFeedContainer = styled.section.attrs({
 })`
     width: 100%;
 
+    .carousel{
+      border-radius: 0.375rem!important;
+      overflow: hidden;
+    }
+
     @media all and (min-width: 1024px) {
       border: 1px solid rgb(0 0 0 / 6%);
       border-radius: 18px;
 
       .news-carosel-container{
         display: flex;
+        justify-content: space-between;
       }
         .news-feed-headlines{
           width: 33%;
         }
         
         .carousel{
-          width: 67%;
+          width: 66.3%;
         }
     }
   
       .news-feed-headlines{
         .news-item{
-          height: 112px;
-          padding: 5px;
+          height: 116px;
+          padding: 5px 0;
           display: block;
 
            .card{
             height: 100%;
             padding: 5px;
+            box-shadow: 0 0 10px #afaaaaa6;
+            border: 1px solid #89828254;
           }
         }
      
@@ -108,9 +116,7 @@ const NewsFeedContainer = styled.section.attrs({
             color: "#ffcd04;
           }
       }
-      .carousel-indicators{
-        display: none;
-      }
+
 
       .other-news-item-title {
         width: 45%;
@@ -124,32 +130,30 @@ const NewsFeedContainer = styled.section.attrs({
 
       }
       .other-news-item{
-        margin: 10px 0%;
+        margin: 5px 0% 0;
         width: 100%;
         height: 85px;
         padding: 1px;
+        box-shadow: 0 0 10px #afaaaaa6;
+        border: 1px solid #89828254;
+
         img{
           width: 1rem;
           height: 110%;
         }
       }
      
-      .other-news-item-title{
-        width: 65%;
-        font-size: 0.735rem;
-        line-height: 1.1rem;
-        overflow: hidden;
-      }      
+     
     
       @media all and (min-width: 1024px) {
         .other-news{
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 10px; 
+          gap: 5px; 
+          padding-bottom: 20px;
         }
         .other-news-item{
           height: 126px!important;
-          
           padding: 4px;
           display:flex;
           flex-direction: row;
@@ -161,12 +165,16 @@ const NewsFeedContainer = styled.section.attrs({
         }
  
         .other-news-item-title{
-          width: 40%;
-          font-size: 0.53rem;
-          line-height: 0.67rem;
+          width: 45%;
+          font-size: 0.58rem;
+          line-height: 0.73rem;
           overflow: hidden;
-          margin: 1.7rem 0.4rem 0.4rem 0.4rem;
+          margin: 1.4rem 0.4rem 0.4rem 0.4rem;
         }
+      }
+
+      .carousel-indicators{
+        display: none;
       }
 `;
 

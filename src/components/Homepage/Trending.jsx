@@ -24,7 +24,7 @@ const Trending = () => {
                 className="col-3 p-1 pl-3 d-flex flex-row justify-content-start  align-items-center news-item"
                 style={{
                   margin: "10px",
-                  width: "255px!important",
+                  width: "255px",
                   height: "82px",
                   overflow: "hidden",
                 }}

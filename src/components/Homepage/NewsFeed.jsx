@@ -15,6 +15,15 @@ const NewsFeedContainer = styled.section.attrs({
       overflow: hidden;
     }
 
+ 
+    @media all and (max-width: 1024px) {
+      .carousel-caption {
+          left: 0!important;
+          min-height: -webkit-max-content!important;
+          min-height: max-content!important;
+          position: relative!important;
+      }
+    }
     @media all and (min-width: 1024px) {
       border: 1px solid rgb(0 0 0 / 6%);
       border-radius: 18px;
@@ -47,8 +56,8 @@ const NewsFeedContainer = styled.section.attrs({
         }
      
         .news-card-title{
-          font-size: 0.735rem;
-          line-height: 0.9rem;
+          font-size: 1rem;
+          line-height: 1.1rem;
           overflow: hidden;
           margin: 0px 30px 0px 24px;
           padding: 5px 0px;
@@ -58,11 +67,18 @@ const NewsFeedContainer = styled.section.attrs({
         font-weight: 700;
         text-decoration: underline;
        }
-      }
 
+  
+      }
+      @media all and (min-width: 800px) {  
+          .news-feed-headlines   .news-card-title{
+              font-size: 0.735rem;
+              line-height: 1rem;
+          }
+      }
       .carousel-control-prev, .carousel-control-next {
         position: absolute;
-        bottom: 8px;
+        bottom:11px;
         right: 10px;
         opacity: 1;
         top: 8px;
@@ -120,22 +136,24 @@ const NewsFeedContainer = styled.section.attrs({
 
       .other-news-item-title {
         width: 45%;
-      font-size: 0.6rem;
-      line-height: 0.84rem;
-      overflow: hidden;
-      margin: 10px 0.1rem 0.1rem;
+        font-size: 0.6rem;
+        line-height: 0.84rem;
+        overflow: hidden;
+        margin: 1.4rem 0.2rem 0.4rem 0.8rem;
       }
+
       .other-news{
         display: block;
-
       }
+
       .other-news-item{
-        margin: 5px 0% 0;
+        margin: 4px 0% 0;
         width: 100%;
-        height: 85px;
+        height: 125px;
         padding: 1px;
         box-shadow: 0 0 10px #afaaaaa6;
         border: 1px solid #89828254;
+        flex-direction: row;
 
         img{
           width: 1rem;
@@ -149,14 +167,15 @@ const NewsFeedContainer = styled.section.attrs({
         .other-news{
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 5px; 
+          gap: 0.3rem; 
           padding-bottom: 20px;
         }
         .other-news-item{
           height: 126px!important;
           padding: 4px;
-          display:flex;
+          display: flex;
           flex-direction: row;
+
           img{
             width: 1rem;
             height: 100%;
@@ -167,15 +186,20 @@ const NewsFeedContainer = styled.section.attrs({
         .other-news-item-title{
           width: 45%;
           font-size: 0.58rem;
-          line-height: 0.73rem;
+          line-height: 0.8rem;
           overflow: hidden;
-          margin: 1.4rem 0.4rem 0.4rem 0.4rem;
+          margin: 1.4rem 0.2rem 0.4rem 0.8rem;
         }
+
       }
 
       .carousel-indicators{
         display: none;
       }
+
+      .carousel-inner {
+        border-radius: 6px;
+    }
 `;
 
 const NewsFeed = () => {
@@ -268,7 +292,7 @@ const NewsFeed = () => {
         {news.slice(4, 10).map((item, index) => (
           <Card
             key={index}
-            className="other-news-item  news-item"
+            className="other-news-item news-item"
           >
             <div
               className="news-item-header"

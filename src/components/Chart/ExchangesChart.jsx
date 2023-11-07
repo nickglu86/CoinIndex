@@ -60,6 +60,13 @@ const ExchangesChart = ({ exchanges }) => {
     </thead>
   );
 
+  const getStars = (trust_score) => {
+    let stars = []
+    for (let i = 0; i < trust_score/2; i++) {
+      stars.push(<img src={'/assets/icons/star.png'} width={12} height={12} />) 
+      }
+    return stars;
+  }
   // Exchanges Table Body
   const TableBody = () => (
     <tbody>
@@ -81,10 +88,8 @@ const ExchangesChart = ({ exchanges }) => {
           <td>
             <span> {exchange.name}</span>
           </td>
-          <td>
-            <Badge bg="success" style={{ fontSize: "17px" }}>
-              {exchange.trust_score}
-            </Badge>
+          <td style={{minWidth: '100px'}}>
+              { getStars(exchange.trust_score) }     
           </td>
           <td>
             <a href={exchange.url}> {optimizeUrlLabel(exchange.url)}</a>

@@ -9,7 +9,7 @@ const Exchanges = () => {
   if (!isLoading) {
     return (
       <Container>
-        <Row className="justify-content-md-start">
+        <Row className="justify-content-md-start" style={{overflowX: 'auto'}}>
           <h1>Exchanges</h1>
           <ExchangesChart exchanges={apiData.exchanges} />
         </Row>

@@ -32,5 +32,12 @@ const getPriceforDisplay = (priceValue) => {
               : priceValue.toFixed(Math.floor(Math.log10(parseFloat(priceValue))) * -1 + 2)
 }
 
+const adjustDateStirng = date => {
+  const splitedDateArr = date.split(' ');
+  const dateArr = splitedDateArr[0].split('-');
+  const timeArr = splitedDateArr[1].split(':');
 
-export { priceChange, getNewsItemURI, getPriceforDisplay };
+  return `${timeArr[0]}:${timeArr[1]} ${dateArr[2]}-${dateArr[1]}`
+
+}
+export { priceChange, getNewsItemURI, getPriceforDisplay,  adjustDateStirng};

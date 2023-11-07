@@ -16,7 +16,7 @@ for (const [key, value] of Object.entries(resources)) {
                             <img
                                 src={resItem["img"]}
                                 alt={resItem["name"]}
-                                style={{ width: '25%', minWidth : '200px', padding: '0 20px' }}
+                                style={{ width: '230px', padding: '10px 20px'  }}
                             />
                         </a>)
                 )

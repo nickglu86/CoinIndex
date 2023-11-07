@@ -1,8 +1,206 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { DataContext } from "../../context/DataContext";
-import { getNewsItemURI } from "../../utils/DataFuncs";
+import { adjustDateStirng, getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
+
+const NewsFeedContainer = styled.section.attrs({
+  className: 'news-feed-cont',
+})`
+    width: 100%;
+
+    .carousel{
+      border-radius: 0.375rem!important;
+      overflow: hidden;
+    }
+
+ 
+    @media all and (max-width: 1024px) {
+      .carousel-caption {
+          left: 0!important;
+          min-height: -webkit-max-content!important;
+          min-height: max-content!important;
+          position: relative!important;
+      }
+    }
+    @media all and (min-width: 1024px) {
+      border: 1px solid rgb(0 0 0 / 6%);
+      border-radius: 18px;
+
+      .news-carosel-container{
+        display: flex;
+        justify-content: space-between;
+      }
+        .news-feed-headlines{
+          width: 33%;
+        }
+        
+        .carousel{
+          width: 66.3%;
+        }
+    }
+  
+      .news-feed-headlines{
+        .news-item{
+          height: 116px;
+          padding: 5px 0;
+          display: block;
+
+           .card{
+            height: 100%;
+            padding: 5px;
+            box-shadow: 0 0 10px #afaaaaa6;
+            border: 1px solid #89828254;
+          }
+        }
+     
+        .news-card-title{
+          font-size: 1rem;
+          line-height: 1.1rem;
+          overflow: hidden;
+          margin: 0px 30px 0px 24px;
+          padding: 5px 0px;
+       }
+
+       .news-card-title.headline{
+        font-weight: 700;
+        text-decoration: underline;
+       }
+
+  
+      }
+      @media all and (min-width: 800px) {  
+          .news-feed-headlines   .news-card-title{
+              font-size: 0.735rem;
+              line-height: 1rem;
+          }
+      }
+      .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        bottom:11px;
+        right: 10px;
+        opacity: 1;
+        top: 8px;
+        height: 40px;
+        width: auto;
+        border: 1px solid #ffffff5e;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .carousel-control-prev{
+        right: 60px;
+        left: unset;
+      }
+
+      .carousel-control-next, .carousel-control-prev {
+          height: auto;
+          top: auto;
+          width: auto;
+      }   
+
+      //Carousel Slider Header & Footer
+      .carousel-caption.caption-header{
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        height: 19%;
+        min-height: max-content;
+        background-color: rgba(0, 0, 0, 0.7);
+        text-align: left;
+        padding: 10px 0px 5px 15px;
+        display: flex;
+        align-items: center;
+
+        h3{
+          max-width: 700px;
+          font-size: 1.25rem;
+        }
+      }
+
+      .carousel-caption.caption-footer{
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 13%;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px 0px 5px 15px;
+        display: flex;
+        align-items: center;
+        font-size: 0.735rem;
+        
+          span{
+            color: "#ffcd04;
+          }
+      }
+
+
+      .other-news-item-title {
+        width: 45%;
+        font-size: 0.6rem;
+        line-height: 0.84rem;
+        overflow: hidden;
+        margin: 1.4rem 0.2rem 0.4rem 0.8rem;
+      }
+
+      .other-news{
+        display: block;
+      }
+
+      .other-news-item{
+        margin: 4px 0% 0;
+        width: 100%;
+        height: 125px;
+        padding: 1px;
+        box-shadow: 0 0 10px #afaaaaa6;
+        border: 1px solid #89828254;
+        flex-direction: row;
+
+        img{
+          width: 1rem;
+          height: 110%;
+        }
+      }
+     
+     
+    
+      @media all and (min-width: 1024px) {
+        .other-news{
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.3rem; 
+          padding-bottom: 20px;
+        }
+        .other-news-item{
+          height: 126px!important;
+          padding: 4px;
+          display: flex;
+          flex-direction: row;
+
+          img{
+            width: 1rem;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+ 
+        .other-news-item-title{
+          width: 45%;
+          font-size: 0.58rem;
+          line-height: 0.8rem;
+          overflow: hidden;
+          margin: 1.4rem 0.2rem 0.4rem 0.8rem;
+        }
+
+      }
+
+      .carousel-indicators{
+        display: none;
+      }
+
+      .carousel-inner {
+        border-radius: 6px;
+    }
+`;
 
 const NewsFeed = () => {
   const [index, setIndex] = useState(0);
@@ -19,6 +217,8 @@ const NewsFeed = () => {
   //   return newsItem.link.slice(startIndex, endIndex);
   // };
 
+
+
   const NewsCarousel = ({ news }) => (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
       {news.slice(0, 4).map((item, index) => (
@@ -31,47 +231,17 @@ const NewsFeed = () => {
             alt={item.title}
             testatr={item.image_url ? item.image_url : "nothing"}
           />
-          <Carousel.Caption
-            style={{
-              width: "100%",
-              top: "0",
-              left: "0",
-              height: "19%",
-              minHeight: "max-content",
-              backgroundColor: "rgba(0,0,0,.7)",
-              textAlign: "left",
-              padding: "10px 0 5px 15px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <h3
-              style={{
-                maxWidth: "700px",
-                fontSize: "1.25rem",
-              }}
-            >
+          <Carousel.Caption className="caption-header">
+            <h3>
               {item.title}
             </h3>
           </Carousel.Caption>
-          <Carousel.Caption
-            style={{
-              width: "100%",
-              bottom: "0",
-              left: "0",
-              height: "13%",
-              backgroundColor: "rgba(0,0,0,.7)",
-              padding: "10px 0 5px 15px",
-              display: "flex",
-              alignItems: "center",
-              fontSize: "0.735rem",
-            }}
-          >
+          <Carousel.Caption className="caption-footer">
             <div>
               {item.creator[0].length ? (
-                <span style={{ color: "#ffcd04" }}>{item.creator} | </span>
+                <span>{item.creator} | </span>
               ) : null}{" "}
-              {item.pubDate}
+              {adjustDateStirng(item.pubDate)}
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -80,72 +250,63 @@ const NewsFeed = () => {
   );
 
   const NewsList = ({ news }) => (
-    <Row className="news-feeed-right">
+    <div className="news-feed-headlines">
       {news.slice(0, 4).map((item, itemIndex) => (
-        <Card key={itemIndex} className="col-3 news-item">
-          
-          <div className="news-item-header">
-            <img src="/assets/icons/news.png" />
-            <Card.Text> {item.pubDate}</Card.Text>
-          </div>
-          <div>
-            <Card.Text
-              className="pl-2"
-              style={{
-                fontSize: "0.735rem",
-                lineHeight: "0.9rem",
-                overflow: "hidden",
-                margin: "0 30px 0 24px",
-                padding: "5px 0",
-                ...(index === itemIndex && {
-                  fontWeight: "700",
-                  textDecoration: "underline",
-                }),
-              }}
-            >
-              {item.title}
-            </Card.Text>
-            <Link
-              className="card-text"
-              style={{ position: "absolute", width: "100%", height: "100%" }}
-              to={`/news/${getNewsItemURI(item)}`}
-              onMouseEnter={() => setIndex(itemIndex)}
-            ></Link>
-                        <div
-              className="news-item-header"
-              style={{ position: "absolute", bottom: "7px", right: "10px" }}
-            >
-              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
-           
+        <Link
+          key={itemIndex} className="news-item"
+
+          style={{ color: "inherit", textDecoration: "none" }}
+          to={`/news/${getNewsItemURI(item)}`}
+          onMouseEnter={() => setIndex(itemIndex)}
+        >
+          <Card >
+
+            <div className="news-item-header">
+              <img src="/assets/icons/news.png" />
+              <Card.Text> {adjustDateStirng(item.pubDate)}</Card.Text>
             </div>
-          </div>
-        </Card>
+            <div>
+              <Card.Text
+                className={`news-card-title ${index === itemIndex && `headline`}`}  >
+                {item.title}
+              </Card.Text>
+
+              <div
+                className="news-item-header"
+                style={{ position: "absolute", bottom: "7px", right: "10px" }}
+              >
+                <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
+
+              </div>
+            </div>
+          </Card>
+        </Link>
       ))}
-    </Row>
+    </div>
   );
 
   const NewsGrid = ({ news }) => (
-    <div className="my-4">
+    <div className="other-news">
       {/* <h4>Other News</h4> */}
-      <Row className=" d-flex flex-row  justify-content-between align-items-center ">
+      
         {news.slice(4, 10).map((item, index) => (
           <Card
             key={index}
-            className="other-news-item col-3   d-flex flex-row  justify-content-between align-items-center news-item"
+            className="other-news-item news-item"
           >
             <div
               className="news-item-header"
               style={{ position: "absolute", top: "7px", left: "55%" }}
             >
               <img src="/assets/icons/news.png" />
-              <Card.Text> {item.pubDate}</Card.Text>
+              <Card.Text style={{ fontStyle: 'italic', color: 'grey' }}>{adjustDateStirng(item.pubDate)}</Card.Text>
             </div>
             <div
               className="news-item-header"
               style={{ position: "absolute", bottom: "7px", right: "10px" }}
             >
-              <img src="/assets/icons/arrows-red.png"  style={{ width: "17px", height: '17px'}}/>
-           
+              <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
+
             </div>
             <Card.Img
               src={
@@ -156,15 +317,7 @@ const NewsFeed = () => {
 
             <Card.Text
               className="other-news-item-title"
-              style={{
-                width: "45%",
-                fontSize: "0.55rem",
-                lineHeight: "0.77rem",
-                overflow: "hidden",
-                margin: "20px 0.1rem 0.1rem  0.1rem ",
-             
-              }}
-            >
+  >
               {item.title}
             </Card.Text>
             <Card.Link
@@ -173,31 +326,22 @@ const NewsFeed = () => {
             ></Card.Link>
           </Card>
         ))}
-      </Row>
+     
     </div>
   );
 
   return (
-    <div className="news-feed">
+    <NewsFeedContainer>
       <div className="hp-section-title">
         <img src="/assets/icons/news.png" />
         <h2>Latest News</h2>
       </div>
-      <Container className="d-flex justify-content-between news-feed-container">
-        <Col xs={12} sm={12} md={7} lg={8}>
-          {/* <NewsCarousel  news={news} /> */}
-          {!isLoading && <NewsCarousel news={apiData.cryptoNewsApi.results} />}
-        </Col>
-        <Col xs={12} sm={12} md={5} lg={4} className="mx-3">
-          {/* <NewsList news={news} /> */}
-          {!isLoading && <NewsList news={apiData.cryptoNewsApi.results} />}
-        </Col>
-      </Container>
-      <Container>
-        {/* <NewsGrid news={news} /> */}
+      <div className="news-carosel-container">
+        {!isLoading && <NewsCarousel news={apiData.cryptoNewsApi.results} />}
+        {!isLoading && <NewsList news={apiData.cryptoNewsApi.results} />}
+      </div>
         {!isLoading && <NewsGrid news={apiData.cryptoNewsApi.results} />}
-      </Container>
-    </div>
+    </NewsFeedContainer>
   );
 };
 

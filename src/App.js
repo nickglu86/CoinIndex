@@ -4,8 +4,7 @@ import { DataProvider } from "./context/DataContext";
 import FreeComponent from "./components/Auth/FreeComponent";
 import AuthComponent from "./components/Auth/AuthComponent";
 import ProtectedRoutes from "./components/Auth/ProtectedRoutes";
-import Header from "./components/Layout/Header";
-import Footer from "./components/Layout/Footer";
+import Layout from "./components/Layout/Layout";
 import {
   AboutUs,
   NewsLetter,
@@ -23,12 +22,11 @@ import {
 import "./styles/style.css";
 
 function App() {
-  console.log()
+  console.log();
   return (
     <UserProvider>
       <DataProvider>
-        <main>
-          <Header />
+        <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
@@ -45,8 +43,7 @@ function App() {
             <ProtectedRoutes path="/auth" component={AuthComponent} />
             <ProtectedRoutes path="/user" component={UserPage} />
           </Switch>
-          <Footer />
-        </main>
+        </Layout>
       </DataProvider>
     </UserProvider>
   );

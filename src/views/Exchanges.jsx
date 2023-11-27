@@ -9,8 +9,11 @@ const Exchanges = () => {
   if (!isLoading) {
     return (
       <Container>
-        <Row className="justify-content-md-start" style={{overflowX: 'auto'}}>
-          <h1>Exchanges</h1>
+        <Row className="justify-content-md-start" style={{ overflowX: "auto" }}>
+          <div className="hp-section-title" style={{ overflow: "hidden" }}>
+            <h2>Exchanges</h2>
+          </div>
+
           <ExchangesChart exchanges={apiData.exchanges} />
         </Row>
       </Container>

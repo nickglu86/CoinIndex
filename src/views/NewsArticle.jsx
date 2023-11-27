@@ -65,6 +65,8 @@ const NewsArticle = ({ match }) => {
                 maxWidth: "1000px",
                 border: "none",
                 padding: "0",
+                BoxShadow: "rgba(175, 170, 170, 0.65) 0px 0px 10px",
+                border: "1px solid rgba(137, 130, 130, 0.33)",
               }}
             >
               <Card.Header>

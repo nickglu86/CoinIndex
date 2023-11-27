@@ -17,8 +17,8 @@ const Breadcrumbs = ({ title }) => {
     return ( 
        <Link key={name} to={routeTo} active={isLast}>     
         <Breadcrumb.Item >
-            - {index + 1 === pathnames.length
-            ? title
+            \ {index + 1 === pathnames.length
+            ? ` ${title}`
             : capitalize(decodeURIComponent(name))}  
         </Breadcrumb.Item> 
       </Link>

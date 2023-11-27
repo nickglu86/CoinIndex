@@ -1,21 +1,21 @@
 import React from "react";
-import { Container, Row} from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import NewsList from "../components/News/NewsList";
 import { DataContext } from "../context/DataContext";
- 
 
 const News = () => {
-    // News Data from API/Context
-    const {  apiData , isLoading } = DataContext();
+  // News Data from API/Context
+  const { apiData, isLoading } = DataContext();
 
-    return (
-        <Container>
-            <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
-                <h1>Crypto News</h1>
-            </Row>
-            {!isLoading &&  <NewsList news={apiData.cryptoNewsApi.results} /> }  
-        </Container>
-    );
+  return (
+    <Container>
+      <div className="hp-section-title" style={{ overflow: "hidden" }}>
+        <img src="/assets/icons/news.png" />
+        <h2>Latest News</h2>
+      </div>
+      {!isLoading && <NewsList news={apiData.cryptoNewsApi.results} />}
+    </Container>
+  );
 };
 
 export default News;

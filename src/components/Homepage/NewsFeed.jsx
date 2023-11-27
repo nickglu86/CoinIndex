@@ -6,7 +6,7 @@ import { adjustDateStirng, getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
 const NewsFeedContainer = styled.section.attrs({
-  className: 'news-feed-cont',
+  className: "news-feed-cont",
 })`
     width: 100%;
 
@@ -43,12 +43,12 @@ const NewsFeedContainer = styled.section.attrs({
   
       .news-feed-headlines{
         .news-item{
-          height: 116px;
-          padding: 5px 0;
+          eight: 4.8rem;
+          padding: 0.25rem 0;
           display: block;
 
            .card{
-            height: 100%;
+            min-height: 5rem;
             padding: 5px;
             box-shadow: 0 0 10px #afaaaaa6;
             border: 1px solid #89828254;
@@ -56,7 +56,7 @@ const NewsFeedContainer = styled.section.attrs({
         }
      
         .news-card-title{
-          font-size: 1rem;
+          font-size: 0.9rem;
           line-height: 1.1rem;
           overflow: hidden;
           margin: 0px 30px 0px 24px;
@@ -100,29 +100,36 @@ const NewsFeedContainer = styled.section.attrs({
 
       //Carousel Slider Header & Footer
       .carousel-caption.caption-header{
+        position: relative;
         width: 100%;
         top: 0px;
         left: 0px;
         height: 19%;
         min-height: max-content;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.92);
         text-align: left;
         padding: 10px 0px 5px 15px;
         display: flex;
         align-items: center;
 
         h3{
-          max-width: 700px;
-          font-size: 1.25rem;
+          max-width: 35rem;
+          font-size: 1rem;
+          height: 2.8rem;
+          max-height: 2.8rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
 
       .carousel-caption.caption-footer{
+        position: relative;
         width: 100%;
         bottom: 0px;
         left: 0px;
-        height: 13%;
-        background-color: rgba(0, 0, 0, 0.7);
+        height: 70px;
+        background-color: rgba(0, 0, 0, 0.92);
         padding: 10px 0px 5px 15px;
         display: flex;
         align-items: center;
@@ -164,11 +171,14 @@ const NewsFeedContainer = styled.section.attrs({
      
     
       @media all and (min-width: 1024px) {
+        .carousel-caption.caption-header h3{
+            font-size: 1.25rem!important;
+        }
         .other-news{
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 0.3rem; 
-          padding-bottom: 20px;
+          padding: 10px 0 20px;
         }
         .other-news-item{
           height: 126px!important;
@@ -217,30 +227,27 @@ const NewsFeed = () => {
   //   return newsItem.link.slice(startIndex, endIndex);
   // };
 
-
-
   const NewsCarousel = ({ news }) => (
     <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
-      {news.slice(0, 4).map((item, index) => (
+      {news.slice(3, 8).map((item, index) => (
         <Carousel.Item key={index}>
-          <img
-            className="news-carousel-item"
-            src={
-              item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
-            }
-            alt={item.title}
-            testatr={item.image_url ? item.image_url : "nothing"}
-          />
           <Carousel.Caption className="caption-header">
-            <h3>
-              {item.title}
-            </h3>
+            <h3>{item.title}</h3>
           </Carousel.Caption>
+          <div style={{ maxHeight: "480px", overflow: "hidden" }}>
+            <img
+              className="news-carousel-item"
+              src={
+                item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
+              }
+              alt={item.title}
+              testatr={item.image_url ? item.image_url : "nothing"}
+            />
+          </div>
+
           <Carousel.Caption className="caption-footer">
             <div>
-              {item.creator[0].length ? (
-                <span>{item.creator} | </span>
-              ) : null}{" "}
+              {item.creator[0].length ? <span>{item.creator} | </span> : null}{" "}
               {adjustDateStirng(item.pubDate)}
             </div>
           </Carousel.Caption>
@@ -251,23 +258,25 @@ const NewsFeed = () => {
 
   const NewsList = ({ news }) => (
     <div className="news-feed-headlines">
-      {news.slice(0, 4).map((item, itemIndex) => (
+      {news.slice(3, 8).map((item, itemIndex) => (
         <Link
-          key={itemIndex} className="news-item"
-
+          key={itemIndex}
+          className="news-item"
           style={{ color: "inherit", textDecoration: "none" }}
           to={`/news/${getNewsItemURI(item)}`}
           onMouseEnter={() => setIndex(itemIndex)}
         >
-          <Card >
-
+          <Card>
             <div className="news-item-header">
               <img src="/assets/icons/news.png" />
               <Card.Text> {adjustDateStirng(item.pubDate)}</Card.Text>
             </div>
             <div>
               <Card.Text
-                className={`news-card-title ${index === itemIndex && `headline`}`}  >
+                className={`news-card-title ${
+                  index === itemIndex && `headline`
+                }`}
+              >
                 {item.title}
               </Card.Text>
 
@@ -275,8 +284,10 @@ const NewsFeed = () => {
                 className="news-item-header"
                 style={{ position: "absolute", bottom: "7px", right: "10px" }}
               >
-                <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
-
+                <img
+                  src="/assets/icons/arrows-red.png"
+                  style={{ width: "17px", height: "17px" }}
+                />
               </div>
             </div>
           </Card>
@@ -288,45 +299,41 @@ const NewsFeed = () => {
   const NewsGrid = ({ news }) => (
     <div className="other-news">
       {/* <h4>Other News</h4> */}
-      
-        {news.slice(4, 10).map((item, index) => (
-          <Card
-            key={index}
-            className="other-news-item news-item"
+
+      {news.slice(4, 10).map((item, index) => (
+        <Card key={index} className="other-news-item news-item">
+          <div
+            className="news-item-header"
+            style={{ position: "absolute", top: "7px", left: "55%" }}
           >
-            <div
-              className="news-item-header"
-              style={{ position: "absolute", top: "7px", left: "55%" }}
-            >
-              <img src="/assets/icons/news.png" />
-              <Card.Text style={{ fontStyle: 'italic', color: 'grey' }}>{adjustDateStirng(item.pubDate)}</Card.Text>
-            </div>
-            <div
-              className="news-item-header"
-              style={{ position: "absolute", bottom: "7px", right: "10px" }}
-            >
-              <img src="/assets/icons/arrows-red.png" style={{ width: "17px", height: '17px' }} />
-
-            </div>
-            <Card.Img
-              src={
-                item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
-              }
-              style={{ width: "53%", height: "100%", objectFit: "cover" }}
-            />
-
-            <Card.Text
-              className="other-news-item-title"
-  >
-              {item.title}
+            <img src="/assets/icons/news.png" />
+            <Card.Text style={{ fontStyle: "italic", color: "grey" }}>
+              {adjustDateStirng(item.pubDate)}
             </Card.Text>
-            <Card.Link
-              style={{ position: "absolute", width: "100%", height: "100%" }}
-              href={`/news/${getNewsItemURI(item)}`}
-            ></Card.Link>
-          </Card>
-        ))}
-     
+          </div>
+          <div
+            className="news-item-header"
+            style={{ position: "absolute", bottom: "7px", right: "10px" }}
+          >
+            <img
+              src="/assets/icons/arrows-red.png"
+              style={{ width: "17px", height: "17px" }}
+            />
+          </div>
+          <Card.Img
+            src={
+              item.image_url ? item.image_url : "assets/news/crypto-news.jpg"
+            }
+            style={{ width: "53%", height: "100%", objectFit: "cover" }}
+          />
+
+          <Card.Text className="other-news-item-title">{item.title}</Card.Text>
+          <Card.Link
+            style={{ position: "absolute", width: "100%", height: "100%" }}
+            href={`/news/${getNewsItemURI(item)}`}
+          ></Card.Link>
+        </Card>
+      ))}
     </div>
   );
 
@@ -340,7 +347,7 @@ const NewsFeed = () => {
         {!isLoading && <NewsCarousel news={apiData.cryptoNewsApi.results} />}
         {!isLoading && <NewsList news={apiData.cryptoNewsApi.results} />}
       </div>
-        {!isLoading && <NewsGrid news={apiData.cryptoNewsApi.results} />}
+      {!isLoading && <NewsGrid news={apiData.cryptoNewsApi.results} />}
     </NewsFeedContainer>
   );
 };

@@ -3,7 +3,6 @@ import { Card, Row, Nav, Container } from "react-bootstrap";
 import { getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
-
 const NewsList = ({ news }) => {
   const NewsItem = ({ item }) => (
     <Link
@@ -17,7 +16,13 @@ const NewsList = ({ news }) => {
         />
         <Card.Body className="d-flex flex-column news-list-item-body">
           <Card.Subtitle className="mb-3">
-            <span className="text-muted"> {item.pubDate} </span>
+            <span
+              className="text-muted"
+              style={{ fontStyle: "italic", fontSize: "15px" }}
+            >
+              {" "}
+              {item.pubDate}{" "}
+            </span>
           </Card.Subtitle>
           <Card.Title
             style={{
@@ -53,7 +58,7 @@ const NewsList = ({ news }) => {
   );
 
   return (
-    <div className="my-4">
+    <div className="my-1">
       <Container className="news-list" fluid>
         {news.map((item, index) => (
           <NewsItem item={item} key={index} index={index} />

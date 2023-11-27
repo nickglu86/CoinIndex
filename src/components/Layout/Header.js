@@ -12,11 +12,11 @@ import { Link } from "react-router-dom";
 function Header() {
   //  const [loggedIn, setloggedIn] = useState(initialState)
   const personCircleIcon = (
-    <PersonCircle color="grey" className="ml-2" size={36} />
+    <PersonCircle color="grey" className="ml-2" size={24} />
   );
   const { isLoggedIn, _logout } = useContext(UserContext);
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="black">
+    <Navbar collapseOnSelect expand="lg"   variant="black">
       <Container>
       <Link to='/' className="navbar-brand">
       <img
@@ -43,7 +43,7 @@ function Header() {
             }}
           >
             <Link to='/news' className="nav-link">News</Link>
-            <Link to='/chart' className="nav-link">CryptoCurrencies</Link>
+            <Link to='/chart' className="nav-link">Markets</Link>
             <Link to='/exchanges' className="nav-link">Exchanges</Link>
             <Link to='/resources' className="nav-link">Resources</Link>
             {/* <Nav.Link href="/aboutus">About Us</Nav.Link>

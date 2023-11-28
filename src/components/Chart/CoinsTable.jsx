@@ -69,9 +69,9 @@ const CoinsTable = ({ coins }) => {
         </th>
         <th onClick={() => sort("market_cap_rank")}>Market Cap</th>
         <th onClick={() => sort("total_volume")}>Volume(24h)</th>
-        <th
+        <th 
           onClick={() => sort("circulating_supply")}
-          style={{ textAlign: "right" }}
+          style={{ textAlign: "right", paddingRight: '0.8rem' }}
         >
           Circulating Suplly
         </th>
@@ -103,11 +103,11 @@ const CoinsTable = ({ coins }) => {
           <td
             style={{
               fontWeight: "600",
-              fontSize: "0.85rem",
+              fontSize: "0.67rem",
               letterSpacing: "0.5px",
             }}
           >
-            {getPriceforDisplay(coin.current_price)}$
+            ${getPriceforDisplay(coin.current_price)}
           </td>
           {priceChange(coin.price_change_percentage_1h_in_currency)}
           {priceChange(coin.price_change_percentage_24h)}
@@ -119,7 +119,7 @@ const CoinsTable = ({ coins }) => {
           <td style={{ textAlign: "center" }}>
             ${coin.total_volume.toLocaleString()}
           </td>
-          <td style={{ textAlign: "end" }}>
+          <td style={{ textAlign: "end", paddingRight: '0.8rem'}}>
             {coin.symbol} {coin.circulating_supply.toLocaleString()}
           </td>
         </tr>
@@ -129,7 +129,7 @@ const CoinsTable = ({ coins }) => {
 
   //  Coins Table
   return (
-    <Table className="coins-chart" striped hover size="sm">
+    <Table className="coins-chart " hover size="sm">
       <TableHeader />
       <TableBody />
     </Table>

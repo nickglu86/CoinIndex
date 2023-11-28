@@ -20,7 +20,7 @@
           : parseFloat(changeValue) > 0
           ? "+" + parseFloat(changeValue).toFixed(1)
           : parseFloat(changeValue).toFixed(1);
-      return <td style={changeColor}>{valuePrefix}%</td>;
+      return <td style={{...changeColor,  fontWeight: "600"}}>{valuePrefix}%</td>;
 };
 
 // Price Coin Price for Display

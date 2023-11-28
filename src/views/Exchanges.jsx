@@ -9,7 +9,7 @@ const Exchanges = () => {
   if (!isLoading) {
     return (
       <Container>
-        <Row className="justify-content-md-start" style={{ overflowX: "auto" }}>
+        <Row className="justify-content-md-start home-section my-3" style={{ overflowX: "auto" }}>
           <div className="hp-section-title" style={{ overflow: "hidden" }}>
             <h2>Exchanges</h2>
           </div>

@@ -10,7 +10,7 @@ const NewsList = ({ news }) => {
       style={{ textDecoration: "none" }}
       to={`/news/${getNewsItemURI(item)}`}
     >
-      <Card className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center news-item container-fluid news-list-item">
+      <Card className="col-3 p-2 my-4 d-flex flex-row  justify-content-between align-items-center container-fluid news-list-item">
         <Card.Img
           src={item.image_url ? item.image_url : "assets/news/crypto-news.jpg"}
         />

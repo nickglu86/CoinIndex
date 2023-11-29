@@ -319,6 +319,11 @@ table.coins-chart thead th {
 .news-feed-count{
   width: 100%;
 }
+@media all and (max-width: 1024px) {
+  .caption-footer p {
+    display: none!important;
+  }
+}
 
 @media all and (min-width: 1024px) {
   .news-carosel-container {

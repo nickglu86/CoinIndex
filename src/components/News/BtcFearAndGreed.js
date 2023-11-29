@@ -85,7 +85,7 @@ const BtcFearAndGreed = () => {
           </div>
           <div className="btc-widget-hdata" >
      
-            <Table hover>
+            <Table hover style={{cursor: 'pointer'}}>
               <tbody>
                 <tr gaf-attr={todayGAFLabel}>
                   <td>

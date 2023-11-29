@@ -40,4 +40,9 @@ const adjustDateStirng = date => {
   return `${timeArr[0]}:${timeArr[1]} ${dateArr[2]}-${dateArr[1]}`
 
 }
-export { priceChange, getNewsItemURI, getPriceforDisplay,  adjustDateStirng};
+
+//Replace "Read more...Coincu News"
+const clearDesc = desc => desc.replace("Read more...Coincu News", '');
+
+
+export { priceChange, getNewsItemURI, getPriceforDisplay,  adjustDateStirng, clearDesc};

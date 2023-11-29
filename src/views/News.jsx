@@ -8,7 +8,7 @@ const News = () => {
   const { apiData, isLoading } = DataContext();
 
   return (
-    <Container>
+    <Container className="cb">
       <div className="hp-section-title" style={{ overflow: "hidden" }}>
         <img src="/assets/icons/news.png" />
         <h2>Latest News</h2>

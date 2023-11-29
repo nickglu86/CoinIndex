@@ -55,7 +55,7 @@ const CoinsTable = ({ coins }) => {
       <tr className="text-center" style={{ fontSize: "0.75rem" }}>
         <th onClick={() => sort("market_cap_rank")}>#</th>
         <th></th>
-        <th style={{ textAlign: "left" }}>CryptoCurrency</th>
+        <th style={{ textAlign: "left" }}>Name</th>
         <th onClick={() => sort("current_price")}>Price</th>
         <th onClick={() => sort("price_change_percentage_1h_in_currency")}>
           1h
@@ -94,10 +94,10 @@ const CoinsTable = ({ coins }) => {
           <td>
             <img
               src={coin.image}
-              style={{ width: "45px", height: "45px", padding: "2px" }}
+              style={{ width: "2rem", height: "2rem", padding: "2px" }}
             />
           </td>
-          <td style={{ textAlign: "left" }}>
+          <td style={{ textAlign: "left", minWidth: '100px'}}>
             <CoinModal coin={coin} />
           </td>
           <td
@@ -113,13 +113,13 @@ const CoinsTable = ({ coins }) => {
           {priceChange(coin.price_change_percentage_24h)}
           {priceChange(coin.price_change_percentage_7d_in_currency)}
           {priceChange(coin.price_change_percentage_30d_in_currency)}
-          <td style={{ textAlign: "center" }}>
+          <td style={{ textAlign: "center",  fontSize: "0.67rem" }}>
             ${coin.market_cap.toLocaleString()}
           </td>
-          <td style={{ textAlign: "center" }}>
+          <td style={{ textAlign: "center",  fontSize: "0.67rem" }}>
             ${coin.total_volume.toLocaleString()}
           </td>
-          <td style={{ textAlign: "end", paddingRight: '0.8rem'}}>
+          <td style={{ textAlign: "end", paddingRight: '0.8rem',  fontSize: "0.67rem"}}>
             {coin.symbol} {coin.circulating_supply.toLocaleString()}
           </td>
         </tr>

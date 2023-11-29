@@ -14,14 +14,13 @@ import YouTubeVids from "../components/YouTubeVids";
 import BtcFearAndGreed from "../components/News/BtcFearAndGreed";
 const Home = () => {
   return (
-    <Container className="home-page">
+    <Container className="home-page my-3">
       <Row className="justify-content-md-start" style={{ overflow: "hidden" }}>
         <NewsFeed />
         <Trending />
         <BtcFearAndGreed />
         <Top10 />
         {/* <YouTubeVids />  */}
-
       </Row>
     </Container>
   );

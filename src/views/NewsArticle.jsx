@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Card, Breadcrumb } from "react-bootstrap";
 import { DataContext } from "../context/DataContext";
 import Breadcrumbs from "../components/News/BreadCrumbs";
+import { clearDesc } from "../utils/DataFuncs";
 
 const NewsArticle = ({ match }) => {
   const newsItemTitle = match.params.newsItemTitle;
@@ -55,7 +56,7 @@ const NewsArticle = ({ match }) => {
 
       return (
         <>
-          <Row className="mt-4">
+          <Row className="mt-4"  >
             <Breadcrumbs title={newsItem.title} />
           </Row>
           <Row>
@@ -65,6 +66,9 @@ const NewsArticle = ({ match }) => {
                 maxWidth: "1000px",
                 border: "none",
                 padding: "0",
+                BoxShadow: "rgba(175, 170, 170, 0.65) 0px 0px 10px",
+                border: "1px solid rgba(137, 130, 130, 0.33)",
+               
               }}
             >
               <Card.Header>
@@ -81,7 +85,7 @@ const NewsArticle = ({ match }) => {
                 </Card.Title>
 
                 <Card.Text style={{ fontStyle: "italic" }}>
-                  {newsItem.description}
+                  { clearDesc(newsItem.description)}
                 </Card.Text>
 
                 <Card.Img
@@ -100,11 +104,12 @@ const NewsArticle = ({ match }) => {
                     overflow: "hidden",
                     textAlign: "left",
                     marginTop: "20px",
+                    paddingRight: '15px'
                   }}
                 >
                   {paragraphs}
                 </Card.Text>
-                <Link to={newsItem.link}> Read More...</Link>
+                <Link to={newsItem.link} style={{fontSize: '17px'}}> Read More...</Link>
 
                 <Card.Text
                   style={{

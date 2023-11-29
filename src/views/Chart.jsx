@@ -10,8 +10,11 @@ const Chart = () => {
   if (!isLoading) {
     return (
       <Container>
-        <Row className="justify-content-md-start" style={{overflowX: 'auto'}}>
-          <h1>Chart</h1>
+        <Row className="justify-content-md-start home-section my-3" style={{ overflowX: "auto" }}>
+          <div className="hp-section-title">
+            <img src="/assets/icons/trending.png" />
+            <h2>Markets</h2>
+          </div>
           <CoinsTable coins={apiData.coins} />
         </Row>
       </Container>

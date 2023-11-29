@@ -3,6 +3,29 @@ import React, { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 //import { trending } from "../mockdata/trending";
 
+const trendingCoinsStyles = { 
+  height: '100px',
+  margin: '0 auto',
+  position: 'relative',
+  overflow: 'hidden',
+  transform: 'translate3d(0, 0, 0)',
+  maxWidth: '100%',
+  margin: "0 10px",
+  paddingBottom: '30px' 
+}
+
+const trendingCoinsInnerStyles = { 
+  display: 'flex',
+  height: '100px',
+  width: '1850px',
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  height: '100%',
+  transform: 'translate3d(0, 0, 0)',
+  animation: 'moveSlideshow 15s linear infinite',
+}
+
 const Trending = () => {
   // const { trending } = useContext(DataContext);
   const { apiData, isLoading } = DataContext();
@@ -16,15 +39,15 @@ const Trending = () => {
           <h2>Trending Coins</h2>
         </div>
           
-        <Row className="news-grid" style={{ margin: "0 10px", paddingBottom: '30px' }}>
-          <div className="news-grid-inner">
+        <Row style={trendingCoinsStyles}>
+          <div style={trendingCoinsInnerStyles}>
             {trending.map((item, index) => (
               <Card
                 key={index}
-                className="col-3 p-1 pl-3 d-flex flex-row justify-content-start  align-items-center news-item"
+                className="col-3 p-1 pl-3 d-flex flex-row justify-content-start  align-items-center"
                 style={{
                   margin: "10px",
-                  width: "255px",
+                  minWidth: "255px",
                   height: "82px",
                   overflow: "hidden",
                 }}

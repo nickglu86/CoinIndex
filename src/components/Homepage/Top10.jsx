@@ -12,7 +12,7 @@ const Top10 = () => {
     const top10coins = apiData.coins.filter((coin, index) => index < 10);
       
     return (
-      <Col xs={12} sm={12} md={12} lg={12} className="mt-1 home-section" >
+      <Col xs={12} sm={12} md={12} lg={12} className="mt-1 cb"  >
         <div className="hp-section-title">
           <img src="/assets/icons/top10.png"  />
           <h2>Top10</h2>

@@ -10,9 +10,9 @@
         parseFloat(changeValue).toFixed(1) === 0
           ? {}
           : parseFloat(changeValue) > 0
-          ? { color: "green" }
+          ? { color: "#16c784" }
           : parseFloat(changeValue) < 0
-          ? { color: "red" }
+          ? { color: "#ea3943" }
           : {};
       const valuePrefix =
         parseFloat(changeValue).toFixed(1) === 0

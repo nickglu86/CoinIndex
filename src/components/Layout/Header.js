@@ -65,11 +65,15 @@ function Header() {
                   <Button variant="outline-success">Search</Button>
              </Form>
           </Nav> */}
-          <Nav>
+          <Nav            >
             {!isLoggedIn ? (
               <NavDropdown
                 title={personCircleIcon}
                 id="collasible-nav-dropdown"
+                style={{
+                  fontSize: "0.35rem!important",
+                  paddingTop: "0.25rem",
+                }}
               >
                 <Link to='/login' className="dropdown-item">Sign In</Link>
                 <Link to='/register' className="dropdown-item">Sign Up</Link>

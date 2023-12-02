@@ -10,15 +10,19 @@ const NewsArticle = ({ match }) => {
   const { apiData, isLoading } = DataContext();
 
   function findSimilarTitles(searchString, results) {
+    console.log('searchString : ' + searchString)
+    console.log({results})
     return results.filter((result) => {
       const title = result.link.toLowerCase();
       const search = searchString.toLowerCase();
+      console.log(search)
+      console.log(title)
       return title.includes(search) || search.includes(title);
     });
   }
   function splitIntoParagraphs(text) {
     const regex = /([.!?])\s+(?=[A-Z])/;
-    const sentences = text.split(regex);
+    const sentences = text?.split(regex);
     let currentParagraph = "";
     const paragraphs = [];
 
@@ -52,7 +56,7 @@ const NewsArticle = ({ match }) => {
     )[0];
 
     if (newsItem) {
-      const paragraphs = splitIntoParagraphs(newsItem.content, 100);
+      const paragraphs = newsItem.content ? splitIntoParagraphs(newsItem.content, 100) : [];
 
       return (
         <>

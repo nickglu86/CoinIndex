@@ -69,7 +69,7 @@ const BtcFearAndGreed = () => {
     return (
       <Container className="my-3 btc-widget ">
         <Col xs={12} sm={12} md={6} lg={6} className="btc-widget-candle-chart">
-          <div className="btc-candles-chart-label">
+          <div className="btc-candles-chart-label hp-section-title">
             <img src="/bitcoin.png" alt="Bitcoin Logo" />
             <h2>Bitcoin Price Chart</h2>
           </div> 
@@ -85,7 +85,7 @@ const BtcFearAndGreed = () => {
           </div>
           <div className="btc-widget-hdata" >
      
-            <Table hover style={{cursor: 'pointer'}}>
+            <Table  style={{cursor: 'pointer'}}>
               <tbody>
                 <tr gaf-attr={todayGAFLabel}>
                   <td>

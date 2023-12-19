@@ -26,7 +26,7 @@ export const DataProvider = ({ children }) => {
 
     // Init the Context  real data from API /utis/ApiEndpoints.js
      const  initDatafromAPIs =   () => {
-      let endPointsDataRequests = apiEndpoints.map( resource => axios.get(resource.endpoint));
+      let endPointsDataRequests = apiEndpoints.map( resource => axios.get(resource.endpoint, resource.endpoint.headers ? resource.endpoint.headers : null));
         
         Promise.all(endPointsDataRequests)
         .then(responses => {

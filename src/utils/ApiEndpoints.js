@@ -40,6 +40,15 @@ export const apiEndpoints = [
     endpoint: `https://api.coingecko.com/api/v3/exchanges?per_page=100`,
     type: `exchanges`,
   },
+  {
+    name: `cmcNews`,
+    endpoint: `https://pro-api.coinmarketcap.com/v1/content/latest`,
+    type: `news-2`,
+    headers: {
+      'X-CMC_PRO_API_KEY': process.env.REACT_APP_CMS_API_KEY,
+    }
+  },
+  
   // {
   //   name: `copinBerau`,
   //   endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCqK_GSMbpiV8spgD3ZGloSw&part=snippet&maxResults=1&order=date&type=video`,

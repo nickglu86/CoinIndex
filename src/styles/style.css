@@ -146,7 +146,7 @@ section.cover{
   margin: 0 0 0 5px;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: monospace;
+  font-family: 'Open Sans';
 }
 .cover-title img {
   width: 28px;

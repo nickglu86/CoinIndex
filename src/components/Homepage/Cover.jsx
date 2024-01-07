@@ -18,7 +18,7 @@ const Cover = () => {
       <section className="my-2 cover" style={{ display: "flex", padding: 0 }}>
         <Col xs={6} sm={6} md={4} lg={4} className="cb p-2">
         <div className="cover-title">
-           <Globe2 color="#5ca5f1" />
+        <img src="/assets/icons/marketcap.png" />   
             <h2>Total Market Cap</h2>
           </div> 
         
@@ -32,7 +32,8 @@ const Cover = () => {
               " Trillion"}
           </div>
           <div>
-            Last 24h:{" "}
+          <img src="/assets/icons/24hours.png"  width={30}/>   
+            {/* Last 24h:{" "} */}
             <span style={{ color: increase > 0 ? "#16c784" : "#ea3943" }}>
               {(increase > 0 ? "+" : "") + increase + "%"}{" "}
             </span>

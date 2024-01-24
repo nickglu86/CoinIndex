@@ -154,6 +154,12 @@ section.cover{
   padding: 0px;
 }
 
+.progress-bar.bg-btc{
+background-color: #f7941a;
+}
+.progress-bar.bg-eth{
+  background-color: #828384;
+}
 /* Section Title Container*/
 .hp-section-title {
   display: flex;

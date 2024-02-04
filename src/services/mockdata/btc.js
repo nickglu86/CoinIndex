@@ -1,5 +1,5 @@
 export const btc = {
   bitcoin: {
-    usd: 30317,
+    usd: 42971,
   },
 };

@@ -22,7 +22,7 @@ const NewsFeed = () => {
       md={8}
       style={{ margin: "0.2rem" }}
     >
-      {news.slice(0, 10).map((item, index) => (
+      {news.slice(0, parseInt((news.length - 4) /3)*3+4).map((item, index) => (
         <Carousel.Item
           key={index}
           style={{ backgroundColor: "black", overflow: "hidden" }}
@@ -163,15 +163,16 @@ const NewsFeed = () => {
       ))}
     </Col>
   );
-
+        
+  
   const NewsBottomSection = ({ news }) => (
     <div className="other-news " xs={12} md={4}>
-      {news.slice(4, 10).map((item, index) => (
+      {news.slice(4, parseInt((news.length - 4) /3)*3+4).map((item, index) => (
         <NewsItem item={item} itemIndex={index + 4} />
       ))}
     </div>
   );
-
+  console.log(parseInt((apiData.cryptoNewsApi.results.length - 4) /3))
   return (
     <section className="news-feed-count cb">
       <div className="hp-section-title">

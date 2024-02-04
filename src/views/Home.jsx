@@ -20,7 +20,7 @@ const Home = () => {
         <Cover />
         <NewsFeed />
         <Trending />
-        <BtcFearAndGreed />
+        {/* <BtcFearAndGreed /> */}
         <Top10 />
         {/* <YouTubeVids />  */}
       </Row>

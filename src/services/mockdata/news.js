@@ -276,37 +276,7 @@ export const news = {
         ],
         "language": "english"
     },
-    {
-        "article_id": "87ae5d24a5d84e74f8c38e9815f6dbbe",
-        "title": "Massive Surge In AA Wallet Adoption: A Deep Dive Into ERC-4337",
-        "link": "https://coincu.com/219896-massive-surge-aa-wallet-adoption-into-erc-4337/",
-        "keywords": [
-            "News",
-            "AA Wallet",
-            "alchemy",
-            "Alchemy API",
-            "Bundlers",
-            "ERC-4337",
-            "ZeroDev"
-        ],
-        "creator": [
-            "Thana"
-        ],
-        "video_url": null,
-        "description": "Key Points: Research by SixdegreeLab found that after ERC-4337 account abstraction launch, AA Wallet Adoption has increased significantly. However, most wallets were used ≤5 times. The AA Wallet Adoption Surge According to SixdegreeLab’s research on ERC-4337 account abstraction, the numbers tell a compelling story. Six months after its launch, more than 687,000 AA wallets emerged […]Read more...Coincu News",
-        "content": "The AA Wallet Adoption Surge According to SixdegreeLab’s on ERC-4337 account abstraction, the numbers tell a compelling story. Six months after its launch, more than 687,000 AA wallets emerged across multiple chains, sparking over 2 million user operations. However, a fascinating twist lies within these statistics. An astounding 88.24% of AA wallets saw usage limited to five times or less, with most being employed for basic tasks like transferring assets or minting NFTs. Profitability Challenges for Bundlers Amidst the fray, approximately 15,000 Bundlers stood out as crucial elements in packaging and processing user operations, with Pimlico reigning supreme in market share. One standout revelation is Alchemy, which amassed an unprecedented revenue of approximately US$20,000. Astonishingly, 97.18% of bundled transactions contained only a single user operation, leaving around 90% of Bundlers unprofitable. On the flip side, 117 Paymasters gallantly bore the torch by covering users’ gas fees, accumulating a staggering total of US$465,000. Pimlico carved out a lion’s share, capturing 43.45% of this substantial sum. Among the accounts, 62.63% opted for Wallet Factory deployment through ZeroDev. Interestingly, the LEGO method emerged as the most preferred approach for constructing AA wallets, leveraging the Bundler, Paymaster, and Wallet Factory components from different third-party providers.",
-        "pubDate": "2023-09-23 19:41:44",
-        "image_url": "https://coincu.com/wp-content/uploads/2023/09/CoinCU-2023-09-24T023935.516-1024x731.jpg",
-        "source_id": "coincu",
-        "source_priority": 1140042,
-        "country": [
-            "united states of america"
-        ],
-        "category": [
-            "top"
-        ],
-        "language": "english"
-    }
+ 
 ],
   nextPage: null,
 };

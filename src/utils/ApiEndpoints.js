@@ -40,6 +40,11 @@ export const apiEndpoints = [
     endpoint: `https://api.coingecko.com/api/v3/exchanges?per_page=100`,
     type: `exchanges`,
   },
+  {
+    name: `cryptocompare`,
+    endpoint: `https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=745df2061708c7a85bb804edd2d9ef465756c7a3302cb920c2091745d8aba4a7`,
+    type: `news2`,
+  },
   // {
   //   name: `copinBerau`,
   //   endpoint: `https://www.googleapis.com/youtube/v3/search?${process.env.REACT_APP_YOUTUBE_API_KEY}&channelId=UCqK_GSMbpiV8spgD3ZGloSw&part=snippet&maxResults=1&order=date&type=video`,

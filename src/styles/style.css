@@ -149,20 +149,17 @@ footer {
 
 section.cover {
   font-size: 0.7rem;
-  display: flex;
+  display: contents;
   padding: 0;
 }
 .cover-cb{
   border: 1px solid rgb(0 0 0 / 6%);
   border-radius: 18px;
 }
-@media all and (max-width: 1000px) {
-  section.cover {
-    flex-direction: column;
-  }
-}
+
 .cover-elem-wrp {
-  padding: 0 0.5rem;
+  display: inline-block;
+  padding: 0 0.25rem  0.5rem;
 }
 .cover-elem-wrp:first-child {
   padding-left: 0;
@@ -170,6 +167,13 @@ section.cover {
 .cover-elem-wrp:last-child {
   padding-right: 0;
 }
+@media all and (max-width: 1000px) {
+  .cover-elem-wrp,  
+  .cover-elem-wrp:first-child,
+  .cover-elem-wrp:last-child  {
+    padding: 0.25rem;
+  }
+}  
 .cover-elem {
   height: 140px;
 }
@@ -453,6 +457,26 @@ table.coins-chart thead th {
 /* News Feed */
 .news-feed-count {
   width: 100%;
+}
+.news-feed-headlines{
+  padding-left: 0.2rem;
+}
+.other-news-item-title{
+  font-size: 0.6rem;
+  line-height: 0.84rem;
+}
+@media all and (max-width: 767px) {
+  .news-feed-count {
+    padding-right: 0.1rem!important;
+    padding-left: 0.1rem!important;
+  }
+  .news-feed-headlines{
+    padding-left: 0;
+  }
+  .other-news-item-title{
+    font-size: 0.67rem;
+    line-height: 0.9rem;
+  }
 }
 @media all and (max-width: 1024px) {
   .caption-footer p {

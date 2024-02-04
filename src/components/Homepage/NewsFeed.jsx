@@ -138,8 +138,7 @@ const NewsFeed = () => {
             width: "45%",
             overflow: "hidden",
             margin: "33px 0.2rem 0.4rem 0.8rem",
-            fontSize: "0.6rem",
-            lineHeight: "0.84rem",
+
           }}
         >
           {item.title}
@@ -156,7 +155,6 @@ const NewsFeed = () => {
       className="news-feed-headlines"
       xs={12}
       md={4}
-      style={{ paddingLeft: "0.2rem" }}
     >
       {news.slice(0, 4).map((item, itemIndex) => (
         <NewsItem item={item} itemIndex={itemIndex} />

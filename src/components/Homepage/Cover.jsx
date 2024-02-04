@@ -5,6 +5,7 @@ import { Table, Col } from "react-bootstrap";
 import { DataContext } from "../../context/DataContext";
 import { Globe2, GraphUpArrow, BrowserSafari } from "react-bootstrap-icons";
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import HalvingCounter from "./HalvingCounter";
 
 const cryptos = {
   btc: '/assets/cryptos/bitcoin.png',
@@ -84,23 +85,38 @@ const Cover = () => {
             <h2>Fear & Greed Index</h2>
           </div>
 
-          <div style={{ overflow: 'hidden' }}>
+          <div style={{ margin: '10px', position: 'relative' }}>
             <img
-              className="w-50"
-              src={bitcoinFearIndexIMG}
+              // className="w-50"
+                src="/assets/fearandgreed/icon.svg"  
               alt="Latest Crypto Fear & Greed Index"
-              style={{ margin: '-60px 0 -25px 0' }}
+              style={{width: '130px' }}
             />
+            <div style={{
+              width: '13px',
+              height:'13px',
+              borderRadius: '50%',
+              border: '2px solid black',
+              backgroundColor: 'black',
+              position: 'absolute',
+              top: '75px',
+              left: '-2px',
+              zIndex: 1,
+              transformOrigin:' 66.5px -10px',
+              transform: 'rotate('+ (20 + (50/100)*170) + 'deg)',
+            }}>
+
+            </div>
           </div>
         </Col>
         <Col xs={6} sm={6} md={3} lg={3} className="cb  p-2">
           <div className="cover-title">
             <img src="/assets/icons/halving.png" />
-            <h2>Bitcoin Halving</h2>
+            <h2>Bitcoin Halving Countdown</h2>
           </div>
 
           <div style={{ overflow: 'hidden' }}>
-
+            <HalvingCounter />
           </div>
         </Col>
       </section>

@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="135" height="50" viewBox="0 0 135 50" preserveAspectRatio="none" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<polyline points="0.0, 50.0 15.0, 50.0 30.0, 41.55585106382979 45.0, 29.25531914893616 60.0, 22.007978723404246 75.0, 20.27925531914894 90.0, 21.941489361702132 105.0, 7.513297872340418 120.0, 0.0" fill="none" stroke="#32ca5b" stroke-width="1.25"/>
+
+</svg>

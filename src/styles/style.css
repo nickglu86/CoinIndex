@@ -1,4 +1,5 @@
-/* vietnamese */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400');
+
 @font-face {
   font-family: "Space Mono";
   font-style: normal;
@@ -103,7 +104,9 @@ html {
 body {
   font-family: "Open Sans", sans-serif !important;
 }
-
+.navbar-brand{
+  margin-right: 4px!important;
+}
 footer {
   font-size: 0.8rem;
 }
@@ -149,20 +152,17 @@ footer {
 
 section.cover {
   font-size: 0.7rem;
-  display: flex;
+  display: contents;
   padding: 0;
 }
 .cover-cb{
   border: 1px solid rgb(0 0 0 / 6%);
   border-radius: 18px;
 }
-@media all and (max-width: 1000px) {
-  section.cover {
-    flex-direction: column;
-  }
-}
+
 .cover-elem-wrp {
-  padding: 0 0.5rem;
+  display: inline-block;
+  padding: 0 0.25rem  0.5rem;
 }
 .cover-elem-wrp:first-child {
   padding-left: 0;
@@ -170,6 +170,13 @@ section.cover {
 .cover-elem-wrp:last-child {
   padding-right: 0;
 }
+@media all and (max-width: 1000px) {
+  .cover-elem-wrp,  
+  .cover-elem-wrp:first-child,
+  .cover-elem-wrp:last-child  {
+    padding: 0.25rem;
+  }
+}  
 .cover-elem {
   height: 140px;
 }
@@ -199,6 +206,7 @@ section.cover {
 .progress-bar.bg-eth {
   background-color: #7e3a8f;
 }
+
 /* Section Title Container*/
 .hp-section-title {
   display: flex;
@@ -219,6 +227,55 @@ section.cover {
   padding: 0px;
 }
 /* Section Title Container END */
+
+/* Trending Section Home Page */
+
+.home-trending{
+  display: flex;
+}
+@media all and (max-width: 990px) {
+  .home-trending{
+    flex-direction: column;
+  }
+}
+.trending-coins-grid{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* Repeat 7 items in each line, each taking an equal fraction of the available space */
+  gap: 10px; /* Optional: Add some gap between items for better spacing */
+
+}
+.card.trending-coin-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 4px; */
+  width: 100%;
+  height: 154px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: rgba(175, 170, 170, 0.65) 0px 0px 10px;
+  border: 1px solid rgba(137, 130, 130, 0.33);
+  cursor: pointer;
+}
+@media all and (max-width: 1240px) {
+  .trending-coins-grid{
+    grid-template-columns: repeat(5, 1fr); /* Repeat 7 items in each line, each taking an equal fraction of the available space */
+    gap: 10px; /* Optional: Add some gap between items for better spacing */
+  
+  }
+  .card.trending-coin-card:last-child{
+    display: none;
+  }
+}
+@media all and (max-width: 979px) {
+  .trending-coins-grid{
+    grid-template-columns: repeat(3, 1fr); /* Repeat 7 items in each line, each taking an equal fraction of the available space */
+    gap: 10px; /* Optional: Add some gap between items for better spacing */
+  
+  }
+}
+
+/* Trending Section Home Page END */
 
 /* Youtube Widget */
 .youtube-card {
@@ -454,13 +511,33 @@ table.coins-chart thead th {
 .news-feed-count {
   width: 100%;
 }
-@media all and (max-width: 1024px) {
+.news-feed-headlines{
+  padding-left: 0.2rem;
+}
+.other-news-item-title{
+  font-size: 0.6rem;
+  line-height: 0.84rem;
+}
+@media all and (max-width: 767px) {
+  .news-feed-count {
+    padding-right: 0.1rem!important;
+    padding-left: 0.1rem!important;
+  }
+  .news-feed-headlines{
+    padding-left: 0;
+  }
+  .other-news-item-title{
+    font-size: 0.67rem;
+    line-height: 0.9rem;
+  }
+}
+@media all and (max-width: 990px) {
   .caption-footer p {
     display: none !important;
   }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 990px) {
   .news-carosel-container {
     display: flex;
     justify-content: space-between;

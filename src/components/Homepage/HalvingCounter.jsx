@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Col } from "react-bootstrap";
 
 const halvingCountdownUlStyles = {
   listStyleType: "none",
@@ -10,6 +11,7 @@ const halvingCountdownUlStyles = {
   padding: 0,
   backgroundColor: "#eff2f5",
 };
+
 const halvingCountdownElemStyles = {
   width: "100px",
   textAlign: "center",
@@ -19,10 +21,12 @@ const halvingCountdownElemStyles = {
   fontSize: "15px",
   fontWeight: "700",
 };
+
 const halvingCountdownElemLabelStyles = {
   fontSize: "13px",
   fontWeight: "500",
 };
+
 const HalvingCounter = () => {
   const halvingDate = new Date("2024-04-19T01:28:06Z");
   const currentDate = new Date();
@@ -72,12 +76,24 @@ const HalvingCounter = () => {
   };
 
   return (
-    <div style={{"padding":"7px 0 0"}}>
-      <div>{formatTime(seconds)}</div>
-      <div style={{ fontSize: "11px", padding: '10px 0', textAlign: 'center' }}>
-        *Halving is expected to take place in April 2024.
+    <Col xs={12} sm={6} md={6} lg={3} className="cover-elem-wrp">
+      <div className="cover-cb cover-elem p-2">
+        <div className="cover-title">
+          <img src="/assets/icons/halving.png" />
+          <h2>Bitcoin Halving Countdown</h2>
+        </div>
+
+        <div style={{ overflow: "hidden" }}>
+          <div style={{ "padding": "7px 0 0" }}>
+            <div>{formatTime(seconds)}</div>
+            <div style={{ fontSize: "0.5rem", padding: '10px 0', textAlign: 'center' }}>
+              *Halving is expected to take place in April 2024.
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Col>
+
   );
 };
 

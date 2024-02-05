@@ -103,7 +103,7 @@ const CoinsTable = ({ coins }) => {
           <td
             style={{
               fontWeight: "600",
-              fontSize: "0.67rem",
+              fontSize: "0.7rem",
               letterSpacing: "0.5px",
             }}
           >

@@ -37,8 +37,21 @@ const Footer = () => {
         <Row className="d-flex justify-content-between gap-2 my-4 py-4 footer-info">
           <Col xs={12} sm={12} md={4} lg={4}>
             <figure className="d-flex align-items-center">
-              <img src="/coinindex-logo.png" width="80" />
-              <h4>Coin Index</h4>
+            <img
+            src="/coinindex-logo-2.png"
+            width="61"
+            height="61"
+            className="d-inline-block align-top"
+            alt="Coin Index logo"
+          />
+              <h4           style={{
+            fontSize: "25px",
+            lineHeight: '61px',
+            fontFamily: "\"DM Mono\", monospace",
+            color: "#372E18",
+            letterSpacing: '1.3px',
+            marginBottom: '0'
+          }}>Coin Index</h4>
             </figure>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}>

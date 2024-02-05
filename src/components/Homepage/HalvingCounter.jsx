@@ -86,7 +86,7 @@ const HalvingCounter = () => {
         <div style={{ overflow: "hidden" }}>
           <div style={{ "padding": "7px 0 0" }}>
             <div>{formatTime(seconds)}</div>
-            <div style={{ fontSize: "11px", padding: '10px 0', textAlign: 'center' }}>
+            <div style={{ fontSize: "0.5rem", padding: '10px 0', textAlign: 'center' }}>
               *Halving is expected to take place in April 2024.
             </div>
           </div>

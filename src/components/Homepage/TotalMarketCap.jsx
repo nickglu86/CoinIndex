@@ -34,7 +34,7 @@ const TotalMarketCap = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  paddingLeft: "48px",
+                  justifyContent: "center",
                 }}
               >
                 <div

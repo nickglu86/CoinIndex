@@ -1,4 +1,5 @@
-/* vietnamese */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400');
+
 @font-face {
   font-family: "Space Mono";
   font-style: normal;
@@ -103,7 +104,9 @@ html {
 body {
   font-family: "Open Sans", sans-serif !important;
 }
-
+.navbar-brand{
+  margin-right: 4px!important;
+}
 footer {
   font-size: 0.8rem;
 }

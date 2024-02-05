@@ -115,7 +115,7 @@ const NewsArticle = ({ match }) => {
                 </Card.Text>
                 <Link to={newsItem.link} style={{fontSize: '17px'}}> Read More...</Link>
 
-                <Card.Text
+                <div
                   style={{
                     fontSize: "17px",
                     fontWeight: "600",
@@ -123,7 +123,7 @@ const NewsArticle = ({ match }) => {
                   }}
                 >
                   KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
-                </Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </Row>

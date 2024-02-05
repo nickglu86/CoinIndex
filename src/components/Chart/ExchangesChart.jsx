@@ -63,7 +63,7 @@ const ExchangesChart = ({ exchanges }) => {
   const getStars = (trust_score) => {
     let stars = []
     for (let i = 0; i < trust_score/2; i++) {
-      stars.push(<img src={'/assets/icons/star.png'} width={12} height={12} />) 
+      stars.push(<img src={'/assets/icons/star.png'}  key={i} width={12} height={12} />) 
       }
     return stars;
   }

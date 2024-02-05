@@ -13,7 +13,6 @@ export const Context = createContext({});
 export const DataProvider = ({ children }) => {
  
     const [apiData, setApiData] = useState();
-
     const [isLoading, setIsLoading] = useState(true);
 
     // Init the Context with MOCK DATA from ./mockdata/
@@ -31,7 +30,7 @@ export const DataProvider = ({ children }) => {
         Promise.all(endPointsDataRequests)
         .then(responses => {
           let data = {};
-          console.log(responses);
+          // console.log(responses);
           responses.forEach((response, index) => {
             if(apiEndpoints[index].type === 'youtube'){
               Object.assign(data.youtube, { [apiEndpoints[index].name] : response.data });
@@ -62,10 +61,10 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     // Use useMemo to memoize apiData
-    const memoizedApiData = useMemo(() => apiData, [apiData]);
+    // const memoizedApiData = useMemo(() => apiData, [apiData]);
   
     return (
-      <Context.Provider value={{ apiData: memoizedApiData, isLoading }}  >
+      <Context.Provider value={{ apiData, isLoading }}  >
         {children}
       </Context.Provider>
     );

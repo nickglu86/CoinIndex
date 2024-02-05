@@ -42,7 +42,7 @@ const TrendingNFTs = () => {
           <td
             style={{
               textAlign: "left",
-              fontSize: "0.55rem",
+              fontSize: "0.65rem",
               fontWeight: '700',
               maxWidth: "140px",
               verticalAlign: 'middle'

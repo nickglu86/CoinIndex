@@ -9,7 +9,7 @@ const TrendingCategories = () => {
 
   const TableHeader = () => (
     <thead style={{ height: "2.4rem" }}>
-      <tr className="text-center" style={{ fontSize: "0.45rem" }}>
+      <tr className="text-center" style={{ fontSize: "0.65rem" }}>
         <th style={{ textAlign: "left" }}>Category</th>
         <th>Coins</th>
         <th>7d</th>
@@ -32,7 +32,7 @@ const TrendingCategories = () => {
           <td
             style={{
               textAlign: "left",
-              fontSize: "0.55rem",
+              fontSize: "0.7rem",
               fontWeight: "700",
               maxWidth: "140px",
               verticalAlign: 'middle'

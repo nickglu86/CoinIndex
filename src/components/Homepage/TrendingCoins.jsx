@@ -2,38 +2,26 @@ import { Row, Card, ListGroup } from "react-bootstrap";
 import React, { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 //import { trending } from "../mockdata/trending";
- 
 
-const Trending2 = () => {
+const TrendingCoins = () => {
   // const { trending } = useContext(DataContext);
   const { apiData, isLoading } = DataContext();
 
   if (!isLoading) {
     const trending = apiData.trending.coins;
     return (
-      <section className="my-3 home-section">
+      <section className="my-3 pb-3 home-section">
         <div className="hp-section-title">
-        <img src="/assets/icons/trending.png"  />
+          <img src="/assets/icons/trending.png" />
           <h2>Trending Coins</h2>
         </div>
-          
+
         <Row>
-          <div style={{display: 'contents', textAlign: 'center'}} >
+          <div className="trending-coins-grid">
             {trending.map((item, index) => (
               <Card
                 key={index}
-                className="dispay-flex justify-content-center  align-items-center"
-                style={{
-                  margin: "4px",
-                  minWidth: "100px",
-                  width: "11.8%",
-                  height: "154px",
-                  overflow: "hidden",
-                  borderRadius: '15px',
-                  boxShadow: 'rgba(175, 170, 170, 0.65) 0px 0px 10px',
-                  border:'1px solid rgba(137, 130, 130, 0.33)'
-             
-                }}
+                className="trending-coin-card"
               >
                 {/* <ListGroup variant="flush" style={{ fontSize: "0.75rem" }}>
                   <ListGroup.Item>
@@ -49,8 +37,12 @@ const Trending2 = () => {
                 </ListGroup> */}
                 <Card.Img
                   src={item.item.large}
-                  style={{ width: "55px", height: "auto", marginBottom: '14px'}}
-                />{" "}
+                  style={{
+                    width: "2rem",
+                    height: "auto",
+                    marginBottom: "14px",
+                  }}
+                /> 
                 <Card.Title
                   style={{
                     width: "100%",
@@ -62,33 +54,28 @@ const Trending2 = () => {
                 </Card.Title>
               </Card>
             ))}
-                          <Card
-                 
-                className="dispay-flex justify-content-center  align-items-center"
+            <Card
+              className=" trending-coin-card"
+           
+            >
+                <Card.Img
+                 src="/assets/icons/more-trending.png"
+                  style={{
+                    width: "2rem",
+                    height: "auto",
+                    marginBottom: "14px",
+                  }}
+                />{" "}
+              <Card.Title
                 style={{
-                  margin: "4px",
-                  minWidth: "100px",
-                  width: "11.8%",
-                  height: "154px",
-                  overflow: "hidden",
-                  borderRadius: '15px',
-                  boxShadow: 'rgba(175, 170, 170, 0.65) 0px 0px 10px',
-                  border:'1px solid rgba(137, 130, 130, 0.33)'
-             
+                  width: "100%",
+                  textAlign: "center",
+                  fontSize: "0.6rem",
                 }}
               >
- 
-    
-                <Card.Title
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    fontSize: "0.76rem",
-                  }}
-                >
-                  Check Out More!
-                </Card.Title>
-              </Card>
+                More Trending...
+              </Card.Title>
+            </Card>
           </div>
         </Row>
       </section>
@@ -96,4 +83,4 @@ const Trending2 = () => {
   }
 };
 
-export default Trending2;
+export default TrendingCoins;

@@ -153,8 +153,7 @@ const NewsFeed = () => {
   const NewsRightSection = ({ news }) => (
     <Col
       className="news-feed-headlines"
-      xs={12}
-      md={4}
+      xs={12} sm={12} md={12} lg={4} 
     >
       {news.slice(0, 4).map((item, itemIndex) => (
         <NewsItem item={item} itemIndex={itemIndex} />

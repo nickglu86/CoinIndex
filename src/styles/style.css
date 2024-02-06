@@ -126,6 +126,9 @@ footer {
   /* width: 50px!important; */
 }
 
+table tbody tr:last-child{
+  border-color: #fff!important;
+}
 @media all and (max-width: 1024px) {
   .footer-info {
     flex-direction: column;

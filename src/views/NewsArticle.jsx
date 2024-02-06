@@ -10,13 +10,9 @@ const NewsArticle = ({ match }) => {
   const { apiData, isLoading } = DataContext();
 
   function findSimilarTitles(searchString, results) {
-    console.log('searchString : ' + searchString)
-    console.log({results})
     return results.filter((result) => {
       const title = result.link.toLowerCase();
       const search = searchString.toLowerCase();
-      console.log(search)
-      console.log(title)
       return title.includes(search) || search.includes(title);
     });
   }
@@ -115,7 +111,7 @@ const NewsArticle = ({ match }) => {
                 </Card.Text>
                 <Link to={newsItem.link} style={{fontSize: '17px'}}> Read More...</Link>
 
-                <Card.Text
+                <div
                   style={{
                     fontSize: "17px",
                     fontWeight: "600",
@@ -123,7 +119,7 @@ const NewsArticle = ({ match }) => {
                   }}
                 >
                   KeyWords: {newsItem.keywords && newsItem.keywords.join(", ")}
-                </Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </Row>

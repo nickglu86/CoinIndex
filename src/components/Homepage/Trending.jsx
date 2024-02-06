@@ -13,11 +13,7 @@ const Trending = () => {
   if (!isLoading) {
     return (
       <>
-      <TrendingCoins />
-      <section className="home-section home-trending">
-         <Categories />
-         <TrendingNFTs />
-      </section>
+
       </>
       
     );

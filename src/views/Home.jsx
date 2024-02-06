@@ -14,8 +14,10 @@ import YouTubeVids from "../components/YouTubeVids";
 import BtcFearAndGreed from "../components/News/BtcFearAndGreed";
 import Cover from "../components/Homepage/Cover";
 import Categories from "../components/Homepage/TrendingCategories";
+import TrendingCoins from "../components/Homepage/TrendingCoins";
+import TrendingCategories from "../components/Homepage/TrendingCategories";
 import TrendingNFTs from "../components/Homepage/TrendingNFTs";
-import Trending from "../components/Homepage/Trending";
+
 const Home = () => {
   return (
     <Container className="home-page my-3">
@@ -23,7 +25,11 @@ const Home = () => {
         <Cover />
         <NewsFeed />
         <Top10 />
-        <Trending />
+        <TrendingCoins />
+      <section className="home-section home-trending">
+         <TrendingCategories />
+         <TrendingNFTs />
+      </section>
         {/* <BtcFearAndGreed /> */}
 
         {/* <YouTubeVids />  */}

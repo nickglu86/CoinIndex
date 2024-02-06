@@ -21,7 +21,7 @@ function Header() {
       <Container className="px-0">
         <Link to="/" className="navbar-brand" >
           <img
-            src="/coinindex-logo-2.png"
+            src="/coinindex-logo.png"
             width="61"
             height="61"
             className="d-inline-block align-top"
@@ -53,6 +53,7 @@ function Header() {
               fontSize: "0.72rem",
               paddingTop: "0.25rem",
               marginLeft: '13vw',
+              fontFamily: '"DM Mono", monospace',
              
             }}
             onClick={() => setExpanded(false)}

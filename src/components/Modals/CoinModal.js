@@ -15,7 +15,7 @@ function CoinModal({ coin }) {
 
   return (
     <>
-      <span onClick={handleShow} style={{ cursor: "pointer" }}>
+      <span onClick={handleShow} style={{ cursor: "pointer" , fontWeight: '600'}}>
         {coin.name} <WindowPlus />
       </span>
 

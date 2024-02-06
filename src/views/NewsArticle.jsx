@@ -10,13 +10,9 @@ const NewsArticle = ({ match }) => {
   const { apiData, isLoading } = DataContext();
 
   function findSimilarTitles(searchString, results) {
-    console.log('searchString : ' + searchString)
-    console.log({results})
     return results.filter((result) => {
       const title = result.link.toLowerCase();
       const search = searchString.toLowerCase();
-      console.log(search)
-      console.log(title)
       return title.includes(search) || search.includes(title);
     });
   }

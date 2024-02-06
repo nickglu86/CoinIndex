@@ -8,8 +8,8 @@ const TrendingCategories = () => {
   const { apiData, isLoading } = DataContext();
 
   const TableHeader = () => (
-    <thead style={{ height: "2.4rem" }}>
-      <tr className="text-center" style={{ fontSize: "0.65rem" }}>
+    <thead style={{ height: "3rem" }}>
+      <tr className="text-center" style={{ fontSize: "0.48rem" }}>
         <th style={{ textAlign: "left" }}>Category</th>
         <th>Coins</th>
         <th>7d</th>
@@ -32,7 +32,7 @@ const TrendingCategories = () => {
           <td
             style={{
               textAlign: "left",
-              fontSize: "0.7rem",
+              fontSize: "0.64rem",
               fontWeight: "700",
               maxWidth: "140px",
               verticalAlign: 'middle'
@@ -71,6 +71,8 @@ const TrendingCategories = () => {
             fontSize: "0.55rem",
             fontWeight: "700",
             maxWidth: "140px",
+            minWidth: '125px',
+            minHeight: '3rem',
           }}
         >
           More Categories!
@@ -96,10 +98,10 @@ const TrendingCategories = () => {
           <img src="/assets/icons/cat.png" />
           <h2>Trending Categories</h2>
         </div>
-        <Row style={{ width: "100%" }}>
+        <Row style={{ width: "100%", overflowX: 'auto' }}>
           <Table
             className="coins-chart"
-            style={{ width: "95%", margin: "0 auto" }}
+            style={{ width: "95%", margin: "0 auto", padding: 0}}
             hover
           >
             <TableHeader />

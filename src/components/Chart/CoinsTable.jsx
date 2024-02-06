@@ -30,10 +30,9 @@ const CoinsTable = ({ coins }) => {
   }
 
   const DollarSign = () => (
-    '$'
-    // <img src={'assets/icons/dollar.png'}
-    //   style={{ width: "17px", height: "17px", paddingRight: "1px" }}
-    // />
+    <img src={'assets/icons/dollar.png'}
+      style={{ width: "0.65rem", height: "0.75rem", padding: "0 1px 0.1rem 0" }}
+    />
   )
   // Sort function
   Array.prototype.sortBy = function (prop) {
@@ -111,6 +110,7 @@ const CoinsTable = ({ coins }) => {
               fontWeight: "600",
               fontSize: "0.7rem",
               letterSpacing: "0.5px",
+              whiteSpace: 'nowrap'
             }}
           >
             <DollarSign />
@@ -120,15 +120,15 @@ const CoinsTable = ({ coins }) => {
           {priceChange(coin.price_change_percentage_24h)}
           {priceChange(coin.price_change_percentage_7d_in_currency)}
           {priceChange(coin.price_change_percentage_30d_in_currency)}
-          <td style={{ textAlign: "center", fontSize: "0.67rem" }}>
+          <td style={{ textAlign: "center", fontSize: "0.67rem",  whiteSpace: 'nowrap' }}>
           <DollarSign />
           {coin.market_cap.toLocaleString()}
           </td>
-          <td style={{ textAlign: "center", fontSize: "0.67rem" }}>
+          <td style={{ textAlign: "center", fontSize: "0.67rem", whiteSpace: 'nowrap'}}>
           <DollarSign />
           {coin.total_volume.toLocaleString()}
           </td>
-          <td style={{ textAlign: "end", paddingRight: '0.8rem', fontSize: "0.67rem" }}>
+          <td style={{ textAlign: "end", paddingRight: '0.8rem', fontSize: "0.67rem", whiteSpace: 'nowrap' }}>
             {coin.circulating_supply.toLocaleString().split(".")[0]} <img
               src={coin.image}
               style={{ width: "30px", height: "30px", padding: "3px" }}

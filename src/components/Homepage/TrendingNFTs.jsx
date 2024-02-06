@@ -1,6 +1,7 @@
 import { Col, Row, Table, ListGroup } from "react-bootstrap";
 import React, { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
+import { cryptoIcons } from "../../utils/CryptoIcons";
 //import { trending } from "../mockdata/trending";
 
 const TrendingNFTs = () => {
@@ -8,8 +9,8 @@ const TrendingNFTs = () => {
   const { apiData, isLoading } = DataContext();
 
   const TableHeader = () => (
-    <thead style={{height: '2.4rem'}}>
-      <tr className="text-center" style={{ fontSize: "0.45rem" }}>
+    <thead style={{height: '3rem'}}>
+      <tr className="text-center" style={{ fontSize: "0.48rem" }}>
         <th></th>
         <th style={{ textAlign: "left" }}> NFT </th>
         <th>BlockChain</th>
@@ -42,23 +43,25 @@ const TrendingNFTs = () => {
           <td
             style={{
               textAlign: "left",
-              fontSize: "0.65rem",
+              fontSize: "0.64rem",
               fontWeight: '700',
               maxWidth: "140px",
+              minWidth: '135px',
+              minHeight: '3rem',
               verticalAlign: 'middle'
             }}
           >
             {nft.name}
           </td>
-          <td>{nft.native_currency_symbol}</td>
+          <td><img width={20} src={cryptoIcons[nft.native_currency_symbol]} /></td>
           <td>
             <img
               src={nft.data.sparkline}
               style={{ width: "125px", height: "45px", padding: "2px" }}
             />
           </td>
-          <td>{nft.data.floor_price}</td>
-          <td>{nft.data.h24_volume}</td>
+          <td style={{whiteSpace: 'nowrap'}}>{nft.data.floor_price}</td>
+          <td style={{whiteSpace: 'nowrap'}}>{nft.data.h24_volume}</td>
         </tr>
       ))}
     </tbody>
@@ -72,8 +75,8 @@ const TrendingNFTs = () => {
           <img src="/assets/icons/nft.png" />
           <h2>Trending NFTs</h2>
         </div>
-        <Row style={{ width: "100%" }}>
-          <Table className="coins-chart" style={{"width":"95%","margin":"0 auto"}} hover>
+        <Row style={{ width: "100%", overflowX: 'auto'}}>
+          <Table className="coins-chart" style={{"width":"95%","margin":"0 auto",padding: 0 }} hover>
             <TableHeader />
             <TableBody />
           </Table>

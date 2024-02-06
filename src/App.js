@@ -22,7 +22,6 @@ import {
 import "./styles/style.css";
 
 function App() {
-  console.log();
   return (
     <UserProvider>
       <DataProvider>

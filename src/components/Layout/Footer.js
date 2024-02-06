@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer style={{fontSize: '0.6rem'}}>
       <Container>
         <div className="site-info my-4 py-4 ">
           <aside>
             <h4>Site Information</h4>
-            <div className="d-flex flex-column my-4">
+            <div className="d-flex flex-column my-3">
               <Link className="nav-link" to="/aboutus">
                 About / Contact Us
               </Link>
@@ -16,7 +16,7 @@ const Footer = () => {
                 Contributors
               </Link>
             </div>
-            <div className="d-flex flex-column my-4">
+            <div className="d-flex flex-column my-3">
               <Link className="nav-link" to="/newsletter">
                 Get our free newsletter
               </Link>
@@ -24,7 +24,7 @@ const Footer = () => {
                 Privacy Policy
               </Link>
             </div>
-            <div className="d-flex flex-column my-4">
+            <div className="d-flex flex-column my-3">
               <Link className="nav-link" to="/">
                 Site Map
               </Link>
@@ -55,33 +55,33 @@ const Footer = () => {
             </figure>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}>
-            <h4>About US</h4>
+          <h4 className="my-2">About US</h4>
             <p>
               CoinIndex is powered by people with a passion for blockchain and
               cryptocurencies. Contact us if you interested to contribue.
             </p>
           </Col>
           <Col xs={12} sm={12} md={2} lg={2} className="follow-us">
-            <h4>Follow Us</h4>
+            <h4 className="my-2">Follow Us</h4>
             <div className="follow-us links">
               <a href="https://twitter.com/CryptoJ58590975" target="_blank">
                 <img
                   src="/assets/social/twitter.png"
-                  width="44"
+                  width="32"
                   className="mx-1"
                 />
               </a>
               <a href="https://t.me/CryptoJunkie5" target="_blank">
                 <img
                   src="/assets/social/telegram.png"
-                  width="44"
+                  width="32"
                   className="mx-1"
                 ></img>
               </a>
               <a href="/" target="_blank">
                 <img
                   src="/assets/social/facebook.png"
-                  width="44"
+                  width="32"
                   className="mx-1"
                 ></img>
               </a>
@@ -90,8 +90,8 @@ const Footer = () => {
         </Row>
         <Row className="d-flex gap-2 my-4 pt-3">
           <Col>
-            <span>&#169; 2023 CoinIndex </span>
-            <span>| Developed by nickglu86</span>
+            <span>&#169; 2024 CoinIndex </span>
+            <span>| Developed by <a href="https://github.com/nickglu86" target="_blank">nickglu86</a></span>
           </Col>
         </Row>
       </Container>

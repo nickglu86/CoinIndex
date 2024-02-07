@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import Aos from 'aos';
 import { UserProvider } from "./context/UserContext";
 import { Switch, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataContext";
@@ -5,6 +7,8 @@ import FreeComponent from "./components/Auth/FreeComponent";
 import AuthComponent from "./components/Auth/AuthComponent";
 import ProtectedRoutes from "./components/Auth/ProtectedRoutes";
 import Layout from "./components/Layout/Layout";
+import 'aos/dist/aos.css';
+
 import {
   AboutUs,
   NewsLetter,
@@ -22,6 +26,11 @@ import {
 import "./styles/style.css";
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1200,
+    });
+  }, []);
   return (
     <UserProvider>
       <DataProvider>

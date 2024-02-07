@@ -20,13 +20,14 @@
           : parseFloat(changeValue) > 0
           ? "+" + parseFloat(changeValue).toFixed(1)
           : parseFloat(changeValue).toFixed(1);
-      return <td style={{...changeColor,  fontWeight: "600"}}>{valuePrefix}%</td>;
+      return <td style={{...changeColor, fontSize: '0.67rem'}}>{valuePrefix}%</td>;
 };
 
 // Price Coin Price for Display
 const getPriceforDisplay = (priceValue) => {
       return  parseInt(priceValue) > 10
-              ? priceValue.toFixed(0).toLocaleString()
+              ? priceValue.toLocaleString(undefined,
+                {'minimumFractionDigits':0,'maximumFractionDigits':0})
               : parseInt(priceValue) > 0
               ? priceValue.toFixed(2)
               : priceValue.toFixed(Math.floor(Math.log10(parseFloat(priceValue))) * -1 + 2)

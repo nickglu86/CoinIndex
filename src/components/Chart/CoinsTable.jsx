@@ -91,7 +91,7 @@ const CoinsTable = ({ coins }) => {
         <tr
           key={index}
           className="text-center"
-          style={{ verticalAlign: "baseline", fontSize: "0.75rem" }}
+          style={{ verticalAlign: "baseline", fontSize: "0.75rem", cursor: 'pointer' }}
         >
           <td style={{ textAlign: "center", fontWeight: "600" }}>
             {coin.market_cap_rank}
@@ -99,7 +99,7 @@ const CoinsTable = ({ coins }) => {
           <td>
             <img
               src={coin.image}
-              style={{ width: "2rem", height: "2rem", padding: "2px" }}
+              style={{ width: "1.8rem", height: "1.8rem", padding: "2px" }}
             />
           </td>
           <td style={{ textAlign: "left", minWidth: '100px' }}>
@@ -107,10 +107,11 @@ const CoinsTable = ({ coins }) => {
           </td>
           <td
             style={{
-              fontWeight: "600",
+              
               fontSize: "0.7rem",
-              letterSpacing: "0.5px",
-              whiteSpace: 'nowrap'
+              letterSpacing: "0.2px",
+              whiteSpace: 'nowrap',
+              textAlign: 'right'
             }}
           >
             <DollarSign />

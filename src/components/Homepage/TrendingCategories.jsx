@@ -93,7 +93,7 @@ const TrendingCategories = () => {
   if (!isLoading) {
     const categories = apiData.trending.categories;
     return (
-      <Col xs={12} sm={12} md={12} lg={6} className="my-3">
+      <Col xs={12} sm={12} md={12} lg={6} className="my-3"  data-aos="fade-right">
         <div className="hp-section-title">
           <img src="/assets/icons/cat.png" />
           <h2>Trending Categories</h2>

@@ -21,6 +21,7 @@ export const DataProvider = ({ children }) => {
       mockData.cryptoNewsApiAlt : mockData.cryptoNewsApi;
       setApiData(mockData);
       setIsLoading(false);
+      console.log('Using Mock Data!')
     }
 
     // Init the Context  real data from API /utis/ApiEndpoints.js
@@ -49,14 +50,15 @@ export const DataProvider = ({ children }) => {
 
           console.log(data);
           data.cryptoNewsApi = !data.cryptoNewsApi.results.length ? data.cryptoNewsApiAlt : data.cryptoNewsApi;
+          console.log('Data fetched from APIs!')
           setApiData(data);
           setIsLoading(false);
+        
         })
         .catch(error => console.log(error));
     }
 
     useEffect(() => {
-      console.log('Data fetched from APIs!')
       USE_MOCK_DATA ? initWithMockData() : initDatafromAPIs();
     }, []);
 

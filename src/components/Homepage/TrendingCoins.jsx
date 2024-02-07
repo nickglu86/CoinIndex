@@ -10,7 +10,7 @@ const TrendingCoins = () => {
   if (!isLoading) {
     const trending = apiData.trending.coins;
     return (
-      <section className="my-3 pb-3 home-section">
+      <section className="my-3 pb-3 home-section" data-aos="fade-up">
         <div className="hp-section-title">
           <img src="/assets/icons/trending.png" />
           <h2>Trending Coins</h2>

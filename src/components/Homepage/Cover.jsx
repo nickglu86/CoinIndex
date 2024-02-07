@@ -10,7 +10,7 @@ const Cover = () => {
 
   if (!isLoading) {
     return (
-      <section className="my-2 cover">
+      <section className="my-2 cover" >
         <TotalMarketCap />
         <MarketCapDominance />
         <FearAndGreed  />

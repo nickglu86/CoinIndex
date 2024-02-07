@@ -167,7 +167,7 @@ const NewsFeed = () => {
   );
 
   return (
-    <section className="news-feed-count cb">
+    <section className="news-feed-count cb"    data-aos="fade-up"  data-aos-delay="400">
       <div className="hp-section-title">
         <img src="/assets/icons/news.png" />
         <h2>Latest News</h2>

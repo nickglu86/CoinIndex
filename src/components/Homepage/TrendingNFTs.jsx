@@ -70,7 +70,7 @@ const TrendingNFTs = () => {
   if (!isLoading) {
     const trendingNFTs = apiData.trending.nfts;
     return (
-      <Col xs={12} sm={12} md={12} lg={6} className="my-3">
+      <Col xs={12} sm={12} md={12} lg={6} className="my-3"  data-aos="fade-left">
         <div className="hp-section-title">
           <img src="/assets/icons/nft.png" />
           <h2>Trending NFTs</h2>

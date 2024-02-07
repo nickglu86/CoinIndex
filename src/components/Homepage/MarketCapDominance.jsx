@@ -22,7 +22,7 @@ const MarketCapDominance = () => {
       };
       
     return (
-        <Col xs={12} sm={6} md={6} lg={3}  className="cover-elem-wrp">
+        <Col xs={12} sm={6} md={6} lg={3}  className="cover-elem-wrp" data-aos="fade-down"  data-aos-delay="100">
         <div className="cover-cb cover-elem p-2">
           <div className="cover-title">
             <img src="/assets/icons/dominance.png" />

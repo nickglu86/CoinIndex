@@ -38,7 +38,7 @@ const Footer = () => {
           <Col xs={12} sm={12} md={4} lg={4}>
             <figure className="d-flex align-items-center">
             <img
-            src="/coinindex-logo-2.png"
+            src="/coinindex-logo.png"
             width="61"
             height="61"
             className="d-inline-block align-top"

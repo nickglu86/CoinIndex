@@ -85,7 +85,7 @@ const NewsArticle = ({ match }) => {
                 </Card.Title>
 
                 <Card.Text style={{ fontStyle: "italic" }}>
-                  { clearDesc(newsItem.description)}
+                  { newsItem.description}
                 </Card.Text>
 
                 <Card.Img

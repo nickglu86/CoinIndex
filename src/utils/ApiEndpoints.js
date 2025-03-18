@@ -1,7 +1,7 @@
 export const apiEndpoints = [
   {
     name: `cryptoNewsApi`,
-    endpoint: `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=coincu&language=en`,
+    endpoint: `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA_API_KEY}&q=crypto&language=en`,
     type: `news`,
   },
   {

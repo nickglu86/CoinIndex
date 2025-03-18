@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Row, Nav, Container } from "react-bootstrap";
-import { clearDesc, getNewsItemURI } from "../../utils/DataFuncs";
+import { truncateString, clearDesc, getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
 const NewsList = ({ news }) => {
@@ -43,7 +43,7 @@ const NewsList = ({ news }) => {
               marginBottom: '0.35rem'
             }}
           >
-            {clearDesc(item.description ) }
+            { truncateString(item.description) }
           </Card.Text>
           <Card.Text
             style={{

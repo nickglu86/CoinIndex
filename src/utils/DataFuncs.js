@@ -45,5 +45,11 @@ const adjustDateStirng = date => {
 //Replace "Read more...Coincu News"
 const clearDesc = desc => desc.replace("Read more...Coincu News", '');
 
+const truncateString =  (str, maxLength = 100)  => {
+  if (str.length > maxLength) {
+    return str.slice(0, maxLength) + '...'; // Append ellipsis to indicate it's truncated
+  }
+  return str; // Return the string as-is if it's within the limit
+}
 
-export { priceChange, getNewsItemURI, getPriceforDisplay,  adjustDateStirng, clearDesc};
+export { priceChange, getNewsItemURI, getPriceforDisplay,  adjustDateStirng, clearDesc, truncateString};

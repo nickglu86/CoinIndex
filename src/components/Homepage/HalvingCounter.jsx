@@ -28,7 +28,7 @@ const halvingCountdownElemLabelStyles = {
 };
 
 const HalvingCounter = () => {
-  const halvingDate = new Date("2024-04-19T01:28:06Z");
+  const halvingDate = new Date("2028-03-26T01:28:06Z");
   const currentDate = new Date();
   //  const timestamp = currentDate.getTime();
   const [seconds, setSeconds] = useState(halvingDate - currentDate);
@@ -87,7 +87,7 @@ const HalvingCounter = () => {
           <div style={{ "padding": "7px 0 0" }}>
             <div>{formatTime(seconds)}</div>
             <div style={{ fontSize: "0.5rem", padding: '10px 0', textAlign: 'center' }}>
-              *Halving is expected to take place in April 2024.
+              *Halving is expected to take place in March 2028.
             </div>
           </div>
         </div>

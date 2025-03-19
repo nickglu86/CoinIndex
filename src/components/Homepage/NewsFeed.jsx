@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Card, Col, Container, Row, Carousel, Button } from "react-bootstrap";
 import { DataContext } from "../../context/DataContext";
-import { adjustDateStirng, clearDesc, getNewsItemURI } from "../../utils/DataFuncs";
+import { adjustDateStirng, truncateString, getNewsItemURI } from "../../utils/DataFuncs";
 import { Link } from "react-router-dom";
 
 const NewsFeed = () => {
@@ -68,7 +68,7 @@ const NewsFeed = () => {
                 marginBottom: "0",
               }}
             >
-              {clearDesc(item.description)}
+              {truncateString(item.description)}
             </p>
           </Carousel.Caption>
         </Carousel.Item>
